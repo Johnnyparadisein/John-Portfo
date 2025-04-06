@@ -13,7 +13,9 @@ const elements = {
     portfolioItems: document.querySelectorAll('.portfolio-item'),
     lazyImages: document.querySelectorAll('img[data-src]'),
     modalTriggers: document.querySelectorAll('[data-modal-trigger]'),
-    modals: document.querySelectorAll('.modal')
+    modals: document.querySelectorAll('.modal'),
+    scrollTopBtn: document.querySelector('.scroll-top'), // Back to top button
+    scrollTopProgress: document.querySelector('.progress-ring__circle') // Progress circle
 };
 
 // --- Configuration ---
@@ -25,6 +27,8 @@ let currentTheme = localStorage.getItem('theme') || 'dark';
 let isMobileMenuOpen = false;
 let lastScroll = 0;
 let scrollTicking = false;
+let lastFocusedElement = null; // Variable to store the element focused before modal opens
+let progressCircleCircumference = 0; // Store circumference for progress
 
 // --- Initialization ---
 function initializeWebsite() {
@@ -47,6 +51,7 @@ function initializeWebsite() {
     initializeLazyLoading();
     initializeModals();
     adjustBodyPadding(); // Call initially
+    initializeScrollTopButton(); // Initialize back-to-top button
 
     console.log("Website initialization complete."); // Debug log
 }
@@ -165,18 +170,15 @@ function initializeThemeToggle() {
 function initializeSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            e.preventDefault();
             const targetId = this.getAttribute('href');
-            // Ensure it's an internal link
-            if (targetId.length <= 1) return; 
-
             const targetElement = document.querySelector(targetId);
+            const header = document.querySelector('header'); // Get header element
 
-            if (targetElement) {
-                e.preventDefault(); // Only prevent default if target exists
-                const elementPosition = targetElement.offsetTop;
-                // Recalculate header height dynamically if needed, or use constant
-                const currentHeaderHeight = elements.header ? elements.header.offsetHeight : 80;
-                const offsetPosition = elementPosition - currentHeaderHeight - 20; // Adjust offset
+            if (targetElement && header) {
+                const headerOffset = header.offsetHeight; // Use dynamic header height
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
                 window.scrollTo({
                     top: offsetPosition,
@@ -184,11 +186,10 @@ function initializeSmoothScrolling() {
                 });
 
                 // Close mobile menu if open
-                if (isMobileMenuOpen) {
-                    closeMobileMenu();
+                const mobileNav = document.getElementById('mobile-nav');
+                if (mobileNav && mobileNav.classList.contains('active')) {
+                     toggleMobileMenu(); // Ensure toggleMobileMenu is accessible or defined here
                 }
-            } else {
-                 console.warn(`Smooth scroll target not found: ${targetId}`);
             }
         });
     });
@@ -378,6 +379,8 @@ function initializeModals() {
             const modalId = trigger.dataset.modalTrigger;
             const targetModal = document.getElementById(modalId);
             if (targetModal) {
+                // Store the element that triggered the modal
+                lastFocusedElement = document.activeElement;
                 openModal(targetModal);
             } else {
                 console.warn(`Modal with ID '${modalId}' not found.`);
@@ -406,6 +409,8 @@ function openModal(modal) {
 
     // Add listener for Escape key
     document.addEventListener('keydown', handleEscapeKey);
+    // Add listener for focus trapping
+    modal.addEventListener('keydown', handleFocusTrap);
 
     modal.classList.remove('closing'); // Remove closing class if it exists
     modal.style.display = 'flex'; // Set display before triggering animation
@@ -428,6 +433,8 @@ function closeModal(modal) {
 
      // Remove listener for Escape key
     document.removeEventListener('keydown', handleEscapeKey);
+    // Remove listener for focus trapping
+    modal.removeEventListener('keydown', handleFocusTrap);
 
     modal.classList.add('closing');
     modal.setAttribute('aria-hidden', 'true');
@@ -438,6 +445,12 @@ function closeModal(modal) {
         if (modal.classList.contains('closing')) {
              modal.classList.remove('active', 'closing');
              modal.style.display = 'none';
+
+            // Restore focus to the element that opened the modal
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+                lastFocusedElement = null; // Clear after use
+            }
         }
     }, { once: true });
 }
@@ -450,6 +463,101 @@ function handleEscapeKey(event) {
             closeModal(activeModal);
         }
     }
+}
+
+// Function to handle focus trapping within the modal
+function handleFocusTrap(event) {
+    if (event.key !== 'Tab') return;
+
+    const modal = event.currentTarget; // The modal element itself
+    const focusableElements = Array.from(
+        modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    ).filter(el => el.offsetParent !== null); // Filter out hidden elements
+
+    if (focusableElements.length === 0) return; // No focusable elements
+
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+    const currentFocus = document.activeElement;
+
+    if (event.shiftKey) { // Shift + Tab
+        if (currentFocus === firstFocusable) {
+            event.preventDefault();
+            lastFocusable.focus();
+        }
+    } else { // Tab
+        if (currentFocus === lastFocusable) {
+            event.preventDefault();
+            firstFocusable.focus();
+        }
+    }
+}
+
+// --- Back to Top Button --- // Added Section
+function initializeScrollTopButton() {
+    if (!elements.scrollTopBtn || !elements.scrollTopProgress) {
+        console.warn('Scroll top button or progress circle not found.');
+        return;
+    }
+
+    // Calculate circumference
+    const radius = elements.scrollTopProgress.r.baseVal.value;
+    progressCircleCircumference = 2 * Math.PI * radius;
+
+    // Set initial dash array and offset
+    elements.scrollTopProgress.style.strokeDasharray = `${progressCircleCircumference} ${progressCircleCircumference}`;
+    elements.scrollTopProgress.style.strokeDashoffset = progressCircleCircumference;
+
+    // Hide initially
+    elements.scrollTopBtn.hidden = true;
+
+    // Add click listener
+    elements.scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Initial check in case the page loads scrolled down
+    updateOnScroll(); 
+}
+
+// Function to update scroll-related elements (Header, Back-to-Top)
+function updateOnScroll() {
+    const currentScroll = window.scrollY;
+    const pageHeight = document.documentElement.scrollHeight;
+    const viewportHeight = document.documentElement.clientHeight;
+
+    // Toggle header scrolled class
+    if (elements.header) {
+        elements.header.classList.toggle('scrolled', currentScroll > 50);
+        elements.header.style.transform = 'translateY(0)'; // Ensure header stays visible
+    }
+
+    // Back to Top Button Logic
+    if (elements.scrollTopBtn && elements.scrollTopProgress) {
+        const scrollableHeight = pageHeight - viewportHeight;
+
+        if (scrollableHeight > 0) {
+            const scrollPercentage = (currentScroll / scrollableHeight);
+            const progressOffset = progressCircleCircumference * (1 - scrollPercentage);
+            elements.scrollTopProgress.style.strokeDashoffset = Math.max(0, Math.min(progressOffset, progressCircleCircumference));
+
+            // Show/Hide Button
+            if (currentScroll > viewportHeight * 0.8) { // Show after scrolling 80% of viewport height
+                elements.scrollTopBtn.hidden = false;
+                elements.scrollTopBtn.classList.add('visible'); // Add class for potential CSS transitions
+            } else {
+                elements.scrollTopBtn.hidden = true;
+                elements.scrollTopBtn.classList.remove('visible');
+            }
+        } else {
+            // Hide if page isn't scrollable
+            elements.scrollTopBtn.hidden = true;
+            elements.scrollTopBtn.classList.remove('visible');
+            elements.scrollTopProgress.style.strokeDashoffset = progressCircleCircumference;
+        }
+    }
+
+    lastScroll = currentScroll <= 0 ? 0 : currentScroll;
 }
 
 // --- Utility: Adjust Body Padding ---
@@ -469,7 +577,18 @@ function adjustBodyPadding() {
 }
 
 // --- Run Initializers ---
-document.addEventListener('DOMContentLoaded', initializeWebsite);
+document.addEventListener('DOMContentLoaded', () => {
+    initializeWebsite();
+    AOS.init({ // Initialize AOS
+        duration: 800, // values from 0 to 3000, with step 50ms
+        easing: 'ease-in-out', // default easing for AOS animations
+        once: true, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+    });
+    initializeTypedJs(); // Initialize Typed.js
+    initializeLightGallery(); // Initialize LightGallery
+});
 
 // --- Add listener for resize events to readjust padding ---
 window.addEventListener('resize', debounce(adjustBodyPadding, 200));
@@ -488,4 +607,42 @@ function debounce(func, wait, immediate) {
 		timeout = setTimeout(later, wait);
 		if (callNow) func.apply(context, args);
 	};
-}; 
+};
+
+// --- Initialize Typed.js --- // Added Section
+function initializeTypedJs() {
+    const typedElement = document.getElementById('typed-output');
+    if (typedElement) {
+        const typed = new Typed('#typed-output', {
+            strings: [
+                'Motion Designer',
+                'Graphic Designer',
+                'AI Enthusiast'
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 1500,
+            loop: true,
+            smartBackspace: true // Default value
+        });
+    } else {
+        console.warn('Typed.js target element #typed-output not found.');
+    }
+}
+
+// --- Initialize lightGallery --- // Added Section
+function initializeLightGallery() {
+    const galleryContainer = document.getElementById('lightgallery-container');
+    if (galleryContainer) {
+        lightGallery(galleryContainer, {
+            selector: '.portfolio-item > a', // Target the link within each item
+            plugins: [lgZoom, lgThumbnail], // Enable zoom and thumbnail plugins
+            thumbnail: true,
+            licenseKey: 'YOUR_LICENSE_KEY', // Optional: Add license key if you have one
+            speed: 500,
+            download: false // Optional: Disable download button
+        });
+    } else {
+        console.warn('lightGallery container #lightgallery-container not found.');
+    }
+} 

@@ -671,18 +671,17 @@ nav[aria-label="Main Navigation"] {
 }
 .portfolio-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Single column */
+    grid-template-columns: 1fr; /* Single column on mobile */
     gap: var(--space-lg);
-    margin-top: var(--space-lg);
 }
 .portfolio-item {
     background-color: var(--bg-secondary);
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    /* Add transition for filtering animation */
     transition: opacity 0.4s ease, transform 0.4s ease;
-    opacity: 1;
-    transform: scale(1);
 }
 .portfolio-item figure {
     margin: 0;

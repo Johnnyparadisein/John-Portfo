@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio website for John Kvezereli, a Product & Motion Designer specializing in graphic design, UI/UX, and AI-assisted creative work.">
     <title>John Kvezereli | Graphic Designer & AI Musketeer</title>
     
     <!-- Font Preloading -->
@@ -12,6 +13,14 @@
     
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- AOS Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- lightGallery CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css" integrity="sha512-F2E+YYE1gkt0T5TVajAslgDfTEUQKtlu4ralVqykdlujzUJeQxvDFVRjYExRq41ykFPmsrntihHQRS7hmXcggA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-thumbnail.min.css" integrity="sha512-GRxDpj/bx6/I4y6h2LE5rbGaqRcbTu4dYhaTewlS8Nh9hm/akYprvOTZD7GR+FRCALMYadjusted8gpVJdTPX6oiUw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css" integrity="sha512-SUU2qXVLtyGC5t0rLuqnDiIFHWgeVR6WF8XrKyGKluqPvz3VGkNa9QPbF7JUUSdWzu/1Ua/VqfMhcUOkx4kxLw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -75,9 +84,8 @@
         <!-- === Start Hero Section === -->
         <section id="hero">
             <div class="container hero-content">
-                <div class="hero-text">
-                    <span class="hero-eyebrow">John Kvezereli</span>
-                    <h2>Product & Motion Designer</h2>
+                <div class="hero-text" data-aos="fade-right">
+                    <h2><span id="typed-output"></span></h2>
                     <p>
                         Crafting intuitive digital experiences with a focus on motion and usability.
                     </p>
@@ -89,34 +97,34 @@
                 <!-- The hero-stats div and its content will be removed -->
             </div>
             <!-- Scroll Indicator -->
-            <a href="#about" class="scroll-indicator" aria-label="Scroll down to about section">
+            <a href="#about" class="scroll-indicator" aria-label="Scroll down to about section" data-aos="fade-up" data-aos-delay="300">
                 Scroll <i class="ph ph-arrow-down"></i>
             </a>
         </section>
         <!-- === End Hero Section === -->
 
         <section id="about" class="container section" aria-labelledby="about-title">
-            <h2 id="about-title" class="section-title">About Me</h2>
+            <h2 id="about-title" class="section-title" data-aos="fade-up">About Me</h2>
             <div class="about-content">
-                <div class="about-image">
+                <div class="about-image" data-aos="fade-right" data-aos-delay="100">
                     <!-- Placeholder for an image of you - UPDATE data-src path -->
                     <img src="placeholder-profile.png" alt="Headshot of John Kvezereli" loading="lazy" data-src="https://media.licdn.com/dms/image/v2/D4D03AQEV6mYgWXnGkg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1692108704538?e=1749686400&v=beta&t=1kt8UkkfMdtgXEBgpaKUFM8g-KvVnY69YyHaOoMMR6E"> 
                 </div>
-                <div class="about-text">
+                <div class="about-text" data-aos="fade-left" data-aos-delay="200">
                     <p class="lead-text">Hello there! I'm John, a passionate Graphic Designer and AI Musketeer based in Tbilisi, Georgia. I thrive on crafting visually striking designs where aesthetics meet innovation and cutting-edge technology.</p>
                     <p>My expertise spans Graphic Design, UI/UX, Social Media, and exploring the frontiers of AI in the creative process. I believe great design is not just about looking good, but solving problems and communicating effectively. I'm committed to continuous learning, especially integrating AI tools like Midjourney and Stable Diffusion to push creative boundaries.</p>
                     <div class="about-features">
-                        <div class="feature">
+                        <div class="feature" data-aos="fade-up" data-aos-delay="300">
                             <i class="ph ph-lightbulb"></i>
                             <h3>Innovation First</h3>
                             <p>Leveraging cutting-edge AI tools and technologies</p>
                         </div>
-                        <div class="feature">
+                        <div class="feature" data-aos="fade-up" data-aos-delay="400">
                             <i class="ph ph-paint-brush"></i>
                             <h3>Creative Design</h3>
                             <p>Balancing aesthetics with practical functionality</p>
                         </div>
-                        <div class="feature">
+                        <div class="feature" data-aos="fade-up" data-aos-delay="500">
                             <i class="ph ph-users-three"></i>
                             <h3>Collaboration</h3>
                             <p>Working closely with clients to achieve exceptional results</p>
@@ -128,10 +136,10 @@
 
         <!-- === Portfolio Section (Moved Here) === -->
         <section id="portfolio" class="container section" aria-labelledby="portfolio-title">
-            <h2 id="portfolio-title" class="section-title">Portfolio</h2>
+            <h2 id="portfolio-title" class="section-title" data-aos="fade-up">Portfolio</h2>
 
             <!-- Portfolio Filters -->
-            <div class="portfolio-filters">
+            <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
                 <button class="portfolio-filter active" data-filter="*">All</button>
                 <button class="portfolio-filter" data-filter="branding">Branding</button>
                 <button class="portfolio-filter" data-filter="ui-ux">UI/UX</button>
@@ -140,13 +148,13 @@
                 <button class="portfolio-filter" data-filter="social">Social</button>
             </div>
 
-            <div class="portfolio-grid">
+            <div id="lightgallery-container" class="portfolio-grid">
                 <!-- Replace with actual portfolio items -->
-                <div class="portfolio-item" data-categories="branding social">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                <!-- NOTE: href points to LARGE image, img src points to THUMBNAIL -->
+                <div class="portfolio-item" data-categories="branding social" data-aos="fade-up" data-aos-delay="200">
+                    <a href="portfolio/project1-large.jpg" data-lg-size="1600-1200"> <!-- UPDATE href & size -->
                         <figure>
-                            <!-- UPDATE data-src path and alt text -->
-                            <img src="placeholder.png" data-src="portfolio/project1.jpg" alt="Thumbnail for Project Title 1" loading="lazy">
+                            <img src="portfolio/project1.jpg" alt="Thumbnail for Project Title 1" loading="lazy"> <!-- UPDATE src & alt -->
                             <figcaption class="portfolio-content">
                                 <span class="portfolio-category">Branding / Social</span>
                                 <h3>Project Title 1</h3>
@@ -154,11 +162,10 @@
                         </figure>
                     </a>
                 </div>
-                <div class="portfolio-item" data-categories="ui-ux ai">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                <div class="portfolio-item" data-categories="ui-ux ai" data-aos="fade-up" data-aos-delay="300">
+                    <a href="portfolio/project2-large.jpg" data-lg-size="1600-1200"> <!-- UPDATE href & size -->
                         <figure>
-                             <!-- UPDATE data-src path and alt text -->
-                             <img src="placeholder.png" data-src="portfolio/project2.jpg" alt="Thumbnail for Project Title 2" loading="lazy">
+                             <img src="portfolio/project2.jpg" alt="Thumbnail for Project Title 2" loading="lazy"> <!-- UPDATE src & alt -->
                             <figcaption class="portfolio-content">
                                 <span class="portfolio-category">UI/UX / AI</span>
                                 <h3>Project Title 2</h3>
@@ -166,11 +173,10 @@
                         </figure>
                     </a>
                 </div>
-                <div class="portfolio-item" data-categories="motion">
-                     <a href="#" target="_blank" rel="noopener noreferrer">
+                <div class="portfolio-item" data-categories="motion" data-aos="fade-up" data-aos-delay="400">
+                     <a href="portfolio/project3-large.jpg" data-lg-size="1600-1200"> <!-- UPDATE href & size -->
                         <figure>
-                            <!-- UPDATE data-src path and alt text -->
-                            <img src="placeholder.png" data-src="portfolio/project3.jpg" alt="Thumbnail for Project Title 3" loading="lazy">
+                            <img src="portfolio/project3.jpg" alt="Thumbnail for Project Title 3" loading="lazy"> <!-- UPDATE src & alt -->
                             <figcaption class="portfolio-content">
                                 <span class="portfolio-category">Motion Graphics</span>
                                 <h3>Project Title 3</h3>
@@ -178,11 +184,10 @@
                         </figure>
                     </a>
                 </div>
-                 <div class="portfolio-item" data-categories="branding ai">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                 <div class="portfolio-item" data-categories="branding ai" data-aos="fade-up" data-aos-delay="200">
+                    <a href="portfolio/project4-large.jpg" data-lg-size="1600-1200"> <!-- UPDATE href & size -->
                         <figure>
-                            <!-- UPDATE data-src path and alt text -->
-                            <img src="placeholder.png" data-src="portfolio/project4.jpg" alt="Thumbnail for Project Title 4" loading="lazy">
+                            <img src="portfolio/project4.jpg" alt="Thumbnail for Project Title 4" loading="lazy"> <!-- UPDATE src & alt -->
                             <figcaption class="portfolio-content">
                                 <span class="portfolio-category">Branding / AI</span>
                                 <h3>Project Title 4</h3>
@@ -190,11 +195,10 @@
                         </figure>
                     </a>
                 </div>
-                 <div class="portfolio-item" data-categories="social">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                 <div class="portfolio-item" data-categories="social" data-aos="fade-up" data-aos-delay="300">
+                    <a href="portfolio/project5-large.jpg" data-lg-size="1600-1200"> <!-- UPDATE href & size -->
                         <figure>
-                            <!-- UPDATE data-src path and alt text -->
-                            <img src="placeholder.png" data-src="portfolio/project5.jpg" alt="Thumbnail for Project Title 5" loading="lazy">
+                            <img src="portfolio/project5.jpg" alt="Thumbnail for Project Title 5" loading="lazy"> <!-- UPDATE src & alt -->
                             <figcaption class="portfolio-content">
                                 <span class="portfolio-category">Social Media</span>
                                 <h3>Project Title 5</h3>
@@ -202,11 +206,10 @@
                         </figure>
                     </a>
                 </div>
-                 <div class="portfolio-item" data-categories="ui-ux">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                 <div class="portfolio-item" data-categories="ui-ux" data-aos="fade-up" data-aos-delay="400">
+                    <a href="portfolio/project6-large.jpg" data-lg-size="1600-1200"> <!-- UPDATE href & size -->
                         <figure>
-                            <!-- UPDATE data-src path and alt text -->
-                            <img src="placeholder.png" data-src="portfolio/project6.jpg" alt="Thumbnail for Project Title 6" loading="lazy">
+                            <img src="portfolio/project6.jpg" alt="Thumbnail for Project Title 6" loading="lazy"> <!-- UPDATE src & alt -->
                             <figcaption class="portfolio-content">
                                 <span class="portfolio-category">UI/UX</span>
                                 <h3>Project Title 6</h3>
@@ -221,9 +224,9 @@
 
         <!-- === Experience Section (Now here) === -->
         <section id="experience" class="container section" aria-labelledby="experience-title">
-            <h2 id="experience-title" class="section-title">Experience</h2>
+            <h2 id="experience-title" class="section-title" data-aos="fade-up">Experience</h2>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-up">
                     <div class="timeline-date">
                         <i class="ph ph-calendar"></i>
                         2024 - Present
@@ -241,7 +244,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-up">
                     <div class="timeline-date">
                         <i class="ph ph-calendar"></i>
                         2023 - Present
@@ -262,7 +265,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-up">
                     <div class="timeline-date">
                         <i class="ph ph-calendar"></i>
                         2023 - 2024
@@ -283,7 +286,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-up">
                     <div class="timeline-date">
                         <i class="ph ph-calendar"></i>
                         2022 - 2023
@@ -304,7 +307,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-up">
                     <div class="timeline-date">
                         <i class="ph ph-calendar"></i>
                         2019 - 2022
@@ -330,9 +333,9 @@
         <!-- === End Experience Section === -->
 
         <section id="skills" class="container section" aria-labelledby="skills-title">
-            <h2 id="skills-title" class="section-title">Skills</h2>
+            <h2 id="skills-title" class="section-title" data-aos="fade-up">Skills</h2>
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
                     <h3><i class="ph ph-paint-brush"></i> Design</h3>
                     <ul>
                         <li>Brand Identity</li>
@@ -342,7 +345,7 @@
                         <li>Presentation Design</li>
                     </ul>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
                     <h3><i class="ph ph-code"></i> Technology</h3>
                     <ul>
                         <li>Figma</li>
@@ -352,7 +355,7 @@
                         <li>Web3 Concepts</li>
                     </ul>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
                     <h3><i class="ph ph-brain"></i> AI Integration</h3>
                     <ul>
                         <li>AI-Assisted Design Workflows</li>
@@ -366,22 +369,22 @@
         </section>
 
         <section id="contact" class="container section" aria-labelledby="contact-title">
-            <h2 id="contact-title" class="section-title">Get in Touch</h2>
-            <p class="section-subtitle">Ready to collaborate or have a question? Reach out!</p>
+            <h2 id="contact-title" class="section-title" data-aos="fade-up">Get in Touch</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Ready to collaborate or have a question? Reach out!</p>
             <div class="contact-methods">
-                <div class="contact-method">
+                <div class="contact-method" data-aos="fade-up" data-aos-delay="200">
                     <i class="ph ph-envelope-simple"></i>
                     <h3>Email</h3>
                      <!-- UPDATE email address -->
                     <a href="mailto:your.email@example.com">your.email@example.com</a>
                 </div>
-                <div class="contact-method">
+                <div class="contact-method" data-aos="fade-up" data-aos-delay="300">
                     <i class="ph ph-linkedin-logo"></i>
                     <h3>LinkedIn</h3>
                      <!-- UPDATE LinkedIn URL -->
                     <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
                 </div>
-                <div class="contact-method">
+                <div class="contact-method" data-aos="fade-up" data-aos-delay="400">
                     <i class="ph ph-behance-logo"></i>
                     <h3>Behance</h3>
                      <!-- UPDATE Behance URL if different -->
@@ -521,6 +524,15 @@
         </svg>
     </button>
 
-    <script src="script.js"></script>
+    <!-- Typed.js Library -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    
+    <script src="script.js" defer></script>
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- lightGallery JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha512-jEJ0OA9fwz5wUn6rVfGHAXonEgTuoSMtuTqqYvQAALJErTQz5UJSagFyxXjtAZ+Mwn7QcB7WUDGksYBLFJodEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/thumbnail/lg-thumbnail.min.js" integrity="sha512-GRxDpj/bx6/I4y6h2LE5rbGaqRcbTu4dYhaTewlS8Nh9hm/akYprvOTZD7GR+FRCALMYadjusted8gpVJdTPX6oiUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha512-SUU2qXVLtyGC5t0rLuqnDiIFHWgeVR6WF8XrKyGKluqPvz3VGkNa9QPbF7JUUSdWzu/1Ua/VqfMhcUOkx4kxLw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html> 
