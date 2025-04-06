@@ -38,7 +38,6 @@ function initializeWebsite() {
 
     setInitialTheme();
     initializePreloader();
-    initializeNotificationBanner();
     initializeMobileMenu();
     initializeThemeToggle();
     initializeSmoothScrolling();
