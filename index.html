@@ -40,9 +40,9 @@
             <nav role="navigation" aria-label="Main Navigation">
                 <ul>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -56,9 +56,9 @@
         <nav role="navigation" aria-label="Mobile Navigation">
             <ul>
                 <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -144,6 +144,100 @@
             </div>
         </section>
 
+        <!-- === Portfolio Section (Moved Here) === -->
+        <section id="portfolio" class="container section" aria-labelledby="portfolio-title">
+            <h2 id="portfolio-title" class="section-title">Portfolio</h2>
+
+            <!-- Portfolio Filters -->
+            <div class="portfolio-filters">
+                <button class="portfolio-filter active" data-filter="*">All</button>
+                <button class="portfolio-filter" data-filter="branding">Branding</button>
+                <button class="portfolio-filter" data-filter="ui-ux">UI/UX</button>
+                <button class="portfolio-filter" data-filter="motion">Motion</button>
+                <button class="portfolio-filter" data-filter="ai">AI</button>
+                <button class="portfolio-filter" data-filter="social">Social</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Replace with actual portfolio items -->
+                <div class="portfolio-item" data-categories="branding social">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <figure>
+                            <!-- UPDATE data-src path and alt text -->
+                            <img src="placeholder.png" data-src="portfolio/project1.jpg" alt="Thumbnail for Project Title 1" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <span class="portfolio-category">Branding / Social</span>
+                                <h3>Project Title 1</h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="portfolio-item" data-categories="ui-ux ai">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <figure>
+                             <!-- UPDATE data-src path and alt text -->
+                             <img src="placeholder.png" data-src="portfolio/project2.jpg" alt="Thumbnail for Project Title 2" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <span class="portfolio-category">UI/UX / AI</span>
+                                <h3>Project Title 2</h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="portfolio-item" data-categories="motion">
+                     <a href="#" target="_blank" rel="noopener noreferrer">
+                        <figure>
+                            <!-- UPDATE data-src path and alt text -->
+                            <img src="placeholder.png" data-src="portfolio/project3.jpg" alt="Thumbnail for Project Title 3" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <span class="portfolio-category">Motion Graphics</span>
+                                <h3>Project Title 3</h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                 <div class="portfolio-item" data-categories="branding ai">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <figure>
+                            <!-- UPDATE data-src path and alt text -->
+                            <img src="placeholder.png" data-src="portfolio/project4.jpg" alt="Thumbnail for Project Title 4" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <span class="portfolio-category">Branding / AI</span>
+                                <h3>Project Title 4</h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                 <div class="portfolio-item" data-categories="social">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <figure>
+                            <!-- UPDATE data-src path and alt text -->
+                            <img src="placeholder.png" data-src="portfolio/project5.jpg" alt="Thumbnail for Project Title 5" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <span class="portfolio-category">Social Media</span>
+                                <h3>Project Title 5</h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                 <div class="portfolio-item" data-categories="ui-ux">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <figure>
+                            <!-- UPDATE data-src path and alt text -->
+                            <img src="placeholder.png" data-src="portfolio/project6.jpg" alt="Thumbnail for Project Title 6" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <span class="portfolio-category">UI/UX</span>
+                                <h3>Project Title 6</h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <!-- Add more portfolio items as needed -->
+            </div>
+        </section>
+        <!-- === End Portfolio Section === -->
+
+        <!-- === Experience Section (Now here) === -->
         <section id="experience" class="container section" aria-labelledby="experience-title">
             <h2 id="experience-title" class="section-title">Experience</h2>
             <div class="timeline">
@@ -251,6 +345,7 @@
                 </div>
             </div>
         </section>
+        <!-- === End Experience Section === -->
 
         <section id="skills" class="container section" aria-labelledby="skills-title">
             <h2 id="skills-title" class="section-title">Skills</h2>
@@ -285,97 +380,6 @@
                         <li>AI in Motion Design</li>
                     </ul>
                 </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="container section" aria-labelledby="portfolio-title">
-            <h2 id="portfolio-title" class="section-title">Portfolio</h2>
-
-            <!-- Portfolio Filters -->
-            <div class="portfolio-filters">
-                <button class="portfolio-filter active" data-filter="*">All</button>
-                <button class="portfolio-filter" data-filter="branding">Branding</button>
-                <button class="portfolio-filter" data-filter="ui-ux">UI/UX</button>
-                <button class="portfolio-filter" data-filter="motion">Motion</button>
-                <button class="portfolio-filter" data-filter="ai">AI</button>
-                <button class="portfolio-filter" data-filter="social">Social</button>
-            </div>
-
-            <div class="portfolio-grid">
-                <!-- Replace with actual portfolio items -->
-                <div class="portfolio-item" data-categories="branding social">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <figure>
-                            <!-- UPDATE data-src path and alt text -->
-                            <img src="placeholder.png" data-src="portfolio/project1.jpg" alt="Thumbnail for Project Title 1" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <span class="portfolio-category">Branding / Social</span>
-                                <h3>Project Title 1</h3>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-                <div class="portfolio-item" data-categories="ui-ux ai">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <figure>
-                             <!-- UPDATE data-src path and alt text -->
-                             <img src="placeholder.png" data-src="portfolio/project2.jpg" alt="Thumbnail for Project Title 2" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <span class="portfolio-category">UI/UX / AI</span>
-                                <h3>Project Title 2</h3>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-                <div class="portfolio-item" data-categories="motion">
-                     <a href="#" target="_blank" rel="noopener noreferrer">
-                        <figure>
-                            <!-- UPDATE data-src path and alt text -->
-                            <img src="placeholder.png" data-src="portfolio/project3.jpg" alt="Thumbnail for Project Title 3" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <span class="portfolio-category">Motion Graphics</span>
-                                <h3>Project Title 3</h3>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-                 <div class="portfolio-item" data-categories="branding ai">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <figure>
-                            <!-- UPDATE data-src path and alt text -->
-                            <img src="placeholder.png" data-src="portfolio/project4.jpg" alt="Thumbnail for Project Title 4" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <span class="portfolio-category">Branding / AI</span>
-                                <h3>Project Title 4</h3>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-                 <div class="portfolio-item" data-categories="social">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <figure>
-                            <!-- UPDATE data-src path and alt text -->
-                            <img src="placeholder.png" data-src="portfolio/project5.jpg" alt="Thumbnail for Project Title 5" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <span class="portfolio-category">Social Media</span>
-                                <h3>Project Title 5</h3>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-                 <div class="portfolio-item" data-categories="ui-ux">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <figure>
-                            <!-- UPDATE data-src path and alt text -->
-                            <img src="placeholder.png" data-src="portfolio/project6.jpg" alt="Thumbnail for Project Title 6" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <span class="portfolio-category">UI/UX</span>
-                                <h3>Project Title 6</h3>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-                <!-- Add more portfolio items as needed -->
             </div>
         </section>
 

@@ -511,94 +511,125 @@ nav[aria-label="Main Navigation"] {
 
 /* Timeline */
 .timeline {
-    max-width: 100%; /* Full width */
-    margin: 0;
+    max-width: 800px; /* Constrain width for readability */
+    margin: 0 auto; /* Center the timeline */
     position: relative;
-    padding-left: var(--space-lg);
+    padding-left: var(--space-xl); /* Keep padding for line alignment */
 }
 .timeline::before {
-    left: var(--space-sm); 
-    width: 2px;
-    background: var(--accent);
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--space-sm) + 1px); /* Position line within the padding */
+    width: 3px; /* Slightly thicker line */
+    background: linear-gradient(to bottom, var(--accent), var(--accent-muted)); /* Gradient line */
+    border-radius: 2px;
 }
 .timeline-item {
     margin-bottom: var(--space-xl);
     padding: var(--space-lg);
     background: var(--bg-secondary);
-    border-radius: 8px;
     border: 1px solid var(--border);
+    border-left: 3px solid var(--accent); /* Add accent border connection */
+    border-radius: 0 8px 8px 0; /* Adjust radius - keep right side rounded */
     position: relative;
-    margin-left: var(--space-xl); 
-    padding-left: var(--space-xl); 
+    margin-left: var(--space-xl); /* Keep alignment with timeline padding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
 }
+[data-theme="light"] .timeline-item {
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px) translateX(3px); /* Slight move out */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-left-color: var(--text-primary); /* Change border color on hover */
+}
+[data-theme="light"] .timeline-item:hover {
+     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+     border-left-color: var(--text-primary);
+}
+
+/* Hide the dot */
 .timeline-item::before {
-    left: -25px; /* Adjust based on new padding */
-    top: var(--space-lg);
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--accent);
-    border: 3px solid var(--bg-primary);
-    z-index: 1;
+   display: none; 
 }
+
 .timeline-date {
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-md); /* More space below date */
     font-weight: 500;
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    font-size: 0.85rem;
-    color: var(--text-secondary); /* De-emphasize date slightly */
+    font-size: 0.9rem; /* Slightly larger date */
+    color: var(--text-secondary);
 }
 .timeline-date i {
-    color: var(--accent); /* Keep icon colored */
-    font-size: 1rem;
+    color: var(--accent);
+    font-size: 1.1rem;
 }
+
 .timeline-content h3 {
-    font-size: 1.25rem;
+    font-size: 1.35rem; /* Slightly larger title */
     margin-bottom: var(--space-xs);
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    color: var(--text-primary); /* Ensure title is primary color */
+    color: var(--text-primary);
+    font-weight: 600; /* Bolder title */
 }
 .timeline-content h3 i {
-    color: var(--accent); /* Color the icon in the title */
-    font-size: 1.3rem;
+    color: var(--accent); 
+    font-size: 1.5rem; /* Larger icon */
+    flex-shrink: 0; /* Prevent icon shrinking */
 }
 .timeline-company {
     color: var(--text-secondary);
-    font-style: italic;
-    margin-bottom: var(--space-md);
-    font-size: 0.95rem;
+    font-style: normal; /* Remove italic */
+    font-weight: 500;
+    margin-bottom: var(--space-lg); /* More space below company */
+    font-size: 1rem;
 }
 .timeline-details p {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    margin-bottom: var(--space-md);
+    line-height: 1.7;
 }
 .timeline-achievements {
     margin: var(--space-md) 0;
-    padding-left: var(--space-md);
+    padding-left: var(--space-lg); /* Indent achievements */
+    list-style: none; /* Remove default list style */
 }
 .timeline-achievements li {
     margin-bottom: var(--space-sm);
     position: relative;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    padding-left: var(--space-md); /* Space for custom bullet */
 }
 .timeline-achievements li::before {
-    content: '•';
-    color: var(--accent);
+    content: '';
     position: absolute;
-    left: -13px;
+    left: 0;
+    top: 0.6em; /* Align with text */
+    width: 5px;
+    height: 5px;
+    background-color: var(--accent);
+    border-radius: 50%;
 }
+
 .timeline-tech {
-    margin-top: var(--space-md);
+    margin-top: var(--space-lg);
     padding-top: var(--space-md);
     border-top: 1px solid var(--border);
+    font-size: 0.9rem;
     color: var(--text-secondary);
-    font-size: 0.85rem;
 }
 .timeline-tech span {
     font-weight: 600;
+    color: var(--text-primary);
+    margin-right: var(--space-sm);
 }
 
 /* Skills Section */
@@ -1110,27 +1141,25 @@ footer {
 
     /* Timeline */
     .timeline {
-        max-width: 700px;
-        margin: 0 auto;
-        padding-left: var(--space-xl);
+        padding-left: var(--space-xxl); /* Wider padding for line */
     }
     .timeline::before {
-        left: var(--space-md);
+        left: calc(var(--space-lg) + 1px); /* Adjust line position */
     }
     .timeline-item {
-        margin-left: var(--space-xxl);
+        margin-left: var(--space-xxl); /* Align with wider padding */
         padding: var(--space-xl);
-        padding-left: 0; /* Reset padding */
     }
-    .timeline-item::before {
-        left: -41px;
-        top: var(--space-xl);
-        width: 16px;
-        height: 16px;
-        border-width: 4px;
-    }
+     /* No need to adjust ::before styles anymore */
+
     .timeline-content h3 {
-        font-size: 1.3rem;
+        font-size: 1.45rem;
+    }
+     .timeline-details p {
+        font-size: 1.05rem;
+    }
+    .timeline-achievements li {
+        font-size: 1rem;
     }
 
     /* Skills */
