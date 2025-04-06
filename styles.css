@@ -986,13 +986,19 @@ footer {
         display: flex;
     }
     nav[aria-label="Main Navigation"] ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         gap: 25px;
+    }
+    nav[aria-label="Main Navigation"] li {
+        display: inline;
     }
     .mobile-menu {
         display: none;
     }
     .mobile-nav {
-        display: none; /* Hide mobile panel completely */
+        display: none;
     }
 
     /* Hero */
