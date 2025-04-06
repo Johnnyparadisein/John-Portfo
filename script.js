@@ -17,8 +17,8 @@ const elements = {
 };
 
 // --- Configuration ---
-const SCROLL_OFFSET = elements.header ? elements.header.offsetHeight + 20 : 100; // Dynamic offset + extra space
-const LAZY_LOAD_MARGIN = '200px'; // Load images 200px before they enter viewport
+// const SCROLL_OFFSET = elements.header ? elements.header.offsetHeight + 20 : 100; // Removed initial calculation
+const LAZY_LOAD_MARGIN = '200px';
 
 // --- State ---
 let currentTheme = localStorage.getItem('theme') || 'dark';
@@ -224,9 +224,14 @@ function initializeActiveNavHighlighting() {
         return;
     }
 
+    // Define header height here, ensuring header exists
+    const headerHeight = elements.header ? elements.header.offsetHeight : 80; // Use a fallback
+    const topMargin = headerHeight + 20; // Add a little extra space
+
     const observerOptions = {
         root: null,
-        rootMargin: `-${SCROLL_OFFSET}px 0px -50% 0px`, // Adjust top/bottom margin
+        // Use calculated offset for top margin
+        rootMargin: `-${topMargin}px 0px -50% 0px`, 
         threshold: 0
     };
 
