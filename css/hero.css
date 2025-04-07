@@ -9,22 +9,44 @@
     display: flex;
     align-items: center; /* Vertically center content */
     justify-content: center; /* Horizontally center content */
-    position: relative;
+    position: relative; /* Needed for pseudo-elements */
     background-color: var(--bg-primary); 
-    /* Add the same noise texture as the body */
-    background-image: radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-    background-size: 3px 3px;
+    /* Remove gradient noise, will use GIF in pseudo-element */
+    /* background-image: radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px); */
+    /* background-size: 3px 3px; */
     overflow: hidden; 
-    z-index: 0;
+    /* z-index: 0; */ /* z-index not needed here */
     box-sizing: border-box; /* Include padding in height calculation */
 }
+
+/* Add GIF background using ::before pseudo-element */
+/*
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://media3.giphy.com/media/k0dfnr5AZbnrX6h7eY/giphy.gif?cid=6c09b9528sw4bilenmbkce1ut43waut9x58qdmuzs54vwcrp&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s');
+    background-size: cover; 
+    background-position: center; 
+    opacity: 0.1; 
+    z-index: 0; 
+    pointer-events: none; 
+}
+*/
 
 .hero-content {
     position: relative; 
     z-index: 1;
     display: grid;
-    grid-template-columns: 1fr; /* Single column layout for mobile */
-    gap: var(--space-xl); /* Use var */
+    /* Let .container handle width, centering, and base padding */
+    grid-template-columns: 1fr; /* Single column layout for mobile/base */
+    gap: var(--space-lg);
+    /* Removed max-width, margin, padding overrides */
+    box-sizing: border-box;
+    text-align: center; /* Center content on mobile */
 }
 
 /* Styles for the typed output span */
@@ -51,52 +73,73 @@
 }
 
 /* Updated styles for the main text paragraph */
+.hero-text {
+    position: relative; /* Keep relative if needed for other pseudo-elements, otherwise remove */
+    /* Remove padding-bottom added for the previous GIF position */
+    /* padding-bottom: 100px; */
+}
+
+/* Position GIF smaller at the bottom right of the section */
+#hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Position from bottom edge */
+    /* Position right */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    right: var(--space-xl); /* Position from right edge */
+    width: 300px;  /* Smaller width */
+    height: 200px; /* Smaller height */
+    /* Update with the Tumblr GIF URL */
+    background-image: url('https://31.media.tumblr.com/25e63023a46de411c8360b3c1b4a61ab/tumblr_ne4s7eGNYj1snc5kxo1_500.gif'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1; /* Full opacity */
+    z-index: 0; /* Behind hero-content */
+    pointer-events: none;
+}
+
 .hero-text .lead-text {
     font-size: var(--md-typescale-body-large-size); 
     line-height: var(--md-typescale-body-large-line-height);
-    color: var(--text-primary); /* Use primary text color */
-    margin: 0 0 var(--space-lg); /* Use var */
-    max-width: 100%; /* Allow full width within its column */
-    text-align: left; /* Align text left by default now */
-}
-
-.hero-buttons {
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start; /* Align buttons left on mobile */
-    gap: var(--space-md); /* Use var */
-}
-
-.hero-buttons .btn { 
-     width: auto; /* Allow buttons to size naturally */
-     max-width: 280px; 
+    color: var(--text-secondary);
+    margin: 0 auto var(--space-lg); 
+    max-width: 700px; /* Keep text width constraint for mobile */
+    text-align: center;
 }
 
 /* Styles for the image container */
 .about-image {
-    max-width: 400px; /* Increased image size */
-    margin: 0 auto; /* Center image on mobile */
-    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+    width: 100%; 
+    max-width: 350px; /* Smaller max-width for mobile */
+    margin: 0 auto; /* Center on mobile */
     overflow: hidden;
-    position: relative; /* Added for pseudo-element positioning */
-    border-radius: 0; /* Square */
+    position: relative; 
+    border-radius: var(--border-radius-md); 
 }
 
 .about-image::after {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.02); /* Subtle overlay */
-    z-index: 1;
+    /* Use only the SVG noise filter */
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); 
+    background-size: 100px; /* Adjust size as needed */
+    /* Set static opacity */
+    opacity: 0.15; /* Adjust for desired intensity */
     pointer-events: none;
-    opacity: 0; /* Start hidden */
-    animation: noise-flicker 0.1s infinite steps(1); /* Rapid flicker */
+    z-index: 1;
+    /* Blend the noise with the image */
+    mix-blend-mode: overlay; /* Try overlay, soft-light, difference etc. */
+    /* Remove animation */
+    /* animation: noise-fade 2s infinite ease-in-out; */ 
 }
 
 .about-image img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: auto; /* Let height adjust based on width */
     object-fit: cover; /* Ensure image covers the area */
 }
 
@@ -114,65 +157,70 @@
      /* Removed max-width increase here, handled in base */
 }
 
-@media (min-width: 992px) {
-    /* Desktop view: Two-column layout */
-    .hero-content {
-        grid-template-columns: 400px 1fr; /* Adjusted fixed width for image */
-        gap: var(--space-xxl);
-        align-items: center; /* Vertically align items in grid */
-        text-align: left; /* Ensure container doesn't force center */
-    }
-
-    .about-image {
-        max-width: 100%; /* Allow image to fill its column */
-        margin: 0; /* Remove auto margin */
-    }
-
-    .hero-text {
-         /* No specific styles needed unless further adjustments */
-    }
-
-    .hero-text .lead-text {
-        font-size: 1.1rem; /* Slightly smaller for desktop column */
-        margin-bottom: var(--space-xl); /* Use var */
-    }
-
-    .hero-buttons {
-        flex-direction: row; /* Buttons side-by-side */
-        align-items: center; 
-        gap: var(--space-lg); /* Use var */
-    }
-
-     .scroll-indicator {
-         display: flex; 
-         position: absolute;
-         bottom: var(--space-xxl); /* Use var */
-         left: 50%;
-         transform: translateX(-50%);
-         color: var(--text-secondary);
-         font-size: 0.9rem;
-         align-items: center;
-         gap: 5px;
-         opacity: 0.7;
-         transition: opacity 0.3s ease;
-         animation: bounceUpDown 1.5s infinite ease-in-out;
-    }
-    .scroll-indicator:hover {
-        opacity: 1;
-    }
-}
-
 /* Noise animation */
 @keyframes noise-flicker {
   0%   { opacity: 0.5; transform: translate(1px, -1px); }
   25%  { opacity: 0.7; transform: translate(-1px, 1px); }
   50%  { opacity: 0.4; transform: translate(1px, 1px); }
   75%  { opacity: 0.8; transform: translate(-1px, -1px); }
-  100% { opacity: 0.5; transform: translate(-1px, 1px); }
+  100% { opacity: 1; transform: translate(-1px, 1px); }
 }
 
 /* Keep bounce animation */
 @keyframes bounceUpDown {
     0%, 100% { transform: translate(-50%, 0); }
     50% { transform: translate(-50%, 5px); }
+}
+
+/* Define noise fade animation */
+@keyframes noise-fade {
+  0%   { opacity: 0; }
+  50%  { opacity: 0.8; } /* Fade up to 80% opacity */
+  100% { opacity: 0; } 
+}
+
+/* Restore the 992px media query for the two-column layout */
+@media (min-width: 992px) {
+    .hero-content {
+        grid-template-columns: 1fr 1fr; /* Equal width columns */
+        gap: var(--space-xxl); 
+        align-items: center; 
+        text-align: left; 
+        /* Padding is handled by container */
+        /* padding: 0; */ 
+    }
+
+    .about-image {
+        margin: 0; /* Align to start of grid cell */
+        max-width: 100%; /* Allow image to fill its column */
+        max-height: 400px; /* Constrain vertical height */
+    }
+
+    .hero-text {
+        text-align: left;
+    }
+
+    .hero-text .lead-text {
+        text-align: left;
+        margin: 0 0 var(--space-lg); 
+        max-width: none; 
+    }
+
+    .scroll-indicator {
+        display: flex; 
+        position: absolute;
+        bottom: var(--space-xxl); 
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        align-items: center;
+        gap: 5px;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+        animation: bounceUpDown 1.5s infinite ease-in-out;
+    }
+    .scroll-indicator:hover {
+        opacity: 1;
+    }
 } 

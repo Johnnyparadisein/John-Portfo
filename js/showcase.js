@@ -1,15 +1,17 @@
 // --- Portfolio/Showcase Globals ---
-let isotope = null;
+// let isotope = null; // Remove Isotope instance
 const grid = document.querySelector('.portfolio-grid');
-const filters = document.querySelectorAll('.portfolio-filter');
+// const filters = document.querySelectorAll('.portfolio-filter'); // Remove filter selection if filters are removed
 
 // --- Portfolio Filtering using Isotope --- 
 function initializePortfolioFiltering() {
     if (!grid) {
-        console.warn("Isotope grid element ('.portfolio-grid') not found. Filtering disabled.");
-        return; // Silently exit if no grid found
+        console.warn("Portfolio grid element ('.portfolio-grid') not found.");
+        return; // Exit if no grid found
     }
 
+    // Isotope and imagesLoaded are no longer needed for CSS Grid layout
+    /*
     // Ensure Isotope and imagesLoaded are available
     if (typeof Isotope === 'undefined' || typeof imagesLoaded === 'undefined') {
         console.error('Isotope or imagesLoaded library not found. Cannot initialize portfolio filtering.');
@@ -22,26 +24,38 @@ function initializePortfolioFiltering() {
             isotope = new Isotope(grid, {
                 itemSelector: '.portfolio-item',
                 layoutMode: 'masonry',
-                percentPosition: true,
+                // percentPosition: true, // Removed for potentially more precise pixel positioning
                 masonry: {
-                    columnWidth: '.portfolio-item',
-                    gutter: 4 // Adjusted gutter to match previous CSS gap
+                    columnWidth: '.grid-sizer', // Use sizer element for column width
+                    gutter: 8 // Re-enable gutter to match CSS margin
                 }
             });
-            console.log("Isotope initialized for showcase.");
+            console.log("Isotope initialized for showcase with masonry layout and gutter.");
 
-            // Trigger layout after a short delay (optional, but can help with web fonts/dynamic content)
+            // Trigger layout after a short delay AND force a second layout
             setTimeout(() => {
-                if (isotope) isotope.layout();
-                grid.classList.add('isotope-initialized'); // Class for potential CSS transitions
-            }, 150);
+                if (isotope) {
+                    isotope.layout(); // First layout call
+                    console.log("Isotope first layout complete.");
+                    // Force a second layout slightly later
+                    setTimeout(() => {
+                        if (isotope) {
+                            isotope.layout(); 
+                            console.log("Isotope second layout complete.");
+                            grid.classList.add('isotope-initialized');
+                        }
+                    }, 100); 
+                }
+            }, 500); // Keep the initial delay
 
         } catch (error) {
             console.error("Error initializing Isotope:", error);
         }
     });
+    */
 
-    // Filter handling
+    // Filter handling - Removed as we are using CSS Grid
+    /*
     if (filters.length > 0) {
         filters.forEach(filter => {
             filter.addEventListener('click', (event) => {
@@ -73,16 +87,23 @@ function initializePortfolioFiltering() {
     } else {
         console.log("No portfolio filter buttons found.");
     }
+    */
+    console.log("Showcase initialized using CSS Grid. Isotope functionality removed.");
 }
 
-// --- Helper to recalculate layout (e.g., on window resize) ---
+// --- Helper to recalculate layout (e.g., on window resize) --- 
+// Remove Isotope-specific layout refresh
+/*
 function refreshPortfolioLayout() {
     if (isotope) {
         isotope.layout();
     }
 }
+*/
 
 // --- Debounced Resize Handler ---
+// Remove Isotope-specific resize handler
+/*
 let resizeTimeout;
 // Add resize listener only if the grid exists to avoid errors if showcase section is removed
 if (grid) {
@@ -91,8 +112,10 @@ if (grid) {
         resizeTimeout = setTimeout(refreshPortfolioLayout, 250);
     });
 }
+*/
 
 // --- Helper: Announce Status (Accessibility) ---
+// Keep this function if potentially used elsewhere, otherwise remove
 let statusAnnouncer = null;
 function announceStatus(message) {
     if (!statusAnnouncer) {
@@ -115,5 +138,6 @@ function announceStatus(message) {
     console.log("Announcing:", message); // Log announcement
 }
 
-// --- Initialize when DOM is ready ---
-document.addEventListener('DOMContentLoaded', initializePortfolioFiltering);
+// --- Initialize when the window is loaded --- 
+// Still call the simplified initialization function
+window.addEventListener('load', initializePortfolioFiltering);

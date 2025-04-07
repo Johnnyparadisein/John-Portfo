@@ -4,125 +4,69 @@
 
 /* Rename #portfolio to #showcase */
 #showcase {
-    /* padding-left: 0; Remove explicit horizontal padding */
-    /* padding-right: 0; Remove explicit horizontal padding */
+    padding-left: 0; /* Ensure no horizontal padding on section */
+    padding-right: 0; /* Ensure no horizontal padding on section */
     max-width: none; /* Keep this if full-width bleed is intended for grid */
+    /* overflow: hidden; */ /* Commented out previously, keep commented */
 }
 
-.portfolio-filters {
-    /* Remove the entire portfolio-filters block */
-}
+/* Filters are not used in the target layout, remove if not needed elsewhere */
+/* .portfolio-filters { ... } */
+/* .portfolio-filter { ... } */
 
-/* Filter Chips (M3 Inspired) */
-.portfolio-filter {
-    background-color: var(--md-sys-color-surface-variant-dark);
-    color: var(--md-sys-color-on-surface-variant-dark);
-    border: 1px solid var(--md-sys-color-outline-dark);
-    padding: var(--space-sm) var(--space-md); /* Use vars */
-    border-radius: var(--border-radius-md); /* Use var */
-    cursor: pointer;
-    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
-    font-size: var(--md-typescale-label-large-size);
-    font-weight: var(--md-typescale-label-large-weight);
-    line-height: var(--md-typescale-label-large-line-height);
-    letter-spacing: var(--md-typescale-label-large-letter-spacing);
-    display: inline-flex; 
-    align-items: center;
-    justify-content: center;
-    position: relative; 
-    overflow: hidden; 
-}
-[data-theme="light"] .portfolio-filter {
-    background-color: var(--md-sys-color-surface-variant-light);
-    color: var(--md-sys-color-on-surface-variant-light);
-     border: 1px solid var(--md-sys-color-outline-light);
-}
-
-.portfolio-filter::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--md-sys-color-on-surface-variant-dark);
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    pointer-events: none;
-    border-radius: inherit; /* Match chip radius */
-}
-[data-theme="light"] .portfolio-filter::before {
-    background-color: var(--md-sys-color-on-surface-variant-light);
-}
-
-.portfolio-filter:hover::before {
-    opacity: 0.08; /* M3 Hover state */
-}
-.portfolio-filter:focus-visible {
-    outline: none;
-    border-color: var(--md-sys-color-outline-dark); 
-}
-[data-theme="light"] .portfolio-filter:focus-visible {
-     border-color: var(--md-sys-color-outline-light);
-}
-.portfolio-filter:focus-visible::before {
-     opacity: 0.12; /* M3 Focus state */
-}
-.portfolio-filter:active::before {
-     opacity: 0.12; /* M3 Pressed state */
-}
-
-/* Active Filter Chip */
-.portfolio-filter.active {
-    background-color: var(--md-sys-color-secondary-container-dark); 
-    color: var(--md-sys-color-on-secondary-container-dark);
-    border-color: transparent; 
-    box-shadow: none; 
-}
-[data-theme="light"] .portfolio-filter.active {
-     background-color: var(--md-sys-color-secondary-container-light);
-     color: var(--md-sys-color-on-secondary-container-light);
-     border-color: transparent;
-}
-.portfolio-filter.active:hover::before {
-    opacity: 0;
-}
-
-/* Rename .portfolio-grid to .showcase-grid (optional, depends on JS targeting) */
-/* For now, keep as portfolio-grid as JS likely targets .portfolio-item within it */
+/* --- Grid Container --- */
 .portfolio-grid {
-    /* display: grid; */ /* Removed display: grid */
-    /* Adjust columns - use fewer for mobile, more for desktop */
-    /* grid-template-columns: repeat(2, 1fr); */ /* Removed */
-    /* Define a base row height. Adjust this value as needed. */
-    /* grid-auto-rows: 200px; */ /* Removed */
-    /* Reduce the gap */
-    gap: 4px; /* Reduced from variable - Isotope might use 'gutter' option instead */
-    position: relative; /* Keep relative positioning for Isotope items */
-    /* Add some bottom padding if items are absolutely positioned */
-    padding-bottom: 4px; 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Define row heights implicitly or explicitly if needed */
+    /* grid-auto-rows: minmax(100px, auto); */
+    gap: 8px; /* Adjust gap as needed */
+    /* Remove padding - handled by parent .container */
+    /* padding: 8px; */
+    width: 100%;
+    /* Remove box-sizing if padding is removed */
+    /* box-sizing: border-box; */
 }
+
+/* --- Grid Items --- */
 .portfolio-item {
     background-color: var(--md-sys-color-surface-variant-dark);
-    border-radius: var(--border-radius-sm); /* Use var */
+    border-radius: var(--border-radius-sm);
     overflow: hidden;
     box-shadow: var(--md-sys-elevation-1-dark);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* position: relative; */ /* Removed - Isotope handles positioning */
-    opacity: 1; /* Start visible if not using JS fade-in on load */
-    transform: scale(1); 
-    cursor: pointer; /* Add cursor pointer for clickable items */
-    /* Add explicit width for Isotope */
-    width: calc(25% - 3px); /* Example width for 4 columns with 4px gutter (3/4 of gutter) */
-    margin-bottom: 4px; /* Add bottom margin matching the gutter */
+    cursor: pointer;
+    margin-bottom: 0; /* Remove margin used by masonry */
+    width: auto; /* Let grid control width */
+    /* height: auto; Let grid/content control height */
+    position: relative; /* Needed for absolute positioning of figcaption */
 }
+
+/* Remove Isotope/Masonry Specific Styles */
+/* .grid-sizer { ... } */
+/* .portfolio-item.item-width-1 { ... } */
+/* .portfolio-item.item-width-2 { ... } */
+
+/* --- Grid Area Assignments --- */
+/* Based on the image analysis (4 columns, 3 rows) */
+.showcase-item-1 { grid-area: 1 / 1 / 3 / 2; } /* Skyscraper */
+.showcase-item-2 { grid-area: 1 / 2 / 2 / 3; } /* Snow */
+.showcase-item-3 { grid-area: 1 / 3 / 3 / 4; } /* Boat */
+.showcase-item-4 { grid-area: 1 / 4 / 2 / 5; } /* Water */
+.showcase-item-5 { grid-area: 2 / 1 / 3 / 2; } /* Forest */
+.showcase-item-6 { grid-area: 2 / 2 / 3 / 3; } /* Statue */
+.showcase-item-7 { grid-area: 2 / 4 / 3 / 5; } /* Village */
+.showcase-item-8 { grid-area: 3 / 1 / 4 / 2; } /* Field */
+.showcase-item-9 { grid-area: 3 / 2 / 4 / 3; } /* Blank */
+.showcase-item-10 { grid-area: 3 / 3 / 4 / 4; } /* Book */
+.showcase-item-11 { grid-area: 3 / 4 / 4 / 5; } /* Grapes */
+
+
 [data-theme="light"] .portfolio-item {
     background-color: var(--md-sys-color-surface-variant-light);
     box-shadow: var(--md-sys-elevation-1-light);
 }
 
 .portfolio-item:hover {
-    transform: translateY(-5px);
     box-shadow: var(--md-sys-elevation-4-dark);
 }
 [data-theme="light"] .portfolio-item:hover {
@@ -130,39 +74,36 @@
 }
 
 .portfolio-item figure {
-    margin: 0; 
+    margin: 0;
+    width: 100%;
     height: 100%; /* Make figure fill the grid item */
 }
 .portfolio-item figure img {
     display: block;
     width: 100%;
-    height: 100%; /* Let the grid item size determine height */
+    height: 100%; /* Make image fill the figure */
     object-fit: cover;
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    /* Remove fixed aspect-ratio to allow flexible item sizes */
-    /* aspect-ratio: 1 / 1; */ 
 }
-[data-theme="light"] .portfolio-item figure img {
-     border-bottom: 1px solid var(--md-sys-color-outline-variant-light);
-}
-.portfolio-item:hover figure img,
-.portfolio-item:focus-visible figure img {
-    transform: scale(1.05); /* Zoom effect on hover */
-}
+/* Remove theme-specific border - might interfere with gap */
+/* [data-theme="light"] .portfolio-item figure img { ... } */
+
+/* Remove hover scale effect */
+/* .portfolio-item:hover figure img, ... { transform: scale(1.05); } */
 
 .portfolio-content {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: var(--space-md); /* Use var */
-    /* background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); */ /* Removed gradient overlay */
+    padding: var(--space-md);
+    /* Optional: Add subtle gradient back for readability */
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
     color: #fff;
     opacity: 0;
     transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Re-add transition for smoother hover */
     z-index: 2;
-    pointer-events: none; /* Allow clicks to pass through to the item */
+    pointer-events: none;
 }
 
 .portfolio-item:hover .portfolio-content,
@@ -177,52 +118,51 @@
     font-weight: var(--md-typescale-label-medium-weight);
     line-height: var(--md-typescale-label-medium-line-height);
     letter-spacing: var(--md-typescale-label-medium-letter-spacing);
-    /* Use a more contrasty color on the overlay */
     color: rgba(255, 255, 255, 0.8);
     text-transform: uppercase;
 }
 
 .portfolio-item h3 {
-    /* Uses base h3 style (Title Medium) */
-    margin-bottom: 0; 
-    /* Use a more contrasty color on the overlay */
+    margin-bottom: 0;
     color: #ffffff;
 }
 
 /* Style for the 'View Full Portfolio' button container */
 .showcase-view-all {
     text-align: center;
-    margin-top: var(--space-xl); /* Use var */
+    margin-top: var(--space-xl);
 }
 
-/* --- New Grid Span Styles --- */
-/* Removed CSS Grid span rules as Isotope handles layout */
-/* .grid-span-2x1 {
-    grid-column: span 2;
-    grid-row: span 1;
-} */
-/* .grid-span-1x2 {
-    grid-column: span 1;
-    grid-row: span 2;
-} */
-/* .grid-span-2x2 {
-    grid-column: span 2;
-    grid-row: span 2;
-} */
+/* --- Remove Isotope/Masonry Media Queries --- */
+/* @media (max-width: 992px) { ... } */
+/* @media (max-width: 767px) { ... } */
+/* @media (max-width: 575px) { ... } */
 
-/* --- Media Queries for Showcase --- */
-/* Remove media queries adjusting grid columns/rows as Isotope handles responsiveness */
-/* @media (min-width: 768px) {
+/* --- Add New Media Queries for Responsive Grid (Example) --- */
+@media (max-width: 992px) { /* Tablet: 3 Columns */
     .portfolio-grid {
-        grid-template-columns: repeat(3, 1fr); 
-        grid-auto-rows: 250px; 
-        gap: 4px; 
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+        padding: 6px;
     }
-} */
+    /* Adjust grid areas for 3 columns - this requires rethinking the layout */
+    /* Example: Make all items 1x1 */
+    .showcase-item-1, .showcase-item-2, .showcase-item-3, .showcase-item-4, .showcase-item-5, .showcase-item-6, .showcase-item-7, .showcase-item-8, .showcase-item-9, .showcase-item-10, .showcase-item-11 {
+        grid-area: auto / auto / auto / auto; /* Reset area, let grid auto-place */
+    }
+    /* Or define a new specific layout for 3 columns */
+}
 
-/* @media (min-width: 992px) {
+@media (max-width: 600px) { /* Mobile: 2 Columns */
     .portfolio-grid {
-        grid-template-columns: repeat(4, 1fr); 
-        gap: 4px; 
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+        padding: 4px;
     }
-} */ 
+    /* Adjust grid areas for 2 columns */
+    /* Example: Make all items 1x1 */
+     .showcase-item-1, .showcase-item-2, .showcase-item-3, .showcase-item-4, .showcase-item-5, .showcase-item-6, .showcase-item-7, .showcase-item-8, .showcase-item-9, .showcase-item-10, .showcase-item-11 {
+        grid-area: auto / auto / auto / auto; /* Reset area */
+    }
+    /* Or define a new specific layout for 2 columns */
+} 

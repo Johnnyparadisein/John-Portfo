@@ -87,7 +87,7 @@
                  <h1>John Kvezereli</h1>
             </div>
             <div class="header-center">
-                <span>PORTFOLIO 2024</span>
+                <span>PORTFOLIO 2025</span>
             </div>
             <div class="header-right">
                 <nav role="navigation" aria-label="Main Navigation">
@@ -127,14 +127,13 @@
         <!-- === Start Hero Section === -->
         <section id="hero">
             <div class="container hero-content">
-                <!-- Moved About Me Image to the left -->
+                 <!-- Image back on the left -->
                  <div class="about-image" data-aos="fade-right" data-aos-delay="150">
                     <!-- *** Replace placeholder-profile.png and the data-src URL with your actual profile image *** -->
                     <!-- *** Ensure the alt text accurately describes the image *** -->
                     <img data-src="https://media.licdn.com/dms/image/v2/D4D03AQEV6mYgWXnGkg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1692108704538?e=1749686400&v=beta&t=1kt8UkkfMdtgXEBgpaKUFM8g-KvVnY69YyHaOoMMR6E" alt="Headshot of John Kvezereli" loading="lazy">
                 </div>
-
-                <!-- Combined Hero and About Text to the right -->
+                <!-- Text back on the right -->
                 <div class="hero-text" data-aos="fade-left" data-aos-delay="200">
                      <!-- Separated intro text -->
                     <p class="hero-intro">
@@ -144,13 +143,14 @@
                     <p class="lead-text">
                          & self-proclaimed AI Musketeer. Inspired by strong visuals, the creative potential of AI, and maybe a hint of retro tech vibe 💾. Currently based in vibrant Tbilisi, Georgia 🇬🇪🍷🥟. I'm crafting designs as a Senior Graphic Designer at Redberry and sharing knowledge as a Lecturer at the Tbilisi School of Communication. Previously worked with brands like Dunkin' Georgia and Subway.
                     </p>
-                    <!-- Keep hero buttons -->
+                    <!-- Remove hero buttons -->
+                    <!-- 
                     <div class="hero-buttons">
                         <a href="#showcase" class="btn primary">View My Work</a>
                         <a href="#contact" class="btn secondary">Get In Touch</a>
                     </div>
+                    -->
                  </div>
-                 <!-- Removed the original separate about-content structure -->
             </div>
             <!-- Scroll Indicator - Updated href -->
             <a href="#showcase" class="scroll-indicator" aria-label="Scroll down to showcase section" data-aos="fade-up" data-aos-delay="300">
@@ -161,142 +161,106 @@
 
         <!-- === Showcase Section === -->
         <section id="showcase" class="section" aria-labelledby="showcase-title">
-            <div class="container"> <!-- Container for title -->
+            <div class="container"> <!-- Container for title AND grid -->
                 <h2 id="showcase-title" class="section-title" data-aos="fade-up">Showcase</h2>
-            </div>
-            <div class="container"> <!-- Container for grid -->
+                <!-- Move grid inside container -->
                 <div class="portfolio-grid">
-                    <!-- Replace with actual portfolio items -->
-                    <!-- IMPORTANT: Optimize all images for web. Consider WebP/AVIF formats. -->
-                    
-                    <!-- Item 1: Add grid-span-2x1 class -->
-                    <div class="portfolio-item showcase-item-clickable grid-span-2x1" data-categories="branding social" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion1/1200/800">
+                    <!-- Remove grid-sizer -->
+                    <!-- Start actual portfolio items -->
+
+                    <!-- Item 1 (Skyscraper) -->
+                    <div class="portfolio-item showcase-item-clickable showcase-item-1" data-categories="black-lion branding" data-fullscreen-src="portfolio/Black Lion/black-lion-lighter-visual-(NEW)-Camera.jpg">
                         <figure>
-                            <img src="https://picsum.photos/seed/lion1/600/400" alt="Black Lion Showcase Image 1" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <h3>Black Lion 1</h3>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    
-                    <!-- Item 2: No changes -->
-                    <div class="portfolio-item showcase-item-clickable" data-categories="ui-ux ai" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion2/1200/800">
-                        <figure>
-                             <img src="https://picsum.photos/seed/lion2/600/400" alt="Black Lion Showcase Image 2" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <h3>Black Lion 2</h3>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    
-                    <!-- Item 3: Add grid-span-1x2 class -->
-                    <div class="portfolio-item showcase-item-clickable grid-span-1x2" data-categories="motion" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion3/800/1200">
-                         <figure>
-                            <img src="https://picsum.photos/seed/lion3/400/600" alt="Black Lion Showcase Image 3" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <h3>Black Lion 3</h3>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    
-                    <!-- Item 4: No changes -->
-                     <div class="portfolio-item showcase-item-clickable" data-categories="branding ai" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion4/1200/800">
-                        <figure>
-                            <img src="https://picsum.photos/seed/lion4/600/400" alt="Black Lion Showcase Image 4" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <h3>Black Lion 4</h3>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    
-                    <!-- Item 5: Remove <a> tag, add class and data-fullscreen-src -->
-                     <div class="portfolio-item showcase-item-clickable" data-categories="social" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion5/1200/800">
-                        <figure>
-                            <img src="https://picsum.photos/seed/lion5/600/400" alt="Black Lion Showcase Image 5" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <h3>Black Lion 5</h3>
-                            </figcaption>
+                            <img src="portfolio/Black Lion/black-lion-lighter-visual-(NEW)-Camera.jpg" alt="Black Lion Lighter Visual" loading="lazy">
+                            <figcaption class="portfolio-content"><h3>Black Lion</h3></figcaption>
                         </figure>
                     </div>
 
-                    <!-- Item 6: Similar to above -->
-                     <div class="portfolio-item showcase-item-clickable" data-categories="branding" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion6/1200/800">
+                    <!-- Item 2 (Snow) -->
+                    <div class="portfolio-item showcase-item-clickable showcase-item-2" data-categories="kfc social" data-fullscreen-src="portfolio/KFC/KFC-16.01.jpg">
                         <figure>
-                            <img src="https://picsum.photos/seed/lion6/600/400" alt="Black Lion Showcase Image 6" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <h3>Black Lion 6</h3>
-                            </figcaption>
+                            <img src="portfolio/KFC/KFC-16.01.jpg" alt="KFC Promotion" loading="lazy">
+                             <figcaption class="portfolio-content"><h3>KFC</h3></figcaption>
                         </figure>
                     </div>
 
-                    <!-- Duplicate existing items to add more rows -->
-                    <!-- Item 1 Duplicate: Add grid-span-2x1 class -->
-                    <div class="portfolio-item showcase-item-clickable grid-span-2x1" data-categories="branding social" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion7/1200/800">
+                    <!-- Item 3 (Boat) -->
+                    <div class="portfolio-item showcase-item-clickable showcase-item-3" data-categories="alcorium branding" data-fullscreen-src="portfolio/Alcorium/alcorium-loyalty-cASDard-05.07.png">
                         <figure>
-                            <img src="https://picsum.photos/seed/lion7/600/400" alt="Black Lion Showcase Image 7" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <h3>Black Lion 7</h3>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    
-                    <!-- Item 2 Duplicate: No changes -->
-                    <div class="portfolio-item showcase-item-clickable" data-categories="ui-ux ai" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion8/1200/800">
-                        <figure>
-                             <img src="https://picsum.photos/seed/lion8/600/400" alt="Black Lion Showcase Image 8" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <h3>Black Lion 8</h3>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    
-                    <!-- Item 3 Duplicate: Add grid-span-1x2 class -->
-                    <div class="portfolio-item showcase-item-clickable grid-span-1x2" data-categories="motion" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion9/800/1200">
-                         <figure>
-                            <img src="https://picsum.photos/seed/lion9/400/600" alt="Black Lion Showcase Image 9" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <h3>Black Lion 9</h3>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    
-                    <!-- Item 4 Duplicate: No changes -->
-                     <div class="portfolio-item showcase-item-clickable" data-categories="branding ai" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion10/1200/800">
-                        <figure>
-                            <img src="https://picsum.photos/seed/lion10/600/400" alt="Black Lion Showcase Image 10" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <h3>Black Lion 10</h3>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    
-                    <!-- Item 5 Duplicate: Remove <a> tag, add class and data-fullscreen-src -->
-                     <div class="portfolio-item showcase-item-clickable" data-categories="social" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion11/1200/800">
-                        <figure>
-                            <img src="https://picsum.photos/seed/lion11/600/400" alt="Black Lion Showcase Image 11" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <h3>Black Lion 11</h3>
-                            </figcaption>
+                            <img src="portfolio/Alcorium/alcorium-loyalty-cASDard-05.07.png" alt="Alcorium Loyalty Card" loading="lazy">
+                             <figcaption class="portfolio-content"><h3>Alcorium</h3></figcaption>
                         </figure>
                     </div>
 
-                    <!-- Item 6 Duplicate: Similar to above -->
-                     <div class="portfolio-item showcase-item-clickable" data-categories="branding" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion12/1200/800">
+                    <!-- Item 4 (Water) -->
+                     <div class="portfolio-item showcase-item-clickable showcase-item-4" data-categories="other illustration" data-fullscreen-src="portfolio/Other/kvati.png">
                         <figure>
-                            <img src="https://picsum.photos/seed/lion12/600/400" alt="Black Lion Showcase Image 12" loading="lazy">
-                            <figcaption class="portfolio-content">
-                                <h3>Black Lion 12</h3>
-                            </figcaption>
+                            <img src="portfolio/Other/kvati.png" alt="Kvati Illustration" loading="lazy">
+                            <figcaption class="portfolio-content"><h3>Illustration</h3></figcaption>
                         </figure>
-                     </div>
+                    </div>
 
-                    <!-- End Duplicated Items -->
-                </div> <!-- This closes the FIRST portfolio-grid -->
+                    <!-- Item 5 (Forest) -->
+                     <div class="portfolio-item showcase-item-clickable showcase-item-5" data-categories="black-lion product" data-fullscreen-src="portfolio/Black Lion/ახალი-ბოთლით-close-ups-05.06.png">
+                        <figure>
+                            <img src="portfolio/Black Lion/ახალი-ბოთლით-close-ups-05.06.png" alt="Black Lion Bottle Close Up" loading="lazy">
+                             <figcaption class="portfolio-content"><h3>Black Lion</h3></figcaption>
+                        </figure>
+                    </div>
 
-                <!-- Remove the duplicated grid below -->
-                <!-- <div class="portfolio-grid"> ... a lot of duplicated items ... </div> -->
+                    <!-- Item 6 (Statue) -->
+                    <div class="portfolio-item showcase-item-clickable showcase-item-6" data-categories="kfc social" data-fullscreen-src="portfolio/KFC/KFC-06.03-2.png">
+                        <figure>
+                            <img src="portfolio/KFC/KFC-06.03-2.png" alt="KFC Social Media Post" loading="lazy">
+                            <figcaption class="portfolio-content"><h3>KFC</h3></figcaption>
+                        </figure>
+                    </div>
 
-            </div> <!-- End grid container -->
+                    <!-- Item 7 (Village) -->
+                    <div class="portfolio-item showcase-item-clickable showcase-item-7" data-categories="black-lion branding product" data-fullscreen-src="portfolio/Black Lion/ახალი-ბოთლით-iceსდფ-baybe-Camera-3.png">
+                        <figure>
+                             <img src="portfolio/Black Lion/ახალი-ბოთლით-iceსდფ-baybe-Camera-3.png" alt="Black Lion Ice" loading="lazy">
+                            <figcaption class="portfolio-content"><h3>Black Lion Ice</h3></figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Item 8 (Field) -->
+                     <div class="portfolio-item showcase-item-clickable showcase-item-8" data-categories="other branding" data-fullscreen-src="portfolio/Other/ფეიხოა.png">
+                        <figure>
+                            <img src="portfolio/Other/ფეიხოა.png" alt="Feijoa Branding" loading="lazy">
+                            <figcaption class="portfolio-content"><h3>Feijoa</h3></figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Item 9 (Blank) -->
+                    <div class="portfolio-item showcase-item-clickable showcase-item-9" data-categories="kfc social" data-fullscreen-src="portfolio/KFC/KFC 18.03.2024 2.png">
+                        <figure>
+                            <img src="portfolio/KFC/KFC 18.03.2024 2.png" alt="KFC Social Post" loading="lazy">
+                            <figcaption class="portfolio-content"><h3>KFC</h3></figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Item 10 (Book) -->
+                     <div class="portfolio-item showcase-item-clickable showcase-item-10" data-categories="alcorium social" data-fullscreen-src="portfolio/Alcorium/საუბარი-ღვინოხცზე-#1- &-#2-18.06.png">
+                        <figure>
+                            <img src="portfolio/Alcorium/საუბარი-ღვინოხცზე-#1- &-#2-18.06.png" alt="Alcorium Social Post" loading="lazy">
+                            <figcaption class="portfolio-content"><h3>Alcorium Talk</h3></figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Item 11 (Grapes) -->
+                     <div class="portfolio-item showcase-item-clickable showcase-item-11" data-categories="other branding" data-fullscreen-src="portfolio/Other/LOGO-FINAL-01.png"> <!-- Assuming this is the 11th item based on count -->
+                        <figure>
+                            <img src="portfolio/Other/LOGO-FINAL-01.png" alt="Logo Final" loading="lazy">
+                            <figcaption class="portfolio-content"><h3>Logo</h3></figcaption>
+                        </figure>
+                    </div>
+                </div> <!-- End .portfolio-grid -->
+            </div> <!-- End .container -->
+            <!-- Scroll Indicator was previously here, should remain outside container -->
+            <a href="#showcase" class="scroll-indicator" aria-label="Scroll down to showcase section" data-aos="fade-up" data-aos-delay="300">
+                Scroll <i class="ph ph-arrow-down"></i>
+            </a>
         </section>
         <!-- === End Showcase Section === -->
 
@@ -337,7 +301,7 @@
                         <div class="experience-item">
                             <span class="job-title">Lecturer</span>
                             <span class="company">Tbilisi School of Communication</span>
-                            <span class="year">2024 - Present</span>
+                            <span class="year">2025 - Present</span>
                             <p class="experience-description">Empowering the next generation of creatives by teaching advanced design concepts, modern workflows, and emerging technologies like AI integration in design.</p>
                             <ul class="experience-responsibilities">
                                 <li>Developing and delivering curriculum focused on AI-assisted design, branding, and creative technologies.</li>
@@ -359,7 +323,7 @@
                         <div class="experience-item">
                              <span class="job-title">Motion Graphic Designer</span>
                              <span class="company">Subway</span>
-                             <span class="year">2023 - 2024</span>
+                             <span class="year">2023 - 2025</span>
                              <p class="experience-description">Created engaging motion graphics for digital advertising and social media campaigns.</p>
                              <ul class="experience-responsibilities">
                                  <li>Animated logos, text, and graphics for video content.</li>

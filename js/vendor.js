@@ -45,8 +45,36 @@ function initializeTypedJs() {
     }
 }
 
+// --- Typed.js Initialization (Example - adapt as needed) ---
+/*
+const typedElement = document.getElementById('typed-output');
+
+if (typedElement && typeof Typed !== 'undefined') {
+    // Options for Typed.js (customize these)
+    const options = {
+        strings: ["Creative Technologist", "Graphic Designer", "AI Enthusiast", "UI/UX Tinkerer"], // Text to type
+        typeSpeed: 50, // Typing speed in milliseconds
+        backSpeed: 30, // Backspacing speed
+        backDelay: 1500, // Pause before backspacing
+        loop: true, // Loop the animation
+        startDelay: 500, // Delay before typing starts
+        smartBackspace: true, // Only backspace what doesn't match the next string
+        // showCursor: true,
+        // cursorChar: '|',
+        // autoInsertCss: true // Let Typed.js inject basic cursor CSS (optional)
+    };
+
+    // Initialize Typed.js
+    const typed = new Typed('#typed-output', options);
+} else {
+    if (!typedElement) console.warn('Typed.js target element #typed-output not found.');
+    if (typeof Typed === 'undefined') console.warn('Typed.js library not loaded.');
+}
+*/
+console.log("Typed.js animation disabled."); // Add a log message
+
 // --- Initialize Vendor Libraries --- (Called from main.js)
 function initializeVendorLibs() {
     initializeAOS();
-    initializeTypedJs();
+    // initializeTypedJs(); // Comment out the call to disable typing animation
 } 
