@@ -1,0 +1,223 @@
+/* ==========================================================================
+   Experience Section (Timeline) Styles
+   ========================================================================== */
+
+#experience {
+    position: relative; 
+    overflow: hidden; 
+    /* background-color: var(--md-sys-color-surface-container-lowest-dark); /* Add subtle background */
+    z-index: 0; 
+}
+/* [data-theme="light"] #experience {
+    background-color: var(--md-sys-color-surface-container-lowest-light);
+} */
+
+#experience::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(var(--md-sys-color-primary-dark-rgb), 0.06) 0%, rgba(var(--md-sys-color-primary-dark-rgb), 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.3;
+    z-index: -1;
+}
+[data-theme="light"] #experience::after {
+     background: radial-gradient(circle, rgba(var(--md-sys-color-primary-light-rgb), 0.06) 0%, rgba(var(--md-sys-color-primary-light-rgb), 0) 70%);
+     opacity: 0.2;
+}
+
+.timeline {
+    max-width: 800px; 
+    margin: 0 auto; 
+    position: relative;
+    padding-left: var(--space-xl); 
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 10px; 
+    bottom: 10px; 
+    left: calc(var(--space-sm) + 1px); 
+    width: 2px; 
+    background-color: var(--md-sys-color-outline-variant-dark); /* M3 Outline Variant */
+}
+[data-theme="light"] .timeline::before {
+     background-color: var(--md-sys-color-outline-variant-light);
+}
+.timeline-item {
+    margin-bottom: var(--space-xl); 
+    padding: var(--space-xl);
+    background: var(--md-sys-color-surface-container-low-dark); /* M3 Surface Container Low */
+    border: 1px solid var(--md-sys-color-outline-variant-dark);
+    border-radius: 16px; /* M3 Larger radius */
+    position: relative;
+    margin-left: var(--space-xl); 
+    box-shadow: var(--md-sys-elevation-1-dark);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+[data-theme="light"] .timeline-item {
+     background: var(--md-sys-color-surface-container-low-light);
+     border: 1px solid var(--md-sys-color-outline-variant-light);
+     box-shadow: var(--md-sys-elevation-1-light);
+}
+
+.timeline-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--md-sys-elevation-3-dark);
+}
+[data-theme="light"] .timeline-item:hover {
+     box-shadow: var(--md-sys-elevation-3-light);
+}
+
+.timeline-item::before { /* Dot on the timeline */
+   content: '';
+   position: absolute;
+   top: calc(var(--space-xl) + 5px); /* Align with date roughly */
+   left: calc(-1 * var(--space-xl) - var(--space-sm) - 4px); /* Position left of card */
+   width: 10px;
+   height: 10px;
+   background-color: var(--md-sys-color-primary-dark);
+   border: 2px solid var(--md-sys-color-surface-container-low-dark);
+   border-radius: 50%;
+   z-index: 1; /* Above timeline line */
+}
+[data-theme="light"] .timeline-item::before {
+    background-color: var(--md-sys-color-primary-light);
+    border-color: var(--md-sys-color-surface-container-low-light);
+}
+
+.timeline-date {
+    margin-bottom: var(--space-sm); 
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--md-typescale-label-medium-size); /* Use Label Medium */
+    color: var(--md-sys-color-on-surface-variant-dark);
+    font-family: var(--font-mono); 
+}
+.timeline-date i {
+    color: var(--md-sys-color-primary-dark);
+    font-size: 1.1rem; /* Slightly larger icon */
+}
+[data-theme="light"] .timeline-date i {
+    color: var(--md-sys-color-primary-light);
+}
+
+.timeline-content h3 {
+    /* Uses base h3 style (Title Medium) */
+    margin-bottom: var(--space-xs);
+    color: var(--md-sys-color-on-surface-dark);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+[data-theme="light"] .timeline-content h3 {
+    color: var(--md-sys-color-on-surface-light);
+}
+.timeline-company {
+    color: var(--md-sys-color-on-surface-variant-dark);
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: var(--space-md); 
+    font-size: var(--md-typescale-body-large-size); /* Use Body Large */
+}
+[data-theme="light"] .timeline-company {
+    color: var(--md-sys-color-on-surface-variant-light);
+}
+.timeline-details p {
+    font-size: var(--md-typescale-body-medium-size);
+    line-height: var(--md-typescale-body-medium-line-height);
+    margin-bottom: var(--space-md);
+}
+.timeline-achievements {
+    margin: var(--space-md) 0;
+    padding-left: var(--space-md); 
+    list-style: none;
+}
+.timeline-achievements li {
+    margin-bottom: var(--space-sm);
+    position: relative;
+    font-size: var(--md-typescale-body-medium-size);
+    padding-left: 18px; 
+}
+.timeline-achievements li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    background-color: var(--md-sys-color-primary-dark);
+    border-radius: 50%;
+}
+[data-theme="light"] .timeline-achievements li::before {
+    background-color: var(--md-sys-color-primary-light);
+}
+
+.timeline-tech {
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--md-sys-color-outline-variant-dark);
+    color: var(--md-sys-color-on-surface-variant-dark);
+    font-size: var(--md-typescale-label-small-size, 0.6875rem); /* Use Label Small */
+    line-height: var(--md-typescale-label-small-line-height, 1rem);
+}
+[data-theme="light"] .timeline-tech {
+     border-top: 1px solid var(--md-sys-color-outline-variant-light);
+     color: var(--md-sys-color-on-surface-variant-light);
+}
+.timeline-tech span {
+    font-weight: 600;
+    color: var(--md-sys-color-on-surface-dark);
+    margin-right: var(--space-sm);
+}
+[data-theme="light"] .timeline-tech span {
+    color: var(--md-sys-color-on-surface-light);
+}
+
+/* --- Media Queries for Experience --- */
+@media (min-width: 768px) {
+    .timeline {
+        padding-left: var(--space-xxl); 
+    }
+    .timeline::before {
+        left: calc(var(--space-lg) + 1px); 
+    }
+    .timeline-item {
+        margin-left: var(--space-xxl); 
+        padding: var(--space-xl);
+    }
+    .timeline-item::before {
+        left: calc(-1 * (var(--space-xxl) + var(--space-sm) + 4px)); 
+        top: calc(var(--space-xl) + 7px); /* Re-align dot */
+    }
+    .timeline-content h3 {
+        /* Use Title Large on larger screens? */
+        font-size: var(--md-typescale-title-large-size); 
+        line-height: var(--md-typescale-title-large-line-height);
+    }
+     .timeline-details p {
+        font-size: var(--md-typescale-body-large-size);
+        line-height: var(--md-typescale-body-large-line-height);
+    }
+    .timeline-achievements li {
+        font-size: var(--md-typescale-body-large-size);
+    }
+}
+
+@media (min-width: 992px) {
+    .timeline {
+        max-width: 800px; /* Maintain max width */
+    }
+    #experience::after {
+        bottom: -200px;
+        left: -250px;
+        width: 600px;
+        height: 600px;
+    }
+} 

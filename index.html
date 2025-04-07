@@ -6,6 +6,31 @@
     <meta name="description" content="Portfolio website for John Kvezereli, a Product & Motion Designer specializing in graphic design, UI/UX, and AI-assisted creative work.">
     <title>John Kvezereli | Graphic Designer & AI Musketeer</title>
     
+    <!-- Favicon Links - Ensure these files exist in the root directory -->
+    <!-- <link rel="icon" href="favicon.ico" sizes="any"> -->
+    <!-- <link rel="icon" href="favicon.svg" type="image/svg+xml"> -->
+    <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <!-- <link rel="manifest" href="site.webmanifest"> --> <!-- Ensure manifest file is created and configured if used -->
+
+    <!-- SEO Meta Tags -->
+    <!-- UPDATE content attributes with your actual info -->
+    <meta property="og:title" content="John Kvezereli | Graphic Designer & AI Musketeer" />
+    <meta property="og:description" content="Crafting intuitive digital experiences with a focus on motion and usability. Explore my portfolio.">
+    <meta property="og:type" content="website" />
+    <!-- *** UPDATE THIS URL *** -->
+    <meta property="og:url" content="" /> 
+    <!-- *** Add a direct URL to a preview image (e.g., profile pic or hero image) below *** -->
+    <meta property="og:image" content="" /> 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="John Kvezereli | Graphic Designer & AI Musketeer">
+    <meta name="twitter:description" content="Crafting intuitive digital experiences with a focus on motion and usability. Explore my portfolio.">
+     <!-- *** Add the same preview image URL below *** -->
+    <meta name="twitter:image" content="">
+    <!-- Optional: Add twitter:site and twitter:creator if you have Twitter handles
+         <meta name="twitter:site" content="@YourTwitterHandle">
+         <meta name="twitter:creator" content="@YourTwitterHandle">
+    -->
+
     <!-- Font Preloading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,19 +39,31 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
-    <!-- AOS Library CSS -->
+    <!-- Vendor CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Remove LightGallery CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css" integrity="sha512-F2E+YYE1gkt0T5TVajAslgDfTEUQKtlu4ralVqykdlujzUJeQxvDFVRjYExRq41ykFPmsrntihHQRS7hmXcggA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-thumbnail.min.css" integrity="sha512-GRxDpj/bx6/I4y6h2LE5rbGaqRcbTu4dYhaTewlS8Nh9hm/akYprvOTZD7GR+FRCALMYadjusted8gpVJdTPX6oiUw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css" integrity="sha512-SUU2qXVLtyGC5t0rLuqnDiIFHWgeVR6WF8XrKyGKluqPvz3VGkNa9QPbF7JUUSdWzu/1Ua/VqfMhcUOkx4kxLw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     
-    <!-- lightGallery CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css" integrity="sha512-F2E+YYE1gkt0T5TVajAslgDfTEUQKtlu4ralVqykdlujzUJeQxvDFVRjYExRq41ykFPmsrntihHQRS7hmXcggA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-thumbnail.min.css" integrity="sha512-GRxDpj/bx6/I4y6h2LE5rbGaqRcbTu4dYhaTewlS8Nh9hm/akYprvOTZD7GR+FRCALMYadjusted8gpVJdTPX6oiUw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css" integrity="sha512-SUU2qXVLtyGC5t0rLuqnDiIFHWgeVR6WF8XrKyGKluqPvz3VGkNa9QPbF7JUUSdWzu/1Ua/VqfMhcUOkx4kxLw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <link rel="stylesheet" href="styles.css">
+    <!-- Application CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <!-- Rename portfolio.css link -->
+    <link rel="stylesheet" href="css/showcase.css">
+    <link rel="stylesheet" href="css/experience.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/methodology.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     <!-- Preloader -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="preloader-content">
             <div class="preloader-spinner"></div>
             <div class="preloader-text">
@@ -38,7 +75,7 @@
                 <span>K</span>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Skip to main content -->
     <a href="#main" class="skip-link">Skip to main content</a>
@@ -49,7 +86,9 @@
             <nav role="navigation" aria-label="Main Navigation">
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#showcase">Showcase</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="#methodology">Methodology</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -65,7 +104,10 @@
         <nav role="navigation" aria-label="Mobile Navigation">
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                 <!-- Update nav link -->
+                <li><a href="#showcase">Showcase</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="#methodology">Methodology</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -90,7 +132,7 @@
                         Crafting intuitive digital experiences with a focus on motion and usability.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#portfolio" class="btn primary">View My Work</a>
+                        <a href="#showcase" class="btn primary">View My Work</a>
                         <a href="#contact" class="btn secondary">Get In Touch</a>
                     </div>
                 </div>
@@ -107,8 +149,9 @@
             <h2 id="about-title" class="section-title" data-aos="fade-up">About Me</h2>
             <div class="about-content">
                 <div class="about-image" data-aos="fade-right" data-aos-delay="100">
-                    <!-- Placeholder for an image of you - UPDATE data-src path -->
-                    <img src="placeholder-profile.png" alt="Headshot of John Kvezereli" loading="lazy" data-src="https://media.licdn.com/dms/image/v2/D4D03AQEV6mYgWXnGkg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1692108704538?e=1749686400&v=beta&t=1kt8UkkfMdtgXEBgpaKUFM8g-KvVnY69YyHaOoMMR6E"> 
+                    <!-- *** Replace placeholder-profile.png and the data-src URL with your actual profile image *** -->
+                    <!-- *** Ensure the alt text accurately describes the image *** -->
+                    <img data-src="https://media.licdn.com/dms/image/v2/D4D03AQEV6mYgWXnGkg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1692108704538?e=1749686400&v=beta&t=1kt8UkkfMdtgXEBgpaKUFM8g-KvVnY69YyHaOoMMR6E" alt="Headshot of John Kvezereli" loading="lazy">
                 </div>
                 <div class="about-text" data-aos="fade-left" data-aos-delay="200">
                     <p class="lead-text">Hello there! I'm John, a passionate Graphic Designer and AI Musketeer based in Tbilisi, Georgia. I thrive on crafting visually striking designs where aesthetics meet innovation and cutting-edge technology.</p>
@@ -134,93 +177,276 @@
             </div>
         </section>
 
-        <!-- === Portfolio Section (Moved Here) === -->
-        <section id="portfolio" class="container section" aria-labelledby="portfolio-title">
-            <h2 id="portfolio-title" class="section-title" data-aos="fade-up">Portfolio</h2>
+        <!-- === Showcase Section (Formerly Portfolio) === -->
+        <!-- Update section ID and aria-labelledby -->
+        <section id="showcase" class="container section" aria-labelledby="showcase-title">
+            <!-- Update title ID and text -->
+            <h2 id="showcase-title" class="section-title" data-aos="fade-up">Showcase</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">
+                A glimpse into recent projects. Click on an item to view it larger, or see the full portfolio for details.
+            </p>
 
             <!-- Portfolio Filters -->
             <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
-                <button class="portfolio-filter active" data-filter="*">All</button>
-                <button class="portfolio-filter" data-filter="branding">Branding</button>
-                <button class="portfolio-filter" data-filter="ui-ux">UI/UX</button>
-                <button class="portfolio-filter" data-filter="motion">Motion</button>
-                <button class="portfolio-filter" data-filter="ai">AI</button>
-                <button class="portfolio-filter" data-filter="social">Social</button>
+                 <!-- NOTE: These filters might need adjustment based on the projects -->
+                <button class="portfolio-filter active" data-filter="*" aria-pressed="true">All</button>
+                <button class="portfolio-filter" data-filter="branding" aria-pressed="false">Branding</button>
+                <button class="portfolio-filter" data-filter="ui-ux" aria-pressed="false">UI/UX</button>
+                <button class="portfolio-filter" data-filter="motion" aria-pressed="false">Motion</button>
+                <button class="portfolio-filter" data-filter="ai" aria-pressed="false">AI</button>
+                <button class="portfolio-filter" data-filter="social" aria-pressed="false">Social</button>
             </div>
 
-            <div id="lightgallery-container" class="portfolio-grid">
+            <!-- Remove id="lightgallery-container" -->
+            <div class="portfolio-grid">
                 <!-- Replace with actual portfolio items -->
-                <!-- NOTE: href points to LARGE image, img src points to THUMBNAIL -->
-                <div class="portfolio-item" data-categories="branding social" data-aos="fade-up" data-aos-delay="200">
-                    <a href="portfolio/project1-large.jpg" data-lg-size="1600-1200"> <!-- UPDATE href & size -->
-                        <figure>
-                            <img src="portfolio/project1.jpg" alt="Thumbnail for Project Title 1" loading="lazy"> <!-- UPDATE src & alt -->
-                            <figcaption class="portfolio-content">
-                                <span class="portfolio-category">Branding / Social</span>
-                                <h3>Project Title 1</h3>
-                            </figcaption>
-                        </figure>
-                    </a>
+                <!-- IMPORTANT: Optimize all images for web. Consider WebP/AVIF formats. -->
+                
+                <!-- Item 1: Remove <a> tag, add class and data-fullscreen-src -->
+                <div class="portfolio-item showcase-item-clickable" data-categories="branding social" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="portfolio/KFC-16.01.jpg">
+                    <figure>
+                        <img src="portfolio/KFC-16.01.jpg" alt="KFC Branding/Social Media Graphic 1" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Branding / Social</span>
+                            <h3>KFC Project 1</h3>
+                        </figcaption>
+                    </figure>
                 </div>
-                <div class="portfolio-item" data-categories="ui-ux ai" data-aos="fade-up" data-aos-delay="300">
-                    <a href="portfolio/project2-large.jpg" data-lg-size="1600-1200"> <!-- UPDATE href & size -->
-                        <figure>
-                             <img src="portfolio/project2.jpg" alt="Thumbnail for Project Title 2" loading="lazy"> <!-- UPDATE src & alt -->
-                            <figcaption class="portfolio-content">
-                                <span class="portfolio-category">UI/UX / AI</span>
-                                <h3>Project Title 2</h3>
-                            </figcaption>
-                        </figure>
-                    </a>
+                
+                <!-- Item 2: Remove <a> tag, add class and data-fullscreen-src -->
+                <div class="portfolio-item showcase-item-clickable" data-categories="ui-ux ai" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="portfolio/KFC-14.02-3.jpg">
+                    <figure>
+                         <img src="portfolio/KFC-14.02-3.jpg" alt="KFC UI/UX/AI Graphic 2" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">UI/UX / AI</span>
+                            <h3>KFC Project 2</h3>
+                        </figcaption>
+                    </figure>
                 </div>
-                <div class="portfolio-item" data-categories="motion" data-aos="fade-up" data-aos-delay="400">
-                     <a href="portfolio/project3-large.jpg" data-lg-size="1600-1200"> <!-- UPDATE href & size -->
-                        <figure>
-                            <img src="portfolio/project3.jpg" alt="Thumbnail for Project Title 3" loading="lazy"> <!-- UPDATE src & alt -->
-                            <figcaption class="portfolio-content">
-                                <span class="portfolio-category">Motion Graphics</span>
-                                <h3>Project Title 3</h3>
-                            </figcaption>
-                        </figure>
-                    </a>
+                
+                <!-- Item 3: Remove <a> tag, add class and data-fullscreen-src -->
+                <div class="portfolio-item showcase-item-clickable" data-categories="motion" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="portfolio/KFC-06.03-2.png">
+                     <figure>
+                        <img src="portfolio/KFC-06.03-2.png" alt="KFC Motion Graphics 3" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Motion Graphics</span>
+                            <h3>KFC Project 3</h3>
+                        </figcaption>
+                    </figure>
                 </div>
-                 <div class="portfolio-item" data-categories="branding ai" data-aos="fade-up" data-aos-delay="200">
-                    <a href="portfolio/project4-large.jpg" data-lg-size="1600-1200"> <!-- UPDATE href & size -->
-                        <figure>
-                            <img src="portfolio/project4.jpg" alt="Thumbnail for Project Title 4" loading="lazy"> <!-- UPDATE src & alt -->
-                            <figcaption class="portfolio-content">
-                                <span class="portfolio-category">Branding / AI</span>
-                                <h3>Project Title 4</h3>
-                            </figcaption>
-                        </figure>
-                    </a>
+                
+                <!-- Item 4: Remove <a> tag, add class and data-fullscreen-src -->
+                 <div class="portfolio-item showcase-item-clickable" data-categories="branding ai" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="portfolio/KFC 18.03.2024 2.png">
+                    <figure>
+                        <img src="portfolio/KFC 18.03.2024 2.png" alt="KFC Branding/AI Graphic 4" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Branding / AI</span>
+                            <h3>KFC Project 4</h3>
+                        </figcaption>
+                    </figure>
                 </div>
-                 <div class="portfolio-item" data-categories="social" data-aos="fade-up" data-aos-delay="300">
-                    <a href="portfolio/project5-large.jpg" data-lg-size="1600-1200"> <!-- UPDATE href & size -->
-                        <figure>
-                            <img src="portfolio/project5.jpg" alt="Thumbnail for Project Title 5" loading="lazy"> <!-- UPDATE src & alt -->
-                            <figcaption class="portfolio-content">
-                                <span class="portfolio-category">Social Media</span>
-                                <h3>Project Title 5</h3>
-                            </figcaption>
-                        </figure>
-                    </a>
+                
+                <!-- Item 5: Remove <a> tag, add class and data-fullscreen-src -->
+                 <div class="portfolio-item showcase-item-clickable" data-categories="social" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="portfolio/KFC-18.023453.png">
+                    <figure>
+                        <img src="portfolio/KFC-18.023453.png" alt="KFC Social Media Graphic 5" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Social Media</span>
+                            <h3>KFC Project 5</h3>
+                        </figcaption>
+                    </figure>
                 </div>
-                 <div class="portfolio-item" data-categories="ui-ux" data-aos="fade-up" data-aos-delay="400">
-                    <a href="portfolio/project6-large.jpg" data-lg-size="1600-1200"> <!-- UPDATE href & size -->
-                        <figure>
-                            <img src="portfolio/project6.jpg" alt="Thumbnail for Project Title 6" loading="lazy"> <!-- UPDATE src & alt -->
-                            <figcaption class="portfolio-content">
-                                <span class="portfolio-category">UI/UX</span>
-                                <h3>Project Title 6</h3>
-                            </figcaption>
-                        </figure>
-                    </a>
+
+                <!-- Add more items similarly, update alt text and details -->
+                 <div class="portfolio-item showcase-item-clickable" data-categories="branding" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="portfolio/1KFC-18.03.png">
+                    <figure>
+                        <img src="portfolio/1KFC-18.03.png" alt="KFC Branding Graphic 6" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Branding</span>
+                            <h3>KFC Project 6</h3>
+                        </figcaption>
+                    </figure>
                 </div>
-                <!-- Add more portfolio items as needed -->
+
+                 <div class="portfolio-item showcase-item-clickable" data-categories="branding social" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="portfolio/KFC-03sdf.04.png">
+                    <figure>
+                        <img src="portfolio/KFC-03sdf.04.png" alt="KFC Branding/Social Graphic 7" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Branding / Social</span>
+                            <h3>KFC Project 7</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                 <div class="portfolio-item showcase-item-clickable" data-categories="branding product" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="portfolio/ახალი-ბოთლით-iceსდფ-baybe-Camera-3.png">
+                    <figure>
+                        <img src="portfolio/ახალი-ბოთლით-iceსდფ-baybe-Camera-3.png" alt="Bottle Product Render 1" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Branding / Product</span>
+                            <h3>Bottle Mockup 1</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                 <div class="portfolio-item showcase-item-clickable" data-categories="branding product" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="portfolio/ახალი-ბოთლით-close-ups-05.06.png">
+                    <figure>
+                        <img src="portfolio/ახალი-ბოთლით-close-ups-05.06.png" alt="Bottle Product Render 2" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Branding / Product</span>
+                            <h3>Bottle Mockup 2</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="portfolio-item showcase-item-clickable" data-categories="branding product" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="portfolio/ახალი-ბოთლით-opening-Camera-2.png">
+                    <figure>
+                        <img src="portfolio/ახალი-ბოთლით-opening-Camera-2.png" alt="Bottle Product Render 3" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Branding / Product</span>
+                            <h3>Bottle Mockup 3</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                 <div class="portfolio-item showcase-item-clickable" data-categories="branding product" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="portfolio/ახალი-ბოთლdsfით-silluete-Camera.png">
+                    <figure>
+                        <img src="portfolio/ახალი-ბოთლdsfით-silluete-Camera.png" alt="Bottle Product Render 4" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Branding / Product</span>
+                            <h3>Bottle Mockup 4</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                 <div class="portfolio-item showcase-item-clickable" data-categories="branding product" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="portfolio/ახალი-ბოთლით-plants-Camera.png">
+                    <figure>
+                        <img src="portfolio/ახალი-ბოთლით-plants-Camera.png" alt="Bottle Product Render 5" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Branding / Product</span>
+                            <h3>Bottle Mockup 5</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                 <div class="portfolio-item showcase-item-clickable" data-categories="branding" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="portfolio/ფეიხოა.png">
+                    <figure>
+                        <img src="portfolio/ფეიხოა.png" alt="Feijoa Branding" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Branding</span>
+                            <h3>Feijoa Project</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                 <div class="portfolio-item showcase-item-clickable" data-categories="branding" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="portfolio/kvati.png">
+                    <figure>
+                        <img src="portfolio/kvati.png" alt="Kvati Branding" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Branding</span>
+                            <h3>Kvati Project</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                 <div class="portfolio-item showcase-item-clickable" data-categories="poster social" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="portfolio/podfster.png">
+                    <figure>
+                        <img src="portfolio/podfster.png" alt="Poster Design" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Poster / Social</span>
+                            <h3>Poster Project</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="portfolio-item showcase-item-clickable" data-categories="social poster" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="portfolio/საუბარი-ღვინოხცზე-#1- &-#2-18.06.png">
+                    <figure>
+                        <img src="portfolio/საუბარი-ღვინოხცზე-#1- &-#2-18.06.png" alt="Wine Talk Poster 1" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Social / Poster</span>
+                            <h3>Wine Talk 1</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                 <div class="portfolio-item showcase-item-clickable" data-categories="social poster" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="portfolio/საუბარი-ღვინოსდფზე-#1- &-#2-18.06.png">
+                    <figure>
+                        <img src="portfolio/საუბარი-ღვინოსდფზე-#1- &-#2-18.06.png" alt="Wine Talk Poster 2" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Social / Poster</span>
+                            <h3>Wine Talk 2</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                 <div class="portfolio-item showcase-item-clickable" data-categories="branding ui-ux" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="portfolio/alcorium-loyalty-cASDard-05.07.png">
+                    <figure>
+                        <img src="portfolio/alcorium-loyalty-cASDard-05.07.png" alt="Alcorium Loyalty Card Design" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Branding / UI/UX</span>
+                            <h3>Alcorium Card</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="portfolio-item showcase-item-clickable" data-categories="branding product" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="portfolio/black-lion-lighter-visual-(NEW)-Camera.jpg">
+                    <figure>
+                        <img src="portfolio/black-lion-lighter-visual-(NEW)-Camera.jpg" alt="Black Lion Lighter Product Visual" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Branding / Product</span>
+                            <h3>Black Lion Lighter</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="portfolio-item showcase-item-clickable" data-categories="branding product" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="portfolio/open-cup-black-lion-12.03.png">
+                    <figure>
+                        <img src="portfolio/open-cup-black-lion-12.03.png" alt="Black Lion Open Cup Product Visual" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Branding / Product</span>
+                            <h3>Black Lion Cup</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="portfolio-item showcase-item-clickable" data-categories="branding product" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="portfolio/black-lion-sup-board-final.png">
+                    <figure>
+                        <img src="portfolio/black-lion-sup-board-final.png" alt="Black Lion SUP Board Product Visual" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <span class="portfolio-category">Branding / Product</span>
+                            <h3>Black Lion SUP</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- End Portfolio Items -->
+            </div>
+
+             <!-- Add View Full Portfolio Button -->
+            <div class="showcase-view-all" data-aos="fade-up" data-aos-delay="300">
+                <a href="portfolio.html" class="btn secondary">View Full Portfolio</a>
+            </div>
+
+        </section>
+        <!-- === End Showcase Section === -->
+
+        <!-- === Start Work Methodology Section === -->
+        <section id="methodology" class="container section" aria-labelledby="methodology-title">
+            <h2 id="methodology-title" class="section-title" data-aos="fade-up">My Work Methodology</h2>
+            <div class="methodology-content">
+                <div class="methodology-intro" data-aos="fade-up" data-aos-delay="100">
+                     <p>I blend traditional design expertise with the power of AI to create innovative and effective solutions. Here's a glimpse into my process:</p>
+                </div>
+                <div class="methodology-steps">
+                     <div class="step" data-aos="fade-up" data-aos-delay="200">
+                         <i class="ph ph-brain"></i>
+                         <h3>1. Strategy & Foundation</h3>
+                         <p>Every project begins with understanding your goals, audience, and establishing solid design principles.</p>
+                     </div>
+                     <div class="step" data-aos="fade-up" data-aos-delay="300">
+                         <i class="ph ph-atom"></i>
+                         <h3>2. AI-Powered Ideation</h3>
+                         <p>Leveraging tools like Midjourney and Stable Diffusion for rapid concept generation and exploring unique visual directions.</p>
+                     </div>
+                     <div class="step" data-aos="fade-up" data-aos-delay="400">
+                         <i class="ph ph-pencil-circle"></i>
+                         <h3>3. Human-Centric Refinement</h3>
+                         <p>Applying core UI/UX, composition, and typography skills to refine AI outputs into polished, user-friendly designs.</p>
+                     </div>
+                     <div class="step" data-aos="fade-up" data-aos-delay="500">
+                         <i class="ph ph-check-circle"></i>
+                         <h3>4. Iteration & Delivery</h3>
+                         <p>Collaborating through feedback loops to ensure the final product is impactful, effective, and exceeds expectations.</p>
+                     </div>
+                </div>
             </div>
         </section>
-        <!-- === End Portfolio Section === -->
+        <!-- === End Work Methodology Section === -->
 
         <!-- === Experience Section (Now here) === -->
         <section id="experience" class="container section" aria-labelledby="experience-title">
@@ -375,25 +601,34 @@
                 <div class="contact-method" data-aos="fade-up" data-aos-delay="200">
                     <i class="ph ph-envelope-simple"></i>
                     <h3>Email</h3>
-                     <!-- UPDATE email address -->
-                    <a href="mailto:your.email@example.com">your.email@example.com</a>
+                     <!-- *** Add your actual email address below *** -->
+                    <a href="mailto:">your.email@example.com</a>
                 </div>
                 <div class="contact-method" data-aos="fade-up" data-aos-delay="300">
                     <i class="ph ph-linkedin-logo"></i>
                     <h3>LinkedIn</h3>
-                     <!-- UPDATE LinkedIn URL -->
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+                     <!-- *** Add your actual LinkedIn profile URL below *** -->
+                    <a href="" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
                 </div>
                 <div class="contact-method" data-aos="fade-up" data-aos-delay="400">
                     <i class="ph ph-behance-logo"></i>
                     <h3>Behance</h3>
-                     <!-- UPDATE Behance URL if different -->
+                     <!-- *** Verify/Update Behance URL below *** -->
                      <a href="https://www.behance.net/gallery/202855379/John-Kvezerelis-Portfolio" target="_blank" rel="noopener noreferrer">View Portfolio</a>
                 </div>
             </div>
-            <!-- Optional: Add a contact form here -->
+            <!-- Optional: Consider adding a contact form here (requires backend or service) -->
         </section>
     </main>
+
+    <!-- === Fullscreen Image Viewer === -->
+    <div id="fullscreen-viewer" class="fullscreen-viewer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="fullscreen-image">
+        <button class="fullscreen-close" aria-label="Close image viewer"><i class="ph ph-x"></i></button>
+        <div class="fullscreen-content">
+            <img id="fullscreen-image" src="" alt="Fullscreen view of selected project" loading="lazy">
+        </div>
+    </div>
+    <!-- === End Fullscreen Image Viewer === -->
 
     <footer role="contentinfo">
         <div class="container">
@@ -402,11 +637,11 @@
                     <h3>John Kvezereli</h3>
                     <p>Graphic Designer & AI Musketeer</p>
                     <div class="social-links">
-                         <!-- UPDATE social URLs -->
-                        <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
-                        <a href="#" aria-label="Behance"><i class="ph ph-behance-logo"></i></a>
-                        <a href="#" aria-label="Dribbble"><i class="ph ph-dribbble-logo"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                         <!-- *** Add your actual social profile URLs below (use your actual profile links) *** -->
+                        <a href="#" aria-label="LinkedIn Profile"><i class="ph ph-linkedin-logo"></i></a>
+                        <a href="#" aria-label="Behance Profile"><i class="ph ph-behance-logo"></i></a>
+                        <a href="#" aria-label="Dribbble Profile"><i class="ph ph-dribbble-logo"></i></a> <!-- UPDATE href or remove -->
+                        <a href="#" aria-label="Instagram Profile"><i class="ph ph-instagram-logo"></i></a> <!-- UPDATE href or remove -->
                     </div>
                 </div>
                 <nav class="footer-nav" role="navigation" aria-label="Footer Navigation">
@@ -415,7 +650,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#experience">Experience</a></li>
                         <li><a href="#skills">Skills</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#showcase">Showcase</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -431,7 +666,7 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contact</h4>
-                     <!-- UPDATE phone and email -->
+                     <!-- *** Add your actual phone and email below *** -->
                     <p><i class="ph ph-phone"></i> +123 456 7890</p>
                     <p><i class="ph ph-envelope"></i> your.email@example.com</p>
                     <p><i class="ph ph-map-pin"></i> Tbilisi, Georgia</p>
@@ -441,7 +676,7 @@
                 <p>&copy; 2024 John Kvezereli. All rights reserved.</p>
                 <ul>
                     <li><a href="#" data-modal-trigger="sitemap-modal">Sitemap</a></li>
-                     <!-- UPDATE links if Privacy/Terms pages exist -->
+                     <!-- *** Create actual Privacy/Terms pages and link them below, or remove these list items *** -->
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms of Service</a></li>
                 </ul>
@@ -466,19 +701,19 @@
                                 <li><a href="#about" data-modal-close>About</a></li>
                                 <li><a href="#experience" data-modal-close>Experience</a></li>
                                 <li><a href="#skills" data-modal-close>Skills</a></li>
-                                <li><a href="#portfolio" data-modal-close>Portfolio</a></li>
+                                <li><a href="#showcase" data-modal-close>Showcase</a></li>
                                 <li><a href="#contact" data-modal-close>Contact</a></li>
                             </ul>
                         </div>
                         <div class="sitemap-section">
-                            <h3>Portfolio</h3>
+                            <h3>Showcase</h3>
                             <ul>
-                                <li><a href="#portfolio" data-filter="*" data-modal-close>All Projects</a></li>
-                                <li><a href="#portfolio" data-filter="branding" data-modal-close>Branding</a></li>
-                                <li><a href="#portfolio" data-filter="ui-ux" data-modal-close>UI/UX</a></li>
-                                <li><a href="#portfolio" data-filter="motion" data-modal-close>Motion</a></li>
-                                <li><a href="#portfolio" data-filter="ai" data-modal-close>AI</a></li>
-                                <li><a href="#portfolio" data-filter="social" data-modal-close>Social</a></li>
+                                <li><a href="#showcase" data-filter="*" data-modal-close>All Projects</a></li>
+                                <li><a href="#showcase" data-filter="branding" data-modal-close>Branding</a></li>
+                                <li><a href="#showcase" data-filter="ui-ux" data-modal-close>UI/UX</a></li>
+                                <li><a href="#showcase" data-filter="motion" data-modal-close>Motion</a></li>
+                                <li><a href="#showcase" data-filter="ai" data-modal-close>AI</a></li>
+                                <li><a href="#showcase" data-filter="social" data-modal-close>Social</a></li>
                             </ul>
                         </div>
                         <div class="sitemap-section">
@@ -505,10 +740,10 @@
         </div>
     </div>
 
-    <!-- Cookie Consent (if used) -->
+    <!-- Cookie Consent -->
     <div id="cookie-consent" class="cookie-consent" role="region" aria-label="Cookie Consent Banner" hidden>
         <div class="container">
-            <p>This website uses cookies to enhance user experience. <a href="/privacy-policy">Learn more</a></p>
+            <p>This website uses cookies to enhance user experience. <a href="/privacy-policy">Learn more</a></p> <!-- Ensure /privacy-policy link is valid or update -->
             <div>
                 <button class="btn primary cookie-accept">Accept</button>
                 <button class="btn secondary cookie-settings">Settings</button>
@@ -516,7 +751,7 @@
         </div>
     </div>
 
-    <!-- Back to Top Button (if used) -->
+    <!-- Back to Top Button -->
     <button class="scroll-top" aria-label="Scroll to top" hidden>
         <i class="ph ph-arrow-up"></i>
         <svg class="progress-ring" width="40" height="40">
@@ -526,13 +761,45 @@
 
     <!-- Typed.js Library -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    
-    <script src="script.js" defer></script>
     <!-- AOS Library JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- lightGallery JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha512-jEJ0OA9fwz5wUn6rVfGHAXonEgTuoSMtuTqqYvQAALJErTQz5UJSagFyxXjtAZ+Mwn7QcB7WUDGksYBLFJodEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/thumbnail/lg-thumbnail.min.js" integrity="sha512-GRxDpj/bx6/I4y6h2LE5rbGaqRcbTu4dYhaTewlS8Nh9hm/akYprvOTZD7GR+FRCALMYadjusted8gpVJdTPX6oiUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha512-SUU2qXVLtyGC5t0rLuqnDiIFHWgeVR6WF8XrKyGKluqPvz3VGkNa9QPbF7JUUSdWzu/1Ua/VqfMhcUOkx4kxLw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Remove LightGallery JS -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha512-jEJ0GNI4eHMIOqqntGD7Jz7rHvmDrF/2NKzJeDGiP4prtsBzuEY5jGkAoH9VXY1S/2C7hL4jYMPKncx/6oJ5Xw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/thumbnail/lg-thumbnail.min.js" integrity="sha512-dgMoI7f/w39xY+ZMltU2dLzGl9bqOXcvlt7qUSvfAB0Fj7J/01LMWA0PXM5L/iMJDxOo78A4TUd/9Qx+T+15aA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha512-BLW2J7vtSDcb1VrvVwfzmQED9wZO5jGq9uLKYtFCE7T02EK0G3ZtEw/7T8/sA6MstK7Dxy5t+S2C/U4Wqf6xOA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+
+    <!-- === Application JS === -->
+    <script src="js/theme.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/components.js"></script>
+    <!-- Rename portfolio.js reference -->
+    <script src="js/showcase.js"></script>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Schema.org JSON-LD -->
+    <!-- *** Update content with your specific details below *** -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "John Kvezereli Portfolio",
+      "url": "", /* *** Add your deployed website URL *** */
+      "author": {
+        "@type": "Person",
+        "name": "John Kvezereli",
+        "jobTitle": "Graphic Designer & AI Musketeer",
+        "url": "", /* *** Add your deployed website URL *** */
+         "sameAs": [
+          "", /* *** Add your LinkedIn URL *** */
+          "" /* *** Add your Behance URL *** */
+          /* Add other relevant profile URLs */
+        ]
+      },
+      "description": "Portfolio website for John Kvezereli, showcasing graphic design, UI/UX, motion, and AI-assisted work."
+    }
+    </script>
 </body>
 </html> 

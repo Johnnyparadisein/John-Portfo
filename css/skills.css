@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Skills Section Styles
+   ========================================================================== */
+
+#skills {
+    position: relative; 
+    overflow: hidden; 
+}
+#skills::before { /* Add decorative element */
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -150px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(var(--md-sys-color-tertiary-dark-rgb, 206, 191, 223), 0.05) 0%, rgba(var(--md-sys-color-tertiary-dark-rgb, 206, 191, 223), 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: -1;
+    /* Generate tertiary RGB if not defined */
+}
+[data-theme="light"] #skills::before {
+    background: radial-gradient(circle, rgba(var(--md-sys-color-tertiary-light-rgb, 99, 90, 118), 0.05) 0%, rgba(var(--md-sys-color-tertiary-light-rgb, 99, 90, 118), 0) 70%);
+    opacity: 0.4;
+}
+
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: var(--space-lg);
+}
+.skill-category {
+    background-color: var(--md-sys-color-surface-container-low-dark); 
+    padding: var(--space-xl);
+    border-radius: 16px; 
+    border: 1px solid var(--md-sys-color-outline-variant-dark);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--md-sys-elevation-1-dark);
+}
+[data-theme="light"] .skill-category {
+    background-color: var(--md-sys-color-surface-container-low-light);
+    border: 1px solid var(--md-sys-color-outline-variant-light);
+    box-shadow: var(--md-sys-elevation-1-light);
+}
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--md-sys-elevation-3-dark);
+}
+[data-theme="light"] .skill-category:hover {
+    box-shadow: var(--md-sys-elevation-3-light);
+}
+
+.skill-category h3 {
+    /* Uses base h3 style (Title Medium) */
+    margin-bottom: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--md-sys-color-on-surface-dark);
+}
+[data-theme="light"] .skill-category h3 {
+     color: var(--md-sys-color-on-surface-light);
+}
+.skill-category h3 i {
+    color: var(--md-sys-color-primary-dark);
+    font-size: 1.4rem; /* Adjust icon size if needed */
+}
+[data-theme="light"] .skill-category h3 i {
+    color: var(--md-sys-color-primary-light);
+}
+
+.skill-category ul {
+    list-style: none; /* Remove default list style */
+    margin-top: var(--space-md); 
+    padding-left: 0; /* Remove padding */
+}
+.skill-category li {
+    margin-bottom: var(--space-sm);
+    font-size: var(--md-typescale-body-medium-size);
+    line-height: var(--md-typescale-body-medium-line-height);
+    letter-spacing: var(--md-typescale-body-medium-letter-spacing);
+    color: var(--md-sys-color-on-surface-variant-dark);
+    position: relative;
+    padding-left: var(--space-lg); /* Space for custom icon/bullet */
+}
+[data-theme="light"] .skill-category li {
+    color: var(--md-sys-color-on-surface-variant-light);
+}
+
+/* Custom bullet/icon for skill list items - REMOVED */
+/* 
+.skill-category li::before {
+    content: "\ea64"; 
+    font-family: "Phosphor Icons";
+    position: absolute;
+    left: 0;
+    top: 1px; 
+    color: var(--md-sys-color-primary-dark);
+    font-size: 1.1em;
+    font-weight: normal; 
+}
+[data-theme="light"] .skill-category li::before {
+    color: var(--md-sys-color-primary-light);
+}
+*/
+
+/* --- Media Queries for Skills --- */
+@media (min-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+     #skills::before {
+        top: -150px;
+        right: -200px;
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media (min-width: 992px) {
+    /* Adjustments if needed */
+} 

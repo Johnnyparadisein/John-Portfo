@@ -1,0 +1,318 @@
+/* ==========================================================================
+   Header Styles
+   ========================================================================== */
+
+header {
+    padding: calc(var(--space-sm) / 2) 0; /* Reduced vertical padding */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(var(--md-sys-color-surface-dark-rgb, 26, 26, 26), 0.85); /* Use M3 Surface with opacity */
+    backdrop-filter: blur(10px); /* Glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--md-sys-color-outline-variant-dark); /* Use M3 */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; 
+    box-shadow: none;
+}
+[data-theme="light"] header {
+    background-color: rgba(var(--md-sys-color-surface-light-rgb, 240, 240, 240), 0.85); 
+     border-bottom: 1px solid var(--md-sys-color-outline-variant-light); 
+}
+header.scrolled {
+     background-color: rgba(var(--md-sys-color-surface-dark-rgb, 26, 26, 26), 0.95); /* More opaque */
+    box-shadow: var(--md-sys-elevation-2-dark); /* Use M3 elevation */
+}
+[data-theme="light"] header.scrolled {
+     background-color: rgba(var(--md-sys-color-surface-light-rgb, 240, 240, 240), 0.95); 
+    box-shadow: var(--md-sys-elevation-2-light); 
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: var(--header-height); /* Ensure header has minimum height */
+}
+header h1 { /* Site Title / Logo */
+    font-size: var(--md-typescale-title-large-size);
+    line-height: var(--md-typescale-title-large-line-height);
+    font-weight: var(--md-typescale-title-large-weight);
+    color: var(--md-sys-color-on-surface-dark); 
+}
+[data-theme="light"] header h1 {
+     color: var(--md-sys-color-on-surface-light); 
+}
+
+/* Desktop nav hidden by default */
+nav[aria-label="Main Navigation"] {
+    display: none;
+}
+nav[aria-label="Main Navigation"] ul {
+    display: flex;
+    align-items: center; /* Vertically center nav items */
+    gap: var(--space-sm); /* Smaller gap for desktop */
+}
+nav[aria-label="Main Navigation"] li {
+    display: inline;
+}
+nav[aria-label="Main Navigation"] a {
+    /* Use M3 Label Large for nav links */
+    font-size: var(--md-typescale-label-large-size);
+    font-weight: var(--md-typescale-label-large-weight);
+    line-height: var(--md-typescale-label-large-line-height);
+    letter-spacing: var(--md-typescale-label-large-letter-spacing);
+    color: var(--md-sys-color-on-surface-variant-dark); /* Softer color */
+    padding: 5px 16px; /* Reduced vertical padding */
+    border-radius: 100px; /* Pill shape */
+    position: relative;
+    overflow: hidden;
+    transition: color 0.15s ease;
+}
+[data-theme="light"] nav[aria-label="Main Navigation"] a {
+    color: var(--md-sys-color-on-surface-variant-light);
+}
+
+/* State layer for desktop nav links */
+nav[aria-label="Main Navigation"] a::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--md-sys-color-primary-dark);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    border-radius: inherit;
+}
+[data-theme="light"] nav[aria-label="Main Navigation"] a::before {
+    background-color: var(--md-sys-color-primary-light);
+}
+nav[aria-label="Main Navigation"] a:hover {
+    color: var(--md-sys-color-primary-dark); /* Change text color on hover */
+    opacity: 1; /* Override base link opacity hover */
+}
+[data-theme="light"] nav[aria-label="Main Navigation"] a:hover {
+    color: var(--md-sys-color-primary-light);
+}
+nav[aria-label="Main Navigation"] a:hover::before {
+    opacity: 0.08; /* M3 Hover state */
+}
+nav[aria-label="Main Navigation"] a:focus-visible {
+    outline: none;
+    color: var(--md-sys-color-primary-dark);
+}
+[data-theme="light"] nav[aria-label="Main Navigation"] a:focus-visible {
+    color: var(--md-sys-color-primary-light);
+}
+nav[aria-label="Main Navigation"] a:focus-visible::before {
+    opacity: 0.12; /* M3 Focus state */
+}
+nav[aria-label="Main Navigation"] a:active::before {
+    opacity: 0.12; /* M3 Pressed state */
+}
+
+/* Active Desktop Nav Link */
+nav[aria-label="Main Navigation"] a.active {
+    color: var(--md-sys-color-primary-dark);
+    font-weight: var(--md-typescale-label-large-weight); /* Ensure weight stays */
+    /* Optional: Add a subtle background or underline if needed */
+}
+[data-theme="light"] nav[aria-label="Main Navigation"] a.active {
+    color: var(--md-sys-color-primary-light);
+}
+nav[aria-label="Main Navigation"] a.active::before {
+    opacity: 0; /* No state layer on active link */
+}
+
+
+/* Mobile Menu Button (Hamburger) - M3 Icon Button Style */
+.mobile-menu {
+    display: block; /* Visible by default on mobile */
+    background-color: transparent; 
+    border: none;
+    color: var(--md-sys-color-on-surface-dark); 
+    font-size: 1.8rem; 
+    cursor: pointer;
+    padding: 8px; 
+    z-index: 1001;
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%; 
+    position: relative;
+    overflow: hidden;
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+}
+[data-theme="light"] .mobile-menu {
+     color: var(--md-sys-color-on-surface-light);
+}
+
+.mobile-menu::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: currentColor; 
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    border-radius: inherit;
+}
+.mobile-menu:hover::before {
+    opacity: 0.08; /* M3 Hover */
+}
+.mobile-menu:focus-visible {
+    outline: none;
+}
+.mobile-menu:focus-visible::before {
+     opacity: 0.12; /* M3 Focus */
+}
+.mobile-menu:active::before {
+     opacity: 0.12; /* M3 Pressed */
+}
+
+
+/* Mobile Navigation Drawer - M3 Modal Drawer Style */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -100%; 
+    width: 85%; 
+    max-width: 320px;
+    height: 100vh;
+    background-color: var(--md-sys-color-surface-container-high-dark); 
+    z-index: 1002; 
+    padding: var(--space-lg);
+    padding-top: calc(var(--header-height) + var(--space-md)); 
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* M3 Standard Easing */
+    box-shadow: var(--md-sys-elevation-1-dark); 
+    overflow-y: auto;
+    visibility: hidden; 
+}
+[data-theme="light"] .mobile-nav {
+    background-color: var(--md-sys-color-surface-container-high-light);
+    box-shadow: var(--md-sys-elevation-1-light);
+}
+
+.mobile-nav.active {
+    left: 0;
+    visibility: visible;
+}
+.mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs); 
+}
+.mobile-nav a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md); 
+    font-size: var(--md-typescale-label-large-size);
+    font-weight: var(--md-typescale-label-large-weight);
+    line-height: var(--md-typescale-label-large-line-height);
+    letter-spacing: var(--md-typescale-label-large-letter-spacing);
+    padding: 12px var(--space-md); 
+    height: 56px; 
+    color: var(--md-sys-color-on-surface-variant-dark); 
+    border-radius: 100px; 
+    transition: background-color 0.15s ease, color 0.15s ease;
+    position: relative;
+    overflow: hidden; 
+}
+[data-theme="light"] .mobile-nav a {
+    color: var(--md-sys-color-on-surface-variant-light);
+}
+
+.mobile-nav a::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--md-sys-color-on-surface-dark);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    border-radius: inherit;
+}
+[data-theme="light"] .mobile-nav a::before {
+    background-color: var(--md-sys-color-on-surface-light);
+}
+.mobile-nav a:hover::before {
+    opacity: 0.08;
+}
+.mobile-nav a:focus-visible {
+    outline: none;
+}
+.mobile-nav a:focus-visible::before {
+    opacity: 0.12;
+}
+.mobile-nav a:active::before {
+    opacity: 0.12; 
+}
+
+.mobile-nav a.active {
+    background-color: var(--md-sys-color-secondary-container-dark);
+    color: var(--md-sys-color-on-secondary-container-dark);
+    font-weight: var(--md-typescale-label-large-weight); 
+}
+[data-theme="light"] .mobile-nav a.active {
+    background-color: var(--md-sys-color-secondary-container-light);
+    color: var(--md-sys-color-on-secondary-container-light);
+}
+.mobile-nav a.active::before {
+    opacity: 0;
+}
+
+.mobile-nav a i { 
+    display: inline-block; 
+    font-size: 1.5rem; 
+    width: 24px; 
+    text-align: center;
+    margin-right: var(--space-md); 
+} 
+
+/* Scrim for Mobile Drawer */
+.scrim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--md-sys-color-scrim, rgba(0, 0, 0, 0.4)); 
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+    z-index: 1001; /* Below drawer, above content */
+}
+.scrim.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+/* --- Media Queries for Header --- */
+@media (min-width: 768px) {
+    header {
+        padding: var(--space-md) 0;
+    }
+    header h1 {
+        font-size: 1.6rem; /* Keep consistent or adjust */
+    }
+    nav[aria-label="Main Navigation"] {
+        display: flex;
+    }
+    .mobile-menu {
+        display: none;
+    }
+    .mobile-nav {
+        display: none;
+    }
+    .scrim {
+        display: none; /* Scrim not needed on desktop */
+    }
+}
+
+@media (min-width: 992px) {
+    nav[aria-label="Main Navigation"] ul {
+        gap: var(--space-lg); /* Increase gap slightly */
+    }
+} 

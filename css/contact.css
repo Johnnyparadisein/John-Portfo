@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Contact Section Styles
+   ========================================================================== */
+
+#contact {
+    position: relative; 
+    overflow: hidden; 
+}
+#contact::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(var(--md-sys-color-primary-dark-rgb), 0.07) 0%, rgba(var(--md-sys-color-primary-dark-rgb), 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.3;
+    z-index: -1;
+}
+[data-theme="light"] #contact::after {
+    background: radial-gradient(circle, rgba(var(--md-sys-color-primary-light-rgb), 0.07) 0%, rgba(var(--md-sys-color-primary-light-rgb), 0) 70%);
+     opacity: 0.25;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: var(--space-lg);
+    margin-top: var(--space-xl); /* Add space below subtitle */
+}
+.contact-method {
+    background-color: var(--md-sys-color-surface-container-dark);
+    padding: var(--space-xl);
+    border-radius: 16px; 
+    text-align: center;
+    border: none; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--md-sys-elevation-1-dark);
+}
+[data-theme="light"] .contact-method {
+    background-color: var(--md-sys-color-surface-container-light);
+    box-shadow: var(--md-sys-elevation-1-light);
+}
+.contact-method:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--md-sys-elevation-3-dark);
+}
+[data-theme="light"] .contact-method:hover {
+    box-shadow: var(--md-sys-elevation-3-light);
+}
+.contact-method i {
+    font-size: 2.2rem;
+    color: var(--md-sys-color-primary-dark);
+    margin-bottom: var(--space-md);
+}
+[data-theme="light"] .contact-method i {
+    color: var(--md-sys-color-primary-light);
+}
+.contact-method h3 {
+    /* Uses base h3 style (Title Medium) */
+    color: var(--md-sys-color-on-surface-dark);
+    margin-bottom: var(--space-sm); /* Less space below heading */
+}
+[data-theme="light"] .contact-method h3 {
+    color: var(--md-sys-color-on-surface-light);
+}
+.contact-method a {
+    word-break: break-word;
+    font-size: var(--md-typescale-body-medium-size); /* Use Body Medium */
+    color: var(--md-sys-color-primary-dark);
+    text-decoration: underline;
+    text-decoration-color: rgba(var(--md-sys-color-primary-dark-rgb), 0.5); /* Subtle underline */
+    transition: color 0.2s ease, text-decoration-color 0.2s ease, opacity 0.2s ease;
+}
+[data-theme="light"] .contact-method a {
+    color: var(--md-sys-color-primary-light);
+     text-decoration-color: rgba(var(--md-sys-color-primary-light-rgb), 0.5); 
+}
+.contact-method a:hover {
+    color: var(--md-sys-color-primary-dark);
+    text-decoration-color: var(--md-sys-color-primary-dark);
+    opacity: 1; /* Ensure full opacity on hover */
+}
+[data-theme="light"] .contact-method a:hover {
+    color: var(--md-sys-color-primary-light);
+    text-decoration-color: var(--md-sys-color-primary-light);
+}
+
+/* --- Media Queries for Contact --- */
+@media (min-width: 768px) {
+    .contact-methods {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+     #contact::after {
+        bottom: -200px;
+        right: -200px;
+        width: 550px;
+        height: 550px;
+    }
+}
+
+@media (min-width: 992px) {
+     /* Adjustments if needed */
+} 

@@ -1,0 +1,349 @@
+/* ==========================================================================
+   Base Styles (Mobile First)
+   ========================================================================== */
+
+/* Variables */
+:root {
+    /* Dark Theme (Default) - Black/White/Gray + Blue Accent */
+    /* --bg-primary: #000000;       /* Black */
+    /* --bg-secondary: #1a1a1a;     /* Dark Gray */
+    /* --bg-secondary-rgb: 26, 26, 26; /* Add RGB for transparency */
+    /* --text-primary: #ffffff;     /* White */
+    /* --text-secondary: #b3b3b3;   /* Light Gray */
+    /* --accent: #0077FF;          /* Vibrant Blue */
+    /* --accent-muted: rgba(0, 119, 255, 0.1); */
+    /* --border: #282828;           /* Slightly lighter dark border */
+    
+    /* === M3 Color System (Dark) === */
+    --md-sys-color-primary-dark: #5EE5E8;
+    --md-sys-color-on-primary-dark: #003738;
+    --md-sys-color-primary-container-dark: #004F51;
+    --md-sys-color-on-primary-container-dark: #7DF5F8;
+    --md-sys-color-secondary-dark: #b5c9d7; /* M3 Neutral Blue-Gray */
+    --md-sys-color-on-secondary-dark: #21333e;
+    --md-sys-color-secondary-container-dark: #374955;
+    --md-sys-color-on-secondary-container-dark: #d1e5f3;
+    --md-sys-color-tertiary-dark: #cebfdf; /* M3 Purple */
+    --md-sys-color-on-tertiary-dark: #362d47;
+    --md-sys-color-tertiary-container-dark: #4d435e;
+    --md-sys-color-on-tertiary-container-dark: #eadcfa;
+    --md-sys-color-error-dark: #ffb4ab;
+    --md-sys-color-on-error-dark: #690005;
+    --md-sys-color-error-container-dark: #93000a;
+    --md-sys-color-on-error-container-dark: #ffdad6;
+    --md-sys-color-background-dark: #000000; /* Your Black */
+    --md-sys-color-on-background-dark: #e2e2e6; /* M3 Near White */
+    --md-sys-color-surface-dark: #1a1a1a; /* Your Dark Gray */
+    --md-sys-color-on-surface-dark: #e2e2e6; /* M3 Near White */
+    --md-sys-color-surface-variant-dark: #40484d; /* M3 Darker Neutral */
+    --md-sys-color-on-surface-variant-dark: #c0c8cd; /* M3 Lighter Neutral */
+    --md-sys-color-outline-dark: #8a9297; /* M3 Neutral Border */
+    --md-sys-color-outline-variant-dark: #40484d;
+    --md-sys-color-shadow-dark: #000000;
+    --md-sys-color-surface-inverse-dark: #e2e2e6;
+    --md-sys-color-on-surface-inverse-dark: #2e3133;
+    --md-sys-color-primary-inverse-dark: #00658e;
+
+    /* Custom Surface Container Colors (Derived from M3) */
+    --md-sys-color-surface-container-lowest-dark: #0F0F0F; /* Darker than surface */
+    --md-sys-color-surface-container-low-dark: #151515; /* Slightly darker than surface */
+    --md-sys-color-surface-container-dark: #1a1a1a; /* Same as surface */
+    --md-sys-color-surface-container-high-dark: #212121; /* Slightly lighter than surface */
+    --md-sys-color-surface-container-highest-dark: #2a2a2a; /* Lighter than surface */
+    --md-sys-color-on-surface-container-dark: #e2e2e6; /* Same as on-surface */
+
+    /* RGB values for rgba() */
+    --md-sys-color-surface-dark-rgb: 26, 26, 26;
+    --md-sys-color-primary-dark-rgb: 94, 229, 232;
+
+
+    /* Mapping current vars to M3 roles */
+    --bg-primary: var(--md-sys-color-background-dark);
+    --bg-secondary: var(--md-sys-color-surface-dark);
+    --bg-secondary-rgb: 26, 26, 26; /* Keep for existing rgba use? Re-eval later. */
+    --text-primary: var(--md-sys-color-on-background-dark);
+    --text-secondary: var(--md-sys-color-on-surface-variant-dark);
+    --accent: var(--md-sys-color-primary-dark);
+    --accent-muted: rgba(var(--md-sys-color-primary-dark-rgb, 94, 229, 232), 0.1); /* Use new RGB */
+    --border: var(--md-sys-color-outline-variant-dark);
+
+    --container-width: 1200px;
+    /* M3 Elevation Shadows (Dark - adapt as needed) */
+    --md-sys-elevation-1-dark: 0px 1px 3px 1px rgba(0,0,0,0.15), 0px 1px 2px 0px rgba(0,0,0,0.3);
+    --md-sys-elevation-2-dark: 0px 2px 6px 2px rgba(0,0,0,0.15), 0px 1px 2px 0px rgba(0,0,0,0.3);
+    --md-sys-elevation-3-dark: 0px 1px 3px 0px rgba(0,0,0,0.3), 0px 4px 8px 3px rgba(0,0,0,0.15);
+    --md-sys-elevation-4-dark: 0px 2px 3px 0px rgba(0,0,0,0.3), 0px 6px 10px 4px rgba(0,0,0,0.15);
+    --md-sys-elevation-5-dark: 0px 4px 4px 0px rgba(0,0,0,0.3), 0px 8px 12px 6px rgba(0,0,0,0.15);
+    --shadow: var(--md-sys-elevation-2-dark); /* Map existing shadow */
+
+    --transition: all 0.3s ease;
+
+    /* Typography */
+    --font-heading: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'Space Grotesk', monospace;
+    /* M3 Type Scale Definitions (Adjust weights/line heights as needed) */
+    --md-typescale-display-large-font: var(--font-heading);
+    --md-typescale-display-large-line-height: 4rem; /* 64px */
+    --md-typescale-display-large-size: 3.5625rem; /* 57px */
+    --md-typescale-display-large-weight: 700;
+
+    --md-typescale-headline-large-font: var(--font-heading);
+    --md-typescale-headline-large-line-height: 2.5rem; /* 40px */
+    --md-typescale-headline-large-size: 2rem; /* 32px */
+    --md-typescale-headline-large-weight: 600;
+
+    --md-typescale-headline-small-font: var(--font-heading); /* Add missing small headline */
+    --md-typescale-headline-small-line-height: 2rem; /* 32px */
+    --md-typescale-headline-small-size: 1.5rem; /* 24px */
+    --md-typescale-headline-small-weight: 500;
+
+    --md-typescale-title-large-font: var(--font-heading);
+    --md-typescale-title-large-line-height: 1.75rem; /* 28px */
+    --md-typescale-title-large-size: 1.375rem; /* 22px */
+    --md-typescale-title-large-weight: 500;
+
+    --md-typescale-title-medium-font: var(--font-heading);
+    --md-typescale-title-medium-line-height: 1.5rem; /* 24px */
+    --md-typescale-title-medium-size: 1rem; /* 16px */
+    --md-typescale-title-medium-weight: 500;
+    --md-typescale-title-medium-letter-spacing: 0.15px;
+
+    --md-typescale-body-large-font: var(--font-body);
+    --md-typescale-body-large-line-height: 1.5rem; /* 24px */
+    --md-typescale-body-large-size: 1rem; /* 16px */
+    --md-typescale-body-large-weight: 400;
+
+    --md-typescale-body-medium-font: var(--font-body);
+    --md-typescale-body-medium-line-height: 1.25rem; /* 20px */
+    --md-typescale-body-medium-size: 0.875rem; /* 14px */
+    --md-typescale-body-medium-weight: 400;
+    --md-typescale-body-medium-letter-spacing: 0.25px;
+
+    --md-typescale-label-large-font: var(--font-body);
+    --md-typescale-label-large-line-height: 1.25rem; /* 20px */
+    --md-typescale-label-large-size: 0.875rem; /* 14px */
+    --md-typescale-label-large-weight: 500;
+    --md-typescale-label-large-letter-spacing: 0.1px;
+
+    --md-typescale-label-medium-font: var(--font-body);
+    --md-typescale-label-medium-line-height: 1rem; /* 16px */
+    --md-typescale-label-medium-size: 0.75rem; /* 12px */
+    --md-typescale-label-medium-weight: 500;
+    --md-typescale-label-medium-letter-spacing: 0.5px;
+
+    /* Header Height (Approximate initial) */
+    --header-height: 65px; 
+
+    /* Spacing (Aligned to 4/8 grid) */
+    --space-xs: 0.25rem;  /* 4px */
+    --space-sm: 0.5rem;   /* 8px */
+    --space-md: 1rem;     /* 16px */
+    --space-lg: 1.5rem;   /* 24px */
+    --space-xl: 2rem;     /* 32px */
+    --space-xxl: 3rem;    /* 48px */
+    --space-section: 4rem; /* 64px - Mobile section padding */
+
+     /* Scrim Color */
+     --md-sys-color-scrim: rgba(0, 0, 0, 0.4);
+}
+
+/* Light Theme - White/Gray + Blue Accent */
+[data-theme="light"] {
+    /* === M3 Color System (Light) === */
+    --md-sys-color-primary-light: #006A6C;
+    --md-sys-color-on-primary-light: #ffffff;
+    --md-sys-color-primary-container-light: #7DF5F8;
+    --md-sys-color-on-primary-container-light: #002021;
+    --md-sys-color-secondary-light: #4f616d; /* M3 Neutral Blue-Gray */
+    --md-sys-color-on-secondary-light: #ffffff;
+    --md-sys-color-secondary-container-light: #d1e5f3;
+    --md-sys-color-on-secondary-container-light: #0a1e28;
+    --md-sys-color-tertiary-light: #635a76; /* M3 Purple */
+    --md-sys-color-on-tertiary-light: #ffffff;
+    --md-sys-color-tertiary-container-light: #eadcfa;
+    --md-sys-color-on-tertiary-container-light: #1f1730;
+    --md-sys-color-error-light: #ba1a1a;
+    --md-sys-color-on-error-light: #ffffff;
+    --md-sys-color-error-container-light: #ffdad6;
+    --md-sys-color-on-error-container-light: #410002;
+    --md-sys-color-background-light: #fcfcff; /* M3 Near White */
+    --md-sys-color-on-background-light: #191c1e; /* M3 Near Black */
+    --md-sys-color-surface-light: #f0f0f0; /* Your Light Gray */
+    --md-sys-color-on-surface-light: #191c1e; /* M3 Near Black */
+    --md-sys-color-surface-variant-light: #dde3e9; /* M3 Lighter Neutral */
+    --md-sys-color-on-surface-variant-light: #40484d; /* M3 Darker Neutral */
+    --md-sys-color-outline-light: #70787d; /* M3 Neutral Border */
+    --md-sys-color-outline-variant-light: #c0c8cd;
+    --md-sys-color-shadow-light: #000000;
+    --md-sys-color-surface-inverse-light: #2e3133;
+    --md-sys-color-on-surface-inverse-light: #f0f0f4;
+    --md-sys-color-primary-inverse-light: #74ceff;
+
+    /* Custom Surface Container Colors (Derived from M3) */
+    --md-sys-color-surface-container-lowest-light: #ffffff; /* White */
+    --md-sys-color-surface-container-low-light: #f7f7fa; /* Slightly off-white */
+    --md-sys-color-surface-container-light: #f0f0f0; /* Same as surface */
+    --md-sys-color-surface-container-high-light: #e8e8eb; /* Slightly darker */
+    --md-sys-color-surface-container-highest-light: #e1e1e4; /* Darker */
+    --md-sys-color-on-surface-container-light: #191c1e; /* Same as on-surface */
+
+    /* RGB values for rgba() */
+    --md-sys-color-surface-light-rgb: 240, 240, 240;
+    --md-sys-color-primary-light-rgb: 0, 106, 108;
+
+    /* Mapping */
+    --bg-primary: var(--md-sys-color-background-light);
+    --bg-secondary: var(--md-sys-color-surface-light);
+    --bg-secondary-rgb: 240, 240, 240; 
+    --text-primary: var(--md-sys-color-on-background-light);
+    --text-secondary: var(--md-sys-color-on-surface-variant-light);
+    --accent: var(--md-sys-color-primary-light);
+    --accent-muted: rgba(var(--md-sys-color-primary-light-rgb, 0, 106, 108), 0.1); /* Use new RGB */
+    --border: var(--md-sys-color-outline-variant-light);
+
+     /* M3 Elevation Shadows (Light - adapt as needed) */
+    --md-sys-elevation-1-light: 0px 1px 3px 1px rgba(0,0,0,0.15), 0px 1px 2px 0px rgba(0,0,0,0.3);
+    --md-sys-elevation-2-light: 0px 2px 6px 2px rgba(0,0,0,0.15), 0px 1px 2px 0px rgba(0,0,0,0.3);
+    --md-sys-elevation-3-light: 0px 1px 3px 0px rgba(0,0,0,0.3), 0px 4px 8px 3px rgba(0,0,0,0.15);
+    --md-sys-elevation-4-light: 0px 2px 3px 0px rgba(0,0,0,0.3), 0px 6px 10px 4px rgba(0,0,0,0.15);
+    --md-sys-elevation-5-light: 0px 4px 4px 0px rgba(0,0,0,0.3), 0px 8px 12px 6px rgba(0,0,0,0.15);
+    --shadow: var(--md-sys-elevation-2-light); 
+
+    /* Scrim Color */
+    --md-sys-color-scrim: rgba(0, 0, 0, 0.4); /* Keep same for light */
+}
+
+/* Reset and Base */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--md-typescale-body-large-font); 
+    background-color: var(--md-sys-color-background-dark); 
+    /* ADD subtle noise texture */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 3px 3px;
+    color: var(--md-sys-color-on-background-dark); 
+    line-height: var(--md-typescale-body-large-line-height); 
+    font-size: var(--md-typescale-body-large-size); 
+    font-weight: var(--md-typescale-body-large-weight); 
+    overflow-x: hidden;
+    /* Dynamic padding set by JS */
+    transition: padding-top 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+[data-theme="light"] body {
+    background-color: var(--md-sys-color-background-light); 
+    /* ADD subtle noise texture (adjust color for light theme) */
+    background-image: radial-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 1px);
+    background-size: 3px 3px;
+    color: var(--md-sys-color-on-background-light); 
+}
+
+a {
+    color: var(--md-sys-color-primary-dark); 
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+[data-theme="light"] a {
+    color: var(--md-sys-color-primary-light); 
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Lazy Load Image Transition */
+img[data-src] {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+img.loaded {
+    opacity: 1;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 { 
+    font-family: var(--font-heading); 
+    line-height: 1.2;
+    font-weight: normal; /* Reset default weights */
+    color: var(--md-sys-color-on-surface-dark); /* Default */
+}
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6 {
+     color: var(--md-sys-color-on-surface-light);
+}
+
+/* Apply M3 Type Scale to specific headings */
+/* h1 is often logo/site title, styled in header.css */
+/* h2 used for .section-title, styled in layout.css */
+/* h3 used for sub-sections/cards */
+h3 { 
+    font-size: var(--md-typescale-title-medium-size);
+    line-height: var(--md-typescale-title-medium-line-height);
+    font-weight: var(--md-typescale-title-medium-weight);
+    letter-spacing: var(--md-typescale-title-medium-letter-spacing);
+}
+
+p {
+    line-height: var(--md-typescale-body-large-line-height);
+    font-size: var(--md-typescale-body-large-size);
+    font-weight: var(--md-typescale-body-large-weight);
+    color: var(--md-sys-color-on-surface-variant-dark); /* Use softer color for body */
+}
+[data-theme="light"] p {
+    color: var(--md-sys-color-on-surface-variant-light);
+}
+
+/* Accessibility Focus Outline */
+*:focus-visible {
+    outline: 3px solid var(--md-sys-color-primary-dark); 
+    outline-offset: 2px;
+    border-radius: 2px; 
+}
+[data-theme="light"] *:focus-visible {
+    outline-color: var(--md-sys-color-primary-light); 
+}
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Media Query for Tablet Base adjustments */
+@media (min-width: 768px) {
+    :root {
+        --space-section: 100px; 
+         --header-height: 70px; 
+    }
+    body {
+        /* Slightly larger base font on tablet */
+        font-size: 17px; 
+    }
+}
+
+/* Media Query for Desktop Base adjustments */
+@media (min-width: 992px) {
+     /* No specific base changes here, handled in layout/components */
+} 

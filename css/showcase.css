@@ -1,0 +1,206 @@
+/* ==========================================================================
+   Showcase Section Styles (Formerly Portfolio)
+   ========================================================================== */
+
+/* Rename #portfolio to #showcase */
+#showcase {
+    /* Existing styles are fine */
+}
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm); /* 8px gap */
+    margin-bottom: var(--space-xl);
+}
+
+/* Filter Chips (M3 Inspired) */
+.portfolio-filter {
+    background-color: var(--md-sys-color-surface-variant-dark);
+    color: var(--md-sys-color-on-surface-variant-dark);
+    border: 1px solid var(--md-sys-color-outline-dark);
+    padding: 6px 16px; /* M3 chip padding */
+    border-radius: 8px; /* M3 chip radius */
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+    font-size: var(--md-typescale-label-large-size);
+    font-weight: var(--md-typescale-label-large-weight);
+    line-height: var(--md-typescale-label-large-line-height);
+    letter-spacing: var(--md-typescale-label-large-letter-spacing);
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+    overflow: hidden; 
+}
+[data-theme="light"] .portfolio-filter {
+    background-color: var(--md-sys-color-surface-variant-light);
+    color: var(--md-sys-color-on-surface-variant-light);
+     border: 1px solid var(--md-sys-color-outline-light);
+}
+
+.portfolio-filter::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--md-sys-color-on-surface-variant-dark);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    border-radius: inherit; /* Match chip radius */
+}
+[data-theme="light"] .portfolio-filter::before {
+    background-color: var(--md-sys-color-on-surface-variant-light);
+}
+
+.portfolio-filter:hover::before {
+    opacity: 0.08; /* M3 Hover state */
+}
+.portfolio-filter:focus-visible {
+    outline: none;
+    border-color: var(--md-sys-color-outline-dark); 
+}
+[data-theme="light"] .portfolio-filter:focus-visible {
+     border-color: var(--md-sys-color-outline-light);
+}
+.portfolio-filter:focus-visible::before {
+     opacity: 0.12; /* M3 Focus state */
+}
+.portfolio-filter:active::before {
+     opacity: 0.12; /* M3 Pressed state */
+}
+
+/* Active Filter Chip */
+.portfolio-filter.active {
+    background-color: var(--md-sys-color-secondary-container-dark); 
+    color: var(--md-sys-color-on-secondary-container-dark);
+    border-color: transparent; 
+    box-shadow: none; 
+}
+[data-theme="light"] .portfolio-filter.active {
+     background-color: var(--md-sys-color-secondary-container-light);
+     color: var(--md-sys-color-on-secondary-container-light);
+     border-color: transparent;
+}
+.portfolio-filter.active:hover::before {
+    opacity: 0;
+}
+
+/* Rename .portfolio-grid to .showcase-grid (optional, depends on JS targeting) */
+/* For now, keep as portfolio-grid as JS likely targets .portfolio-item within it */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: var(--space-lg);
+}
+.portfolio-item {
+    background-color: var(--md-sys-color-surface-variant-dark);
+    border-radius: 12px; /* M3 Medium radius */
+    overflow: hidden;
+    box-shadow: var(--md-sys-elevation-1-dark);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; 
+    opacity: 1; /* Start visible if not using JS fade-in on load */
+    transform: scale(1); 
+    cursor: pointer; /* Add cursor pointer for clickable items */
+}
+[data-theme="light"] .portfolio-item {
+    background-color: var(--md-sys-color-surface-variant-light);
+    box-shadow: var(--md-sys-elevation-1-light);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--md-sys-elevation-4-dark);
+}
+[data-theme="light"] .portfolio-item:hover {
+    box-shadow: var(--md-sys-elevation-4-light);
+}
+
+.portfolio-item figure {
+    margin: 0; 
+}
+.portfolio-item figure img {
+    display: block;
+    width: 100%;
+    height: 100%; /* Let aspect-ratio control this */
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    aspect-ratio: 1 / 1; /* Default to square, adjust as needed or remove for natural ratio */
+}
+[data-theme="light"] .portfolio-item figure img {
+     border-bottom: 1px solid var(--md-sys-color-outline-variant-light);
+}
+.portfolio-item:hover figure img,
+.portfolio-item:focus-visible figure img {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.portfolio-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-md);
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    color: #fff;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+    pointer-events: none; /* Allow clicks to pass through to the item */
+}
+
+.portfolio-item:hover .portfolio-content,
+.portfolio-item:focus-visible .portfolio-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-category {
+    display: block;
+    font-size: var(--md-typescale-label-medium-size);
+    font-weight: var(--md-typescale-label-medium-weight);
+    line-height: var(--md-typescale-label-medium-line-height);
+    letter-spacing: var(--md-typescale-label-medium-letter-spacing);
+    /* Use a more contrasty color on the overlay */
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+}
+
+.portfolio-item h3 {
+    /* Uses base h3 style (Title Medium) */
+    margin-bottom: 0; 
+    /* Use a more contrasty color on the overlay */
+    color: #ffffff;
+}
+
+/* Style for the 'View Full Portfolio' button container */
+.showcase-view-all {
+    text-align: center;
+    margin-top: var(--space-xl);
+}
+
+/* --- Media Queries for Showcase --- */
+@media (min-width: 768px) {
+    .portfolio-filters {
+        gap: var(--space-md);
+    }
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: var(--space-xl);
+    }
+    /* Remove fixed height, rely on aspect-ratio or natural dimensions */
+    /* .portfolio-item img { height: 250px; } */
+}
+
+@media (min-width: 992px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+} 

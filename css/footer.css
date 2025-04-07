@@ -1,0 +1,172 @@
+/* ==========================================================================
+   Footer Styles
+   ========================================================================== */
+
+footer {
+    background-color: var(--md-sys-color-surface-container-lowest-dark); /* Use darker surface */
+    padding: var(--space-xxl) 0 var(--space-lg);
+    margin-top: var(--space-xxl);
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+    text-align: center; 
+}
+[data-theme="light"] footer {
+    background-color: var(--md-sys-color-surface-container-lowest-light);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xxl);
+}
+.footer-info h3,
+.footer-nav h4,
+.footer-services h4,
+.footer-contact h4 {
+    /* Use Title Medium for footer headings */
+    font-size: var(--md-typescale-title-medium-size);
+    line-height: var(--md-typescale-title-medium-line-height);
+    font-weight: var(--md-typescale-title-medium-weight);
+    letter-spacing: var(--md-typescale-title-medium-letter-spacing);
+    margin-bottom: var(--space-md);
+    color: var(--md-sys-color-on-surface-dark);
+}
+[data-theme="light"] .footer-info h3,
+[data-theme="light"] .footer-nav h4,
+[data-theme="light"] .footer-services h4,
+[data-theme="light"] .footer-contact h4 {
+     color: var(--md-sys-color-on-surface-light);
+}
+.footer-info p {
+    margin-bottom: var(--space-md);
+    font-size: var(--md-typescale-body-medium-size);
+    line-height: var(--md-typescale-body-medium-line-height);
+}
+.social-links {
+    display: flex;
+    justify-content: center; 
+    gap: var(--space-md);
+    margin-top: 10px;
+}
+.social-links a {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    display: inline-flex; /* For hover effect */
+    padding: 4px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+.social-links a::before { /* State layer */
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--md-sys-color-primary-dark);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    border-radius: inherit;
+}
+[data-theme="light"] .social-links a::before {
+    background-color: var(--md-sys-color-primary-light);
+}
+.social-links a:hover {
+    color: var(--md-sys-color-primary-dark);
+    opacity: 1; /* Override base link opacity */
+}
+[data-theme="light"] .social-links a:hover {
+    color: var(--md-sys-color-primary-light);
+}
+.social-links a:hover::before {
+    opacity: 0.08;
+}
+
+.footer-nav ul,
+.footer-services ul {
+    padding: 0;
+}
+.footer-nav li,
+.footer-services li,
+.footer-contact p {
+    margin-bottom: var(--space-sm);
+    font-size: var(--md-typescale-body-medium-size);
+}
+.footer-nav a,
+.footer-contact a {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+.footer-nav a:hover,
+.footer-contact a:hover {
+    color: var(--accent);
+}
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center contact info on mobile */
+    gap: var(--space-sm);
+}
+.footer-contact p i {
+    /* margin-right: var(--space-sm); */
+    color: var(--accent);
+    font-size: 1.1rem; /* Adjust icon size */
+}
+.footer-bottom {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--border);
+    font-size: var(--md-typescale-body-small-size, 0.75rem);
+    line-height: var(--md-typescale-body-small-line-height, 1rem);
+    color: var(--md-sys-color-on-surface-variant-dark);
+}
+[data-theme="light"] .footer-bottom {
+    color: var(--md-sys-color-on-surface-variant-light);
+}
+.footer-bottom ul {
+    display: flex;
+    flex-direction: column; 
+    gap: var(--space-sm);
+    margin-top: 10px;
+}
+.footer-bottom a {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+.footer-bottom a:hover {
+    color: var(--accent);
+}
+
+/* --- Media Queries for Footer --- */
+@media (min-width: 768px) {
+    footer {
+        text-align: left; 
+    }
+    .footer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--space-xl);
+    }
+    .social-links {
+        justify-content: flex-start; 
+    }
+    .footer-contact p {
+        justify-content: flex-start; /* Align left */
+    }
+    .footer-bottom {
+        display: flex; /* Row layout */
+        justify-content: space-between;
+        align-items: center;
+    }
+    .footer-bottom ul {
+        flex-direction: row; 
+        gap: var(--space-lg);
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer-grid {
+         gap: var(--space-xl); 
+    }
+} 

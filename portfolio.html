@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detailed portfolio of John Kvezereli, showcasing graphic design, UI/UX, and AI-assisted creative work.">
+    <title>Portfolio Details | John Kvezereli</title>
+    
+    <!-- Favicon Links -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Font Preloading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Application CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/header.css"> 
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/portfolio-detail.css"> <!-- Specific CSS for this page -->
+</head>
+<body data-theme="dark"> <!-- Assume dark theme default, JS will handle toggle -->
+
+    <!-- Preloader (Optional, could be removed for faster load on detail page) -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-spinner"></div>
+            <div class="preloader-text"><span>LOADING</span></div>
+        </div>
+    </div>
+
+    <!-- Skip to main content -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Re-use Header from index.html (Adjust links if needed) -->
+    <header role="banner">
+        <div class="container">
+            <h1><a href="index.html">John Kvezereli</a></h1> 
+            <nav role="navigation" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#showcase">Showcase</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li> <!-- Active link -->
+                    <li><a href="index.html#methodology">Methodology</a></li>
+                    <li><a href="index.html#experience">Experience</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu" aria-label="Toggle menu" aria-expanded="false">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-nav">
+        <nav role="navigation" aria-label="Mobile Navigation">
+            <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#showcase">Showcase</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="index.html#methodology">Methodology</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Theme Toggle (Keep if desired) -->
+    <button class="theme-toggle" aria-label="Toggle theme">
+        <div class="theme-toggle-icons">
+            <i class="ph ph-sun"></i>
+            <i class="ph ph-moon"></i>
+        </div>
+    </button>
+
+    <main id="main" role="main" class="portfolio-detail-page">
+        <section class="container section">
+            <h2 class="section-title page-title">Portfolio</h2>
+            <p class="section-subtitle">Detailed descriptions of selected projects.</p>
+            
+            <div class="back-link-container">
+                 <a href="index.html" class="btn secondary icon-left"><i class="ph ph-arrow-left"></i> Back to Home</a>
+            </div>
+
+            <div class="portfolio-detail-grid">
+
+                <!-- Project 1 -->
+                <article class="portfolio-detail-item" id="project-kfc-1">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/KFC-16.01.jpg" alt="KFC Branding/Social Media Graphic 1" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>KFC Branding - Project 1</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Branding</span><span class="category-tag">Social</span></div>
+                        <p><strong>Description:</strong> [Provide a detailed description of this KFC project. What was the goal? What was your role? What was the outcome?]</p>
+                        <p><strong>Process & Challenges:</strong> [Describe the creative process, any challenges faced, and how they were overcome. Mention specific techniques or ideas explored.]</p>
+                        <p><strong>Tools Used:</strong> Adobe Photoshop, Adobe Illustrator</p>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="portfolio-detail-item" id="project-kfc-2">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/KFC-14.02-3.jpg" alt="KFC UI/UX/AI Graphic 2" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>KFC Valentine's AI Concept</h3>
+                        <div class="portfolio-categories"><span class="category-tag">UI/UX</span><span class="category-tag">AI</span><span class="category-tag">Concept</span></div>
+                        <p><strong>Description:</strong> [Describe this project - looks like a Valentine's concept possibly using AI. Explain the idea and the visuals.]</p>
+                        <p><strong>Process & Challenges:</strong> [How was AI used here (e.g., Midjourney, Stable Diffusion)? What were the prompts or iterations? Was it integrated with UI/UX mockups?]</p>
+                        <p><strong>Tools Used:</strong> Midjourney, Figma, Adobe Photoshop</p>
+                    </div>
+                </article>
+
+                 <!-- Project 3 -->
+                <article class="portfolio-detail-item" id="project-kfc-3">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/KFC-06.03-2.png" alt="KFC Motion Graphics 3" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>KFC Motion Graphic</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Motion</span><span class="category-tag">Social</span></div>
+                        <p><strong>Description:</strong> [Describe the motion graphic project. What was the message or promotion? What was the style?]</p>
+                        <p><strong>Process & Challenges:</strong> [What software was used for animation? Were there specific animation techniques employed? Any challenges with timing or rendering?]</p>
+                        <p><strong>Tools Used:</strong> Adobe After Effects, Adobe Illustrator</p>
+                    </div>
+                </article>
+
+                 <!-- Project 4 -->
+                 <article class="portfolio-detail-item" id="project-kfc-4">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/KFC 18.03.2024 2.png" alt="KFC Branding/AI Graphic 4" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>KFC Branding AI Exploration</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Branding</span><span class="category-tag">AI</span><span class="category-tag">Concept</span></div>
+                        <p><strong>Description:</strong> [Describe this AI-assisted branding concept for KFC. What aspect of the brand was being explored?]</p>
+                        <p><strong>Process & Challenges:</strong> [Detail the AI generation process. What tools were used? How were the results refined or integrated?]</p>
+                        <p><strong>Tools Used:</strong> AI Image Generator (Specify which), Adobe Photoshop</p>
+                    </div>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="portfolio-detail-item" id="project-kfc-5">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/KFC-18.023453.png" alt="KFC Social Media Graphic 5" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>KFC Social Media Post</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Social</span><span class="category-tag">Branding</span></div>
+                        <p><strong>Description:</strong> [Describe this social media graphic. What was the campaign or message? Target audience?]</p>
+                        <p><strong>Process & Challenges:</strong> [Discuss the design choices, layout, typography, and imagery. Any specific constraints for social media platforms?]</p>
+                        <p><strong>Tools Used:</strong> Adobe Photoshop, Adobe Illustrator</p>
+                    </div>
+                </article>
+                
+                 <!-- Project 6 -->
+                <article class="portfolio-detail-item" id="project-kfc-6">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/1KFC-18.03.png" alt="KFC Branding Graphic 6" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>KFC Branding Visual</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Branding</span></div>
+                        <p><strong>Description:</strong> [Provide details about this specific KFC branding visual. What element or product does it focus on?]</p>
+                        <p><strong>Process & Challenges:</strong> [Highlight the design decisions made for this visual.]</p>
+                        <p><strong>Tools Used:</strong> Adobe Photoshop, Adobe Illustrator</p>
+                    </div>
+                </article>
+
+                <!-- Project 7 -->
+                <article class="portfolio-detail-item" id="project-kfc-7">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/KFC-03sdf.04.png" alt="KFC Branding/Social Graphic 7" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>KFC Social/Branding Graphic</h3>
+                         <div class="portfolio-categories"><span class="category-tag">Branding</span><span class="category-tag">Social</span></div>
+                        <p><strong>Description:</strong> [Describe this graphic. What was its purpose? Promotion? Announcement?]</p>
+                        <p><strong>Process & Challenges:</strong> [Discuss the creation process.]</p>
+                        <p><strong>Tools Used:</strong> Adobe Photoshop, Adobe Illustrator</p>
+                    </div>
+                </article>
+
+                <!-- Project 8 (Bottle) -->
+                <article class="portfolio-detail-item" id="project-bottle-1">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/ახალი-ბოთლით-iceსდფ-baybe-Camera-3.png" alt="Bottle Product Render 1" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>Product Visualization - Ice Bottle</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Branding</span><span class="category-tag">Product Visualization</span><span class="category-tag">3D Render</span></div>
+                        <p><strong>Description:</strong> [Describe this product visualization. What product is it? What is the setting or concept (e.g., ice)?]</p>
+                        <p><strong>Process & Challenges:</strong> [Was 3D software used (e.g., Blender, Cinema 4D)? Or is this a photomanipulation? Describe the lighting, texturing, and rendering process.]</p>
+                        <p><strong>Tools Used:</strong> Blender (?), Adobe Photoshop</p>
+                    </div>
+                </article>
+                
+                <!-- Project 9 (Feijoa) -->
+                 <article class="portfolio-detail-item" id="project-feijoa">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/ფეიხოა.png" alt="Feijoa Branding" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>Feijoa Drink Branding</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Branding</span><span class="category-tag">Packaging</span></div>
+                        <p><strong>Description:</strong> [Describe the branding project for this Feijoa drink. Target market? Brand personality?]</p>
+                        <p><strong>Process & Challenges:</strong> [Discuss logo design, color palette, typography, and packaging mockup creation.]</p>
+                        <p><strong>Tools Used:</strong> Adobe Illustrator, Adobe Photoshop</p>
+                    </div>
+                </article>
+
+                 <!-- Project 10 (Kvati) -->
+                 <article class="portfolio-detail-item" id="project-kvati">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/kvati.png" alt="Kvati Branding" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>Kvati Branding Concept</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Branding</span><span class="category-tag">Concept</span></div>
+                        <p><strong>Description:</strong> [Explain the branding concept behind 'Kvati'. What does the visual represent?]</p>
+                        <p><strong>Process & Challenges:</strong> [Detail the design process for this branding element.]</p>
+                        <p><strong>Tools Used:</strong> Adobe Illustrator, Adobe Photoshop</p>
+                    </div>
+                </article>
+
+                 <!-- Project 11 (Poster) -->
+                 <article class="portfolio-detail-item" id="project-poster">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/podfster.png" alt="Poster Design" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>Abstract Poster Design</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Poster</span><span class="category-tag">Social</span><span class="category-tag">Graphic Design</span></div>
+                        <p><strong>Description:</strong> [Describe this poster design. Is it for an event, a promotion, or artistic expression? Explain the visual style.]</p>
+                        <p><strong>Process & Challenges:</strong> [Discuss the composition, color choices, and techniques used to create the poster.]</p>
+                        <p><strong>Tools Used:</strong> Adobe Photoshop, Adobe Illustrator</p>
+                    </div>
+                </article>
+
+                 <!-- Project 12 (Wine Talk 1) -->
+                 <article class="portfolio-detail-item" id="project-wine-1">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/საუბარი-ღვინოხცზე-#1- &-#2-18.06.png" alt="Wine Talk Poster 1" loading="lazy"> 
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>'Wine Talk' Poster/Social Graphic</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Social</span><span class="category-tag">Poster</span><span class="category-tag">Branding</span></div>
+                        <p><strong>Description:</strong> [Explain the 'Wine Talk' project. Is it a series, an event? Describe the visual identity.]</p>
+                        <p><strong>Process & Challenges:</strong> [Discuss the design process for this specific graphic (assuming the two files are related but distinct graphics/versions).] </p>
+                        <p><strong>Tools Used:</strong> Adobe Photoshop, Adobe Illustrator</p>
+                    </div>
+                </article>
+
+                 <!-- Project 13 (Wine Talk 2) -->
+                 <article class="portfolio-detail-item" id="project-wine-2">
+                     <figure class="portfolio-detail-image">
+                         <img src="portfolio/საუბარი-ღვინოსდფზე-#1- &-#2-18.06.png" alt="Wine Talk Poster 2" loading="lazy">
+                    </figure>
+                     <div class="portfolio-detail-content">
+                         <h3>'Wine Talk' Poster/Social Graphic (Variant)</h3>
+                         <div class="portfolio-categories"><span class="category-tag">Social</span><span class="category-tag">Poster</span><span class="category-tag">Branding</span></div>
+                         <p><strong>Description:</strong> [Explain this variant of the 'Wine Talk' graphic. How does it differ from the other? What was its specific use?]</p>
+                         <p><strong>Process & Challenges:</strong> [Discuss the design choices specific to this version.]</p>
+                         <p><strong>Tools Used:</strong> Adobe Photoshop, Adobe Illustrator</p>
+                    </div>
+                 </article>
+
+                 <!-- Project 14 (Alcorium Card) -->
+                 <article class="portfolio-detail-item" id="project-alcorium">
+                     <figure class="portfolio-detail-image">
+                         <img src="portfolio/alcorium-loyalty-cASDard-05.07.png" alt="Alcorium Loyalty Card Design" loading="lazy">
+                     </figure>
+                     <div class="portfolio-detail-content">
+                         <h3>Alcorium Loyalty Card</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Branding</span><span class="category-tag">UI/UX</span><span class="category-tag">Graphic Design</span></div>
+                         <p><strong>Description:</strong> [Describe the Alcorium loyalty card project. Target audience? Key features visually represented?]</p>
+                         <p><strong>Process & Challenges:</strong> [Discuss the design process, incorporating branding elements and UI/UX considerations for a physical card.]</p>
+                         <p><strong>Tools Used:</strong> Adobe Illustrator, Adobe Photoshop</p>
+                     </div>
+                 </article>
+                 
+                 <!-- Project 15 (Black Lion Lighter) -->
+                 <article class="portfolio-detail-item" id="project-bl-lighter">
+                     <figure class="portfolio-detail-image">
+                         <img src="portfolio/black-lion-lighter-visual-(NEW)-Camera.jpg" alt="Black Lion Lighter Product Visual" loading="lazy">
+                     </figure>
+                     <div class="portfolio-detail-content">
+                         <h3>Black Lion Lighter Visualization</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Branding</span><span class="category-tag">Product Visualization</span><span class="category-tag">3D Render (?)</span></div>
+                         <p><strong>Description:</strong> [Describe the visualization for the Black Lion lighter. What was the goal? Realistic render? Stylized?]</p>
+                         <p><strong>Process & Challenges:</strong> [Explain how the visual was created. 3D modeling/rendering? Photomanipulation? Discuss lighting and materials.]</p>
+                         <p><strong>Tools Used:</strong> Blender (?), Cinema 4D (?), Adobe Photoshop</p>
+                     </div>
+                 </article>
+
+                 <!-- Project 16 (Bottle Closeups) -->
+                 <article class="portfolio-detail-item" id="project-bottle-2">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/ახალი-ბოთლით-close-ups-05.06.png" alt="Bottle Product Render 2" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>Product Visualization - Bottle Close-Ups</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Branding</span><span class="category-tag">Product Visualization</span><span class="category-tag">3D Render</span></div>
+                        <p><strong>Description:</strong> [Describe these close-up shots of the bottle product. What details are highlighted?]</p>
+                        <p><strong>Process & Challenges:</strong> [Focus on the specific challenges of creating realistic close-ups, such as textures, reflections, and depth of field.]</p>
+                        <p><strong>Tools Used:</strong> Blender (?), Adobe Photoshop</p>
+                    </div>
+                </article>
+
+                 <!-- Project 17 (Black Lion Cup) -->
+                 <article class="portfolio-detail-item" id="project-bl-cup">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/open-cup-black-lion-12.03.png" alt="Black Lion Open Cup Product Visual" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>Black Lion Cup Visualization</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Branding</span><span class="category-tag">Product Visualization</span></div>
+                        <p><strong>Description:</strong> [Describe the visualization for the Black Lion open cup product.]</p>
+                        <p><strong>Process & Challenges:</strong> [Detail the process of creating this visual.]</p>
+                        <p><strong>Tools Used:</strong> Blender (?), Adobe Photoshop</p>
+                    </div>
+                </article>
+
+                <!-- Project 18 (Bottle Opening) -->
+                <article class="portfolio-detail-item" id="project-bottle-3">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/ახალი-ბოთლით-opening-Camera-2.png" alt="Bottle Product Render 3" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>Product Visualization - Bottle Opening Sequence</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Branding</span><span class="category-tag">Product Visualization</span><span class="category-tag">3D Render</span></div>
+                        <p><strong>Description:</strong> [Describe this shot, likely part of an opening sequence or animation concept.]</p>
+                        <p><strong>Process & Challenges:</strong> [Discuss the setup for this specific shot, potentially hinting at motion if applicable.]</p>
+                        <p><strong>Tools Used:</strong> Blender (?), Adobe Photoshop</p>
+                    </div>
+                </article>
+
+                <!-- Project 19 (Bottle Silhouette) -->
+                <article class="portfolio-detail-item" id="project-bottle-4">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/ახალი-ბოთლdsfით-silluete-Camera.png" alt="Bottle Product Render 4" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>Product Visualization - Bottle Silhouette</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Branding</span><span class="category-tag">Product Visualization</span><span class="category-tag">3D Render</span></div>
+                        <p><strong>Description:</strong> [Describe the silhouette shot. What mood or feeling does it evoke? Strategic use of lighting?]</p>
+                        <p><strong>Process & Challenges:</strong> [Discuss the lighting setup required to achieve a compelling silhouette.]</p>
+                        <p><strong>Tools Used:</strong> Blender (?), Adobe Photoshop</p>
+                    </div>
+                </article>
+
+                <!-- Project 20 (Bottle Plants) -->
+                <article class="portfolio-detail-item" id="project-bottle-5">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/ახალი-ბოთლით-plants-Camera.png" alt="Bottle Product Render 5" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>Product Visualization - Bottle with Plants</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Branding</span><span class="category-tag">Product Visualization</span><span class="category-tag">3D Render</span></div>
+                        <p><strong>Description:</strong> [Describe this scene featuring the bottle with plants. Natural setting? Freshness concept?]</p>
+                        <p><strong>Process & Challenges:</strong> [Discuss integrating the product model with environmental elements (plants, lighting).] </p>
+                        <p><strong>Tools Used:</strong> Blender (?), Adobe Photoshop</p>
+                    </div>
+                </article>
+                
+                 <!-- Project 21 (Black Lion SUP) -->
+                 <article class="portfolio-detail-item" id="project-bl-sup">
+                    <figure class="portfolio-detail-image">
+                        <img src="portfolio/black-lion-sup-board-final.png" alt="Black Lion SUP Board Product Visual" loading="lazy">
+                    </figure>
+                    <div class="portfolio-detail-content">
+                        <h3>Black Lion SUP Board Visualization</h3>
+                        <div class="portfolio-categories"><span class="category-tag">Branding</span><span class="category-tag">Product Visualization</span><span class="category-tag">Concept</span></div>
+                        <p><strong>Description:</strong> [Describe the visualization for the Black Lion stand-up paddleboard. Lifestyle shot? Product focus?]</p>
+                        <p><strong>Process & Challenges:</strong> [Detail the creation process, whether it involved 3D, photocompositing, or illustration.]</p>
+                        <p><strong>Tools Used:</strong> Adobe Photoshop, Adobe Illustrator, Blender (?)</p>
+                    </div>
+                </article>
+
+                <!-- Add more items for each file in portfolio/ -->
+
+            </div> <!-- End portfolio-detail-grid -->
+            
+             <div class="back-link-container bottom">
+                 <a href="index.html" class="btn secondary icon-left"><i class="ph ph-arrow-left"></i> Back to Home</a>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Re-use Footer -->
+    <footer role="contentinfo">
+         <!-- Copy footer content from index.html -->
+         <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>John Kvezereli</h3>
+                    <p>Graphic Designer & AI Musketeer creating intuitive and visually striking digital experiences.</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+                        <a href="#" target="_blank" aria-label="Behance"><i class="ph ph-behance-logo"></i></a>
+                        <a href="#" target="_blank" aria-label="Dribbble"><i class="ph ph-dribbble-logo"></i></a>
+                        <!-- Add other relevant links -->
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#showcase">Showcase</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="index.html#experience">Experience</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Graphic Design</li>
+                        <li>UI/UX Design</li>
+                        <li>Motion Graphics</li>
+                        <li>AI-Assisted Design</li>
+                        <li>Social Media Graphics</li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p><i class="ph ph-envelope-simple"></i> <a href="mailto:john.kvezereli@email.com">john.kvezereli@email.com</a></p>
+                    <p><i class="ph ph-phone"></i> <a href="tel:+995123456789">+995 123 456 789</a></p> 
+                    <p><i class="ph ph-map-pin"></i> Tbilisi, Georgia</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> John Kvezereli. All Rights Reserved.</p>
+                 <ul>
+                     <li><a href="#">Privacy Policy</a></li> 
+                     <li><a href="#">Terms of Service</a></li> 
+                 </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Basic JS for theme toggle and mobile nav -->
+    <!-- Vendor libraries (add if needed, e.g., AOS if components use it) -->
+    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <script src="js/theme.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/vendor.js"></script> 
+    <script src="js/main.js"></script>
+
+    <!-- Simple script for footer year and page-specific initializations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year in footer
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+            
+            // Initialize theme and navigation (assuming main.js doesn't do this automatically)
+            // If main.js handles these, these lines can potentially be removed.
+            if (typeof setInitialTheme === 'function') setInitialTheme();
+            if (typeof initializeThemeToggle === 'function') initializeThemeToggle();
+            if (typeof initializeNavigation === 'function') initializeNavigation();
+            
+            // Initialize AOS if added
+            // if (typeof AOS !== 'undefined') {
+            //     AOS.init({
+            //         duration: 800,
+            //         once: true,
+            //         mirror: false
+            //     });
+            // }
+
+            // Any other portfolio-detail specific JS logic can go here
+        });
+    </script>
+
+</body>
+</html> 

@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Layout Styles
+   ========================================================================== */
+
+/* Container */
+.container {
+    width: 90%; /* Consistent width */
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md); /* Use variables */
+}
+
+/* Section Base */
+.section {
+    padding: var(--space-section) 0; 
+}
+
+.section-title {
+    font-size: var(--md-typescale-headline-large-size);
+    line-height: var(--md-typescale-headline-large-line-height);
+    font-weight: var(--md-typescale-headline-large-weight);
+    margin-bottom: var(--space-xl);
+    text-align: center;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: var(--md-typescale-body-large-size);
+    line-height: var(--md-typescale-body-large-line-height);
+    color: var(--md-sys-color-on-surface-variant-dark);
+    margin-bottom: var(--space-xxl);
+    max-width: 700px; /* Slightly increase max-width */
+    margin-left: auto;
+    margin-right: auto;
+}
+[data-theme="light"] .section-subtitle {
+    color: var(--md-sys-color-on-surface-variant-light);
+}
+
+/* --- Media Queries for Layout --- */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 var(--space-lg);
+    }
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: var(--space-xxl);
+    }
+     .section-subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .section {
+        padding: 100px 0;
+    }
+    .section-title {
+        font-size: 2.5rem; /* Keep consistent with tablet or adjust */
+    }
+}
+
+/* @media (min-width: 1200px) { ... } */ 

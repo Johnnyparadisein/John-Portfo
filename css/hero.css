@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Hero Section Styles
+   ========================================================================== */
+
+#hero {
+    min-height: 100vh; /* Increased initial height */
+    padding-top: calc(var(--header-height) + var(--space-xxl)); /* Add header height to padding */
+    padding-bottom: var(--space-xxl);
+    display: flex;
+    align-items: center;
+    text-align: center; 
+    position: relative;
+    background-color: var(--bg-primary); 
+    overflow: hidden; 
+    z-index: 0;
+}
+
+/* Optional: Add a subtle graphic element */
+#hero::before {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(var(--md-sys-color-primary-dark-rgb), 0.1) 0%, rgba(var(--md-sys-color-primary-dark-rgb), 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.5; 
+    z-index: -1; 
+}
+[data-theme="light"] #hero::before {
+     background: radial-gradient(circle, rgba(var(--md-sys-color-primary-light-rgb), 0.1) 0%, rgba(var(--md-sys-color-primary-light-rgb), 0) 70%);
+     opacity: 0.4;
+}
+
+.hero-content {
+    position: relative; 
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: var(--space-xl);
+}
+
+.hero-content h2 {
+    /* Use M3 Display Large */
+    font-size: var(--md-typescale-display-large-size);
+    line-height: var(--md-typescale-display-large-line-height);
+    font-weight: var(--md-typescale-display-large-weight);
+    margin-bottom: var(--space-md);
+    color: var(--text-primary); 
+    /* Animation handled by AOS */
+}
+
+.hero-content h2 #typed-output {
+    /* Ensure typed text inherits color properly */
+     display: inline-block; /* Needed for correct rendering */
+}
+
+.hero-content p {
+    /* Use M3 Headline Small or Body Large */
+    font-size: var(--md-typescale-body-large-size); 
+    line-height: var(--md-typescale-body-large-line-height);
+    color: var(--text-secondary);
+    margin: 0 auto var(--space-xl); 
+    max-width: 90%;
+    /* Animation handled by AOS */
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: var(--space-md);
+    /* Animation handled by AOS */
+}
+
+.hero-buttons .btn { 
+     width: 100%; 
+     max-width: 280px; 
+}
+
+.scroll-indicator {
+    display: none; /* Hide on mobile initially */
+}
+
+
+/* --- Media Queries for Hero --- */
+@media (min-width: 768px) {
+    #hero {
+        padding-top: calc(var(--header-height) + var(--space-xxl)); 
+        padding-bottom: var(--space-xxl);
+        text-align: center; /* Keep centered on tablet */
+    }
+    #hero::before {
+        width: 400px; 
+        height: 400px;
+        bottom: -150px;
+        left: -150px;
+        opacity: 0.6;
+    }
+    .hero-content {
+        grid-template-columns: 1fr; 
+        gap: var(--space-xxl);
+        justify-items: center; 
+        text-align: center; 
+    }
+    .hero-content h2 {
+        /* Adjust if needed, clamp useful */
+        font-size: clamp(3rem, 8vw, 4.5rem); 
+        line-height: 1.1;
+    }
+    .hero-content p {
+        font-size: 1.25rem;
+        max-width: 650px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-buttons {
+        flex-direction: row;
+        justify-content: center; 
+        gap: var(--space-lg);
+    }
+    .scroll-indicator {
+         display: flex; 
+         position: absolute;
+         bottom: 30px;
+         left: 50%;
+         transform: translateX(-50%);
+         color: var(--text-secondary);
+         font-size: 0.9rem;
+         align-items: center;
+         gap: 5px;
+         opacity: 0.7;
+         transition: opacity 0.3s ease;
+         /* Animation handled by AOS */
+         animation: bounceUpDown 1.5s infinite ease-in-out; /* Add animation */
+    }
+    .scroll-indicator:hover {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero-content h2 {
+         font-size: clamp(4rem, 7vw, 5rem); /* Larger */
+    }
+     #hero::before {
+        width: 500px; 
+        height: 500px;
+        bottom: -200px;
+        left: -200px;
+        opacity: 0.7;
+    }
+}
+
+/* Bounce animation for scroll indicator */
+@keyframes bounceUpDown {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 5px); }
+} 

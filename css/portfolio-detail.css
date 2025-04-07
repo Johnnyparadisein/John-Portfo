@@ -1,0 +1,92 @@
+/* --- Portfolio Detail Page Specific Styles --- */
+
+.portfolio-detail-page {
+    padding-top: var(--header-height); /* Adjust based on actual header height */
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 1rem; /* Space below title */
+}
+
+.back-link-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.back-link-container.bottom {
+    margin-top: 4rem;
+}
+
+.portfolio-detail-grid {
+    display: grid;
+    gap: 4rem; /* Space between projects */
+    margin-top: 3rem;
+}
+
+.portfolio-detail-item {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-detail-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.portfolio-detail-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Adjust as needed */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.portfolio-detail-content {
+    padding: 1.5rem;
+}
+
+.portfolio-detail-content h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+    color: var(--text-color-strong);
+}
+
+.portfolio-categories {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.category-tag {
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.portfolio-detail-content p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.portfolio-detail-content p strong {
+    color: var(--text-color-medium);
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Example: Adjust grid for larger screens if needed */
+/* @media (min-width: 768px) {
+    .portfolio-detail-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+} */ 
