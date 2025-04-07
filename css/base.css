@@ -31,11 +31,10 @@
     --md-sys-color-on-error-dark: #690005;
     --md-sys-color-error-container-dark: #93000a;
     --md-sys-color-on-error-container-dark: #ffdad6;
-    --md-sys-color-background-dark: #000000; /* Your Black */
+    --md-sys-color-background-dark: #121212; /* Set to dark gray */
     --md-sys-color-on-background-dark: #e2e2e6; /* M3 Near White */
-    --md-sys-color-surface-dark: #1a1a1a; /* Your Dark Gray */
-    --md-sys-color-on-surface-dark: #e2e2e6; /* M3 Near White */
-    --md-sys-color-surface-variant-dark: #40484d; /* M3 Darker Neutral */
+    --md-sys-color-surface-dark: #1a1a1a; /* Restore original Dark Gray */
+    --md-sys-color-surface-variant-dark: #40484d; /* Restore original M3 Darker Neutral */
     --md-sys-color-on-surface-variant-dark: #c0c8cd; /* M3 Lighter Neutral */
     --md-sys-color-outline-dark: #8a9297; /* M3 Neutral Border */
     --md-sys-color-outline-variant-dark: #40484d;
@@ -45,15 +44,15 @@
     --md-sys-color-primary-inverse-dark: #00658e;
 
     /* Custom Surface Container Colors (Derived from M3) */
-    --md-sys-color-surface-container-lowest-dark: #0F0F0F; /* Darker than surface */
-    --md-sys-color-surface-container-low-dark: #151515; /* Slightly darker than surface */
-    --md-sys-color-surface-container-dark: #1a1a1a; /* Same as surface */
-    --md-sys-color-surface-container-high-dark: #212121; /* Slightly lighter than surface */
-    --md-sys-color-surface-container-highest-dark: #2a2a2a; /* Lighter than surface */
+    --md-sys-color-surface-container-lowest-dark: #0F0F0F; /* Restore original */
+    --md-sys-color-surface-container-low-dark: #151515; /* Restore original */
+    --md-sys-color-surface-container-dark: #1a1a1a; /* Restore original */
+    --md-sys-color-surface-container-high-dark: #212121; /* Restore original */
+    --md-sys-color-surface-container-highest-dark: #2a2a2a; /* Restore original */
     --md-sys-color-on-surface-container-dark: #e2e2e6; /* Same as on-surface */
 
     /* RGB values for rgba() */
-    --md-sys-color-surface-dark-rgb: 26, 26, 26;
+    --md-sys-color-surface-dark-rgb: 26, 26, 26; /* Restore original */
     --md-sys-color-primary-dark-rgb: 94, 229, 232;
 
 
@@ -173,12 +172,11 @@
     --md-sys-color-on-error-light: #ffffff;
     --md-sys-color-error-container-light: #ffdad6;
     --md-sys-color-on-error-container-light: #410002;
-    --md-sys-color-background-light: #fcfcff; /* M3 Near White */
-    --md-sys-color-on-background-light: #191c1e; /* M3 Near Black */
-    --md-sys-color-surface-light: #f0f0f0; /* Your Light Gray */
-    --md-sys-color-on-surface-light: #191c1e; /* M3 Near Black */
-    --md-sys-color-surface-variant-light: #dde3e9; /* M3 Lighter Neutral */
-    --md-sys-color-on-surface-variant-light: #40484d; /* M3 Darker Neutral */
+    --md-sys-color-background-light: var(--md-sys-color-surface-container-lowest-light); /* Use lowest container color (white) */
+    --md-sys-color-on-background-light: var(--md-sys-color-on-surface-container-light); /* Use corresponding on-surface color (dark) */
+    --md-sys-color-surface-light: #f0f0f0; /* Restore original Light Gray */
+    --md-sys-color-surface-variant-light: #dde3e9; /* Restore original M3 Lighter Neutral */
+    --md-sys-color-on-surface-variant-light: #40484d; /* Restore original M3 Darker Neutral */
     --md-sys-color-outline-light: #70787d; /* M3 Neutral Border */
     --md-sys-color-outline-variant-light: #c0c8cd;
     --md-sys-color-shadow-light: #000000;
@@ -187,15 +185,15 @@
     --md-sys-color-primary-inverse-light: #74ceff;
 
     /* Custom Surface Container Colors (Derived from M3) */
-    --md-sys-color-surface-container-lowest-light: #ffffff; /* White */
-    --md-sys-color-surface-container-low-light: #f7f7fa; /* Slightly off-white */
-    --md-sys-color-surface-container-light: #f0f0f0; /* Same as surface */
-    --md-sys-color-surface-container-high-light: #e8e8eb; /* Slightly darker */
-    --md-sys-color-surface-container-highest-light: #e1e1e4; /* Darker */
-    --md-sys-color-on-surface-container-light: #191c1e; /* Same as on-surface */
+    --md-sys-color-surface-container-lowest-light: #ffffff; /* Restore original White */
+    --md-sys-color-surface-container-low-light: #f7f7fa; /* Restore original Slightly off-white */
+    --md-sys-color-surface-container-light: #f0f0f0; /* Restore original Same as surface */
+    --md-sys-color-surface-container-high-light: #e8e8eb; /* Restore original Slightly darker */
+    --md-sys-color-surface-container-highest-light: #e1e1e4; /* Restore original Darker */
+    --md-sys-color-on-surface-container-light: #191c1e; /* Restore original Same as on-surface */
 
     /* RGB values for rgba() */
-    --md-sys-color-surface-light-rgb: 240, 240, 240;
+    --md-sys-color-surface-light-rgb: 240, 240, 240; /* Restore original */
     --md-sys-color-primary-light-rgb: 0, 106, 108;
 
     /* Mapping */
@@ -262,13 +260,13 @@ body::before {
     /* border-radius: 50%; */
     /* Use a radial gradient with the theme colors */
     /* Adjusted alpha values for more blue and transparency */
-    background: radial-gradient(circle at top left, 
+    /* background: radial-gradient(circle at top left, 
         hsla(var(--md-sys-color-primary-dark-hue, 181), 74%, 63%, 0.2) 0%, /* Primary color - More transparent */
-        hsla(var(--md-sys-color-tertiary-dark-hue, 271), 37%, 75%, 0.1) 40%, /* Tertiary color - Even more transparent */
-        transparent 70% /* Fade to transparent */
-    );
+        /* hsla(var(--md-sys-color-tertiary-dark-hue, 271), 37%, 75%, 0.1) 40%, /* Tertiary color - Even more transparent */
+        /* transparent 70% /* Fade to transparent */
+    /* ); */ /* Removed background gradient */
     /* Adjust blur */
-    filter: blur(100px); 
+    /* filter: blur(100px); */ /* Removed */
     z-index: -1; /* Place behind content */
     /* Remove opacity, control via gradient alpha */
     /* opacity: 0.3; */
@@ -290,11 +288,11 @@ body::before {
 [data-theme="light"] body::before {
     /* Update gradient colors for light theme */
     /* Adjusted alpha values for more blue and transparency */
-    background: radial-gradient(circle at top left, 
+    /* background: radial-gradient(circle at top left, 
         hsla(var(--md-sys-color-primary-light-hue, 181), 100%, 21%, 0.15) 0%, /* Primary color - More transparent */
-        hsla(var(--md-sys-color-tertiary-light-hue, 272), 18%, 41%, 0.08) 40%, /* Tertiary color - Even more transparent */
-        transparent 70% /* Fade to transparent */
-    );
+        /* hsla(var(--md-sys-color-tertiary-light-hue, 272), 18%, 41%, 0.08) 40%, /* Tertiary color - Even more transparent */
+        /* transparent 70% /* Fade to transparent */
+    /* ); */ /* Removed background gradient */
     /* Remove opacity override */
     /* opacity: 0.2; */
 }

@@ -52,7 +52,8 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/about.css">
+    <!-- Remove the about.css link -->
+    <!-- <link rel="stylesheet" href="css/about.css"> -->
     <!-- Rename portfolio.css link -->
     <link rel="stylesheet" href="css/showcase.css">
     <link rel="stylesheet" href="css/experience.css">
@@ -85,7 +86,7 @@
             <h1>John Kvezereli</h1>
             <nav role="navigation" aria-label="Main Navigation">
                 <ul>
-                    <li><a href="#about">About</a></li>
+                    <!-- Remove About link -->
                     <li><a href="#showcase">Showcase</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="#methodology">Methodology</a></li>
@@ -103,7 +104,7 @@
     <div class="mobile-nav">
         <nav role="navigation" aria-label="Mobile Navigation">
             <ul>
-                <li><a href="#about">About</a></li>
+                <!-- Remove About link -->
                  <!-- Update nav link -->
                 <li><a href="#showcase">Showcase</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
@@ -126,39 +127,37 @@
         <!-- === Start Hero Section === -->
         <section id="hero">
             <div class="container hero-content">
-                <div class="hero-text" data-aos="fade-right">
-                    <h2><span id="typed-output"></span></h2>
-                    <p>
-                        Crafting intuitive digital experiences with a focus on motion and usability.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#showcase" class="btn primary">View My Work</a>
-                        <a href="#contact" class="btn secondary">Get In Touch</a>
-                    </div>
-                </div>
-                <!-- The hero-stats div and its content will be removed -->
-            </div>
-            <!-- Scroll Indicator -->
-            <a href="#about" class="scroll-indicator" aria-label="Scroll down to about section" data-aos="fade-up" data-aos-delay="300">
-                Scroll <i class="ph ph-arrow-down"></i>
-            </a>
-        </section>
-        <!-- === End Hero Section === -->
-
-        <section id="about" class="container section" aria-labelledby="about-title">
-            <h2 id="about-title" class="section-title" data-aos="fade-up">About Me</h2>
-            <div class="about-content">
-                <div class="about-image" data-aos="fade-right" data-aos-delay="100">
+                <!-- Moved About Me Image to the left -->
+                 <div class="about-image" data-aos="fade-right" data-aos-delay="150">
                     <!-- *** Replace placeholder-profile.png and the data-src URL with your actual profile image *** -->
                     <!-- *** Ensure the alt text accurately describes the image *** -->
                     <img data-src="https://media.licdn.com/dms/image/v2/D4D03AQEV6mYgWXnGkg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1692108704538?e=1749686400&v=beta&t=1kt8UkkfMdtgXEBgpaKUFM8g-KvVnY69YyHaOoMMR6E" alt="Headshot of John Kvezereli" loading="lazy">
                 </div>
-                <div class="about-text" data-aos="fade-left" data-aos-delay="200">
-                    <p class="lead-text">Hey! 👋 I'm John Kvezereli, a Graphic Designer & self-proclaimed AI Musketeer. Inspired by strong visuals, the creative potential of AI, and maybe a hint of retro tech vibe 💾. Currently based in vibrant Tbilisi, Georgia 🇬🇪🍷🥟. I'm crafting designs as a Senior Graphic Designer at Redberry and sharing knowledge as a Lecturer at the Tbilisi School of Communication. </p>
-                    <p>Previously worked with brands like Dunkin' Georgia and Subway.</p>
-                </div>
+
+                <!-- Combined Hero and About Text to the right -->
+                <div class="hero-text" data-aos="fade-left" data-aos-delay="200">
+                     <!-- Separated intro text -->
+                    <p class="hero-intro">
+                         Hey! 👋 My name is John Kvezereli. I'm a <span id="typed-output"></span>
+                    </p>
+                     <!-- Remaining body text -->
+                    <p class="lead-text">
+                         & self-proclaimed AI Musketeer. Inspired by strong visuals, the creative potential of AI, and maybe a hint of retro tech vibe 💾. Currently based in vibrant Tbilisi, Georgia 🇬🇪🍷🥟. I'm crafting designs as a Senior Graphic Designer at Redberry and sharing knowledge as a Lecturer at the Tbilisi School of Communication. Previously worked with brands like Dunkin' Georgia and Subway.
+                    </p>
+                    <!-- Keep hero buttons -->
+                    <div class="hero-buttons">
+                        <a href="#showcase" class="btn primary">View My Work</a>
+                        <a href="#contact" class="btn secondary">Get In Touch</a>
+                    </div>
+                 </div>
+                 <!-- Removed the original separate about-content structure -->
             </div>
+            <!-- Scroll Indicator - Updated href -->
+            <a href="#showcase" class="scroll-indicator" aria-label="Scroll down to showcase section" data-aos="fade-up" data-aos-delay="300">
+                Scroll <i class="ph ph-arrow-down"></i>
+            </a>
         </section>
+        <!-- === End Hero Section === -->
 
         <!-- === Showcase Section (Formerly Portfolio) === -->
         <!-- Update section ID and aria-labelledby -->
@@ -170,15 +169,6 @@
             </p>
 
             <!-- Portfolio Filters -->
-            <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
-                 <!-- NOTE: These filters might need adjustment based on the projects -->
-                <button class="portfolio-filter active" data-filter="*" aria-pressed="true">All</button>
-                <button class="portfolio-filter" data-filter="branding" aria-pressed="false">Branding</button>
-                <button class="portfolio-filter" data-filter="ui-ux" aria-pressed="false">UI/UX</button>
-                <button class="portfolio-filter" data-filter="motion" aria-pressed="false">Motion</button>
-                <button class="portfolio-filter" data-filter="ai" aria-pressed="false">AI</button>
-                <button class="portfolio-filter" data-filter="social" aria-pressed="false">Social</button>
-            </div>
 
             <!-- Remove id="lightgallery-container" -->
             <div class="portfolio-grid">
@@ -186,70 +176,125 @@
                 <!-- IMPORTANT: Optimize all images for web. Consider WebP/AVIF formats. -->
                 
                 <!-- Item 1: Add grid-span-2x1 class -->
-                <div class="portfolio-item showcase-item-clickable grid-span-2x1" data-categories="branding social" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="portfolio/KFC/KFC-16.01.jpg">
+                <div class="portfolio-item showcase-item-clickable grid-span-2x1" data-categories="branding social" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion1/1200/800">
                     <figure>
-                        <img src="portfolio/KFC/KFC-16.01.jpg" alt="KFC Branding/Social Media Graphic 1" loading="lazy">
+                        <img src="https://picsum.photos/seed/lion1/600/400" alt="Black Lion Showcase Image 1" loading="lazy">
                         <figcaption class="portfolio-content">
-                            <span class="portfolio-category">Branding / Social</span>
-                            <h3>KFC Project 1</h3>
+                            <h3>Black Lion 1</h3>
                         </figcaption>
                     </figure>
                 </div>
                 
                 <!-- Item 2: No changes -->
-                <div class="portfolio-item showcase-item-clickable" data-categories="ui-ux ai" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="portfolio/KFC/KFC-14.02-3.jpg">
+                <div class="portfolio-item showcase-item-clickable" data-categories="ui-ux ai" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion2/1200/800">
                     <figure>
-                         <img src="portfolio/KFC/KFC-14.02-3.jpg" alt="KFC UI/UX/AI Graphic 2" loading="lazy">
+                         <img src="https://picsum.photos/seed/lion2/600/400" alt="Black Lion Showcase Image 2" loading="lazy">
                         <figcaption class="portfolio-content">
-                            <span class="portfolio-category">UI/UX / AI</span>
-                            <h3>KFC Project 2</h3>
+                            <h3>Black Lion 2</h3>
                         </figcaption>
                     </figure>
                 </div>
                 
                 <!-- Item 3: Add grid-span-1x2 class -->
-                <div class="portfolio-item showcase-item-clickable grid-span-1x2" data-categories="motion" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="portfolio/KFC/KFC-06.03-2.png">
+                <div class="portfolio-item showcase-item-clickable grid-span-1x2" data-categories="motion" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion3/800/1200">
                      <figure>
-                        <img src="portfolio/KFC/KFC-06.03-2.png" alt="KFC Motion Graphics 3" loading="lazy">
+                        <img src="https://picsum.photos/seed/lion3/400/600" alt="Black Lion Showcase Image 3" loading="lazy">
                         <figcaption class="portfolio-content">
-                            <span class="portfolio-category">Motion Graphics</span>
-                            <h3>KFC Project 3</h3>
+                            <h3>Black Lion 3</h3>
                         </figcaption>
                     </figure>
                 </div>
                 
                 <!-- Item 4: No changes -->
-                 <div class="portfolio-item showcase-item-clickable" data-categories="branding ai" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="portfolio/KFC/KFC 18.03.2024 2.png">
+                 <div class="portfolio-item showcase-item-clickable" data-categories="branding ai" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion4/1200/800">
                     <figure>
-                        <img src="portfolio/KFC/KFC 18.03.2024 2.png" alt="KFC Branding/AI Graphic 4" loading="lazy">
+                        <img src="https://picsum.photos/seed/lion4/600/400" alt="Black Lion Showcase Image 4" loading="lazy">
                         <figcaption class="portfolio-content">
-                            <span class="portfolio-category">Branding / AI</span>
-                            <h3>KFC Project 4</h3>
+                            <h3>Black Lion 4</h3>
                         </figcaption>
                     </figure>
                 </div>
                 
                 <!-- Item 5: Remove <a> tag, add class and data-fullscreen-src -->
-                 <div class="portfolio-item showcase-item-clickable" data-categories="social" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="portfolio/KFC/KFC-18.023453.png">
+                 <div class="portfolio-item showcase-item-clickable" data-categories="social" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion5/1200/800">
                     <figure>
-                        <img src="portfolio/KFC/KFC-18.023453.png" alt="KFC Social Media Graphic 5" loading="lazy">
+                        <img src="https://picsum.photos/seed/lion5/600/400" alt="Black Lion Showcase Image 5" loading="lazy">
                         <figcaption class="portfolio-content">
-                            <span class="portfolio-category">Social Media</span>
-                            <h3>KFC Project 5</h3>
+                            <h3>Black Lion 5</h3>
                         </figcaption>
                     </figure>
                 </div>
 
                 <!-- Item 6: Similar to above -->
-                 <div class="portfolio-item showcase-item-clickable" data-categories="branding" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="portfolio/KFC/1KFC-18.03.png">
+                 <div class="portfolio-item showcase-item-clickable" data-categories="branding" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion6/1200/800">
                     <figure>
-                        <img src="portfolio/KFC/1KFC-18.03.png" alt="KFC Branding Graphic 6" loading="lazy">
+                        <img src="https://picsum.photos/seed/lion6/600/400" alt="Black Lion Showcase Image 6" loading="lazy">
                         <figcaption class="portfolio-content">
-                            <span class="portfolio-category">Branding</span>
-                            <h3>KFC Project 6</h3>
+                            <h3>Black Lion 6</h3>
                         </figcaption>
                     </figure>
                 </div>
+
+                <!-- Duplicate existing items to add more rows -->
+                <!-- Item 1 Duplicate: Add grid-span-2x1 class -->
+                <div class="portfolio-item showcase-item-clickable grid-span-2x1" data-categories="branding social" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion7/1200/800">
+                    <figure>
+                        <img src="https://picsum.photos/seed/lion7/600/400" alt="Black Lion Showcase Image 7" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <h3>Black Lion 7</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <!-- Item 2 Duplicate: No changes -->
+                <div class="portfolio-item showcase-item-clickable" data-categories="ui-ux ai" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion8/1200/800">
+                    <figure>
+                         <img src="https://picsum.photos/seed/lion8/600/400" alt="Black Lion Showcase Image 8" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <h3>Black Lion 8</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <!-- Item 3 Duplicate: Add grid-span-1x2 class -->
+                <div class="portfolio-item showcase-item-clickable grid-span-1x2" data-categories="motion" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion9/800/1200">
+                     <figure>
+                        <img src="https://picsum.photos/seed/lion9/400/600" alt="Black Lion Showcase Image 9" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <h3>Black Lion 9</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <!-- Item 4 Duplicate: No changes -->
+                 <div class="portfolio-item showcase-item-clickable" data-categories="branding ai" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion10/1200/800">
+                    <figure>
+                        <img src="https://picsum.photos/seed/lion10/600/400" alt="Black Lion Showcase Image 10" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <h3>Black Lion 10</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <!-- Item 5 Duplicate: Remove <a> tag, add class and data-fullscreen-src -->
+                 <div class="portfolio-item showcase-item-clickable" data-categories="social" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion11/1200/800">
+                    <figure>
+                        <img src="https://picsum.photos/seed/lion11/600/400" alt="Black Lion Showcase Image 11" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <h3>Black Lion 11</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <!-- Item 6 Duplicate: Similar to above -->
+                 <div class="portfolio-item showcase-item-clickable" data-categories="branding" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion12/1200/800">
+                    <figure>
+                        <img src="https://picsum.photos/seed/lion12/600/400" alt="Black Lion Showcase Image 12" loading="lazy">
+                        <figcaption class="portfolio-content">
+                            <h3>Black Lion 12</h3>
+                        </figcaption>
+                    </figure>
+                 </div>
 
                 <!-- End Portfolio Items -->
             </div>
@@ -494,7 +539,7 @@
                 <nav class="footer-nav" role="navigation" aria-label="Footer Navigation">
                     <h4>Navigation</h4>
                     <ul>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#showcase">Showcase</a></li>
                         <li><a href="#experience">Experience</a></li>
                         <li><a href="#skills">Skills</a></li>
                         <li><a href="#showcase">Showcase</a></li>
@@ -545,7 +590,7 @@
                             <h3>Navigation</h3>
                             <ul>
                                 <li><a href="#hero" data-modal-close>Home</a></li>
-                                <li><a href="#about" data-modal-close>About</a></li>
+                                <li><a href="#showcase" data-modal-close>Showcase</a></li>
                                 <li><a href="#experience" data-modal-close>Experience</a></li>
                                 <li><a href="#skills" data-modal-close>Skills</a></li>
                                 <li><a href="#showcase" data-modal-close>Showcase</a></li>

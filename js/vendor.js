@@ -25,9 +25,9 @@ function initializeTypedJs() {
         try { // Add try-catch
             const typed = new Typed('#typed-output', {
                 strings: [
-                    'Motion Designer',
                     'Graphic Designer',
-                    'AI Enthusiast'
+                    'AI Musketeer',
+                    'Creative Technologist'
                 ],
                 typeSpeed: 50,
                 backSpeed: 30,

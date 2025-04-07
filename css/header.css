@@ -9,8 +9,8 @@ header {
     left: 0;
     right: 0;
     background-color: rgba(var(--md-sys-color-surface-dark-rgb, 26, 26, 26), 0.85); /* Use M3 Surface with opacity */
-    backdrop-filter: blur(10px); /* Glass effect */
-    -webkit-backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */ /* Removed */
+    /* -webkit-backdrop-filter: blur(10px); */ /* Removed */
     z-index: 1000;
     border-bottom: 1px solid var(--md-sys-color-outline-variant-dark); /* Use M3 */
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; 
@@ -37,7 +37,7 @@ header .container {
 header h1 { /* Site Title / Logo */
     font-size: var(--md-typescale-title-large-size);
     line-height: var(--md-typescale-title-large-line-height);
-    font-weight: var(--md-typescale-title-large-weight);
+    font-weight: 800; /* Set to extra bold */
     color: var(--md-sys-color-on-surface-dark); 
 }
 [data-theme="light"] header h1 {

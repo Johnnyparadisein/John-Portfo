@@ -5,14 +5,13 @@
 /* Rename #portfolio to #showcase */
 #showcase {
     /* Existing styles are fine */
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
 }
 
 .portfolio-filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: var(--space-sm); /* 8px gap */
-    margin-bottom: var(--space-xl);
+    /* Remove the entire portfolio-filters block */
 }
 
 /* Filter Chips (M3 Inspired) */
@@ -98,12 +97,13 @@
     grid-template-columns: repeat(2, 1fr); 
     /* Define a base row height. Adjust this value as needed. */
     grid-auto-rows: 200px; /* Example: makes each row 200px tall */
-    gap: var(--space-lg);
+    /* Increase the gap */
+    gap: 8px;
     position: relative; /* Added for Isotope positioning */
 }
 .portfolio-item {
     background-color: var(--md-sys-color-surface-variant-dark);
-    border-radius: 12px; /* M3 Medium radius */
+    border-radius: 0;
     overflow: hidden;
     box-shadow: var(--md-sys-elevation-1-dark);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -120,11 +120,9 @@
 .portfolio-item:hover {
     transform: translateY(-5px);
     box-shadow: var(--md-sys-elevation-4-dark);
-    border: 1px solid var(--md-sys-color-primary-dark); /* Added border on hover */
 }
 [data-theme="light"] .portfolio-item:hover {
     box-shadow: var(--md-sys-elevation-4-light);
-    border: 1px solid var(--md-sys-color-primary-light); /* Added border on hover */
 }
 
 .portfolio-item figure {
@@ -153,7 +151,7 @@
     left: 0;
     right: 0;
     padding: var(--space-md);
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    /* background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); */ /* Removed gradient overlay */
     color: #fff;
     opacity: 0;
     transform: translateY(10px);
@@ -176,7 +174,6 @@
     letter-spacing: var(--md-typescale-label-medium-letter-spacing);
     /* Use a more contrasty color on the overlay */
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: var(--space-sm);
     text-transform: uppercase;
 }
 
@@ -212,14 +209,12 @@
 
 /* --- Media Queries for Showcase --- */
 @media (min-width: 768px) {
-    .portfolio-filters {
-        gap: var(--space-md);
-    }
     .portfolio-grid {
         /* Increase columns for medium screens */
         grid-template-columns: repeat(3, 1fr); 
         grid-auto-rows: 250px; /* Adjust row height for larger screens */
-        gap: var(--space-xl);
+        /* Increase the gap */
+        gap: 8px;
     }
     /* Remove fixed height, rely on aspect-ratio or natural dimensions */
     /* .portfolio-item img { height: 250px; } */
@@ -229,6 +224,8 @@
     .portfolio-grid {
         /* Increase columns for large screens */
         grid-template-columns: repeat(4, 1fr); 
+        /* Increase the gap */
+        gap: 8px;
         /* Further adjust row height if needed */
         /* grid-auto-rows: 280px; */
     }
