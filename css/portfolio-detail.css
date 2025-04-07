@@ -2,68 +2,68 @@
 
 .portfolio-detail-page {
     padding-top: var(--header-height); /* Adjust based on actual header height */
-    padding-bottom: 4rem; /* Add some padding at the bottom */
+    padding-bottom: var(--space-xxl); /* Use var */
 }
 
 .page-title {
-    text-align: center;
-    margin-bottom: 1rem; /* Space below title */
+    text-align: left;
+    margin-bottom: var(--space-lg); /* Use var */
 }
 
 .back-link-container {
-    text-align: center;
-    margin: 2rem 0;
+    text-align: left;
+    margin: var(--space-xl) 0; /* Use var */
 }
 
 .back-link-container.bottom {
-    margin-top: 4rem;
+    margin-top: var(--space-xxl); /* Use var */
 }
 
 .portfolio-detail-grid {
     display: grid;
-    gap: 2.5rem; /* Consistent gap */
-    margin-top: 3rem;
+    gap: var(--space-xl); /* Adjusted gap */
+    margin-top: var(--space-xl); /* Use var */
 }
 
 .project-group-title {
     grid-column: 1 / -1; /* Make title span full width */
-    margin-top: 3rem;
-    margin-bottom: 0rem; /* Reduced space before grid items */
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border-color);
+    margin-top: var(--space-xl); /* Use var */
+    margin-bottom: 0; /* Remove space before grid items */
+    padding-bottom: var(--space-md); /* Use var */
+    border-bottom: 1px solid var(--border); /* Use var */
     font-family: var(--font-heading);
     font-size: 1.8rem; /* Adjust size as needed */
-    color: var(--text-color-strong);
+    color: var(--text-primary); /* Use var */
 }
 
 .portfolio-detail-item {
-    background-color: var(--card-bg);
-    border-radius: var(--border-radius-md);
+    background-color: var(--md-sys-color-surface-container-dark); /* Use var */
+    border-radius: var(--border-radius-lg); /* Use var */
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--md-sys-elevation-1-dark); /* Use var */
     display: flex;
     flex-direction: column; /* Ensure image is always on top */
 }
 
 .portfolio-detail-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--md-sys-elevation-3-dark); /* Keep subtle shadow change on hover */
 }
 
 .portfolio-detail-image {
     width: 100%; /* Image takes full width of item */
     flex-shrink: 0;
+    aspect-ratio: 16 / 9; /* Enforce aspect ratio */
     border-right: none; /* Remove side border */
     border-bottom: 1px solid var(--border-color); /* Restore bottom border */
     position: relative; /* Needed for absolute positioning of overlay */
+    overflow: hidden; /* Hide parts of image that overflow */
 }
 
 .portfolio-detail-image img {
     display: block;
     width: 100%;
-    height: auto; /* Let image height be natural */
-    object-fit: contain; /* Changed from cover */
+    height: 100%; /* Make image fill container height */
+    object-fit: cover; /* Cover the container, crop if needed */
     border-bottom: none; 
 }
 
@@ -104,7 +104,7 @@
 
 .portfolio-detail-content {
     width: 100%; /* Content takes full width below image */
-    padding: 1.5rem; 
+    padding: var(--space-lg); /* Use var */
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -113,32 +113,32 @@
 
 .portfolio-detail-content h3 {
     margin-top: 0;
-    margin-bottom: 0.75rem; /* Increased space below title */
+    margin-bottom: var(--space-sm); /* Use var */
     font-family: var(--font-heading);
-    color: var(--text-color-strong);
+    color: var(--text-primary); /* Use var */
     font-size: 1.4rem; /* Adjust size */
     text-align: left; /* Ensure left alignment */
 }
 
 .portfolio-categories {
-    margin-bottom: 1.25rem; /* Increased space below categories */
+    margin-bottom: var(--space-lg); /* Use var */
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: var(--space-sm); /* Use var */
     text-align: left; /* Ensure left alignment */
 }
 
 .category-tag {
-    background-color: var(--primary-color-light);
-    color: var(--primary-color);
-    padding: 0.25rem 0.75rem;
-    border-radius: var(--border-radius-sm);
+    background-color: var(--md-sys-color-secondary-container-dark); /* Use var */
+    color: var(--md-sys-color-on-secondary-container-dark); /* Use var */
+    padding: var(--space-xs) var(--space-sm); /* Use vars */
+    border-radius: var(--border-radius-sm); /* Use var */
     font-size: 0.8rem; /* Slightly smaller */
     font-weight: 500;
 }
 
 .portfolio-detail-content p {
-    margin-bottom: 1rem; /* Consistent paragraph spacing */
+    margin-bottom: var(--space-md); /* Use var */
     line-height: 1.65; /* Slightly increased line height */
     text-align: left; /* Ensure left alignment */
     flex-grow: 1; /* Allow description paragraphs to take space */
@@ -149,28 +149,28 @@
 }
 
 .portfolio-detail-content p strong {
-    color: var(--text-color-medium);
+    color: var(--text-secondary); /* Use var */
     display: block; /* Make labels like 'Description:' block */
-    margin-bottom: 0.25rem;
+    margin-bottom: var(--space-xs); /* Use var */
 }
 
 /* Explanation Section Styles */
 .portfolio-detail-explanation {
-    padding: 1.5rem;
+    padding: var(--space-lg); /* Use var */
     margin-top: 0; /* Remove potential double margin */
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--border); /* Use var */
 }
 
 .portfolio-detail-explanation p strong {
-     color: var(--text-color-medium);
+     color: var(--text-secondary); /* Use var */
      display: block; 
-     margin-bottom: 0.25rem;
+     margin-bottom: var(--space-xs); /* Use var */
      font-size: 0.9rem; /* Slightly smaller label */
      font-weight: 600;
 }
 
 .portfolio-detail-explanation p {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-md); /* Use var */
     line-height: 1.6;
     font-size: 0.95rem; /* Slightly smaller text for details */
 }
@@ -185,17 +185,17 @@
     /* Default to 3 columns for larger screens */
     grid-template-columns: repeat(3, 1fr); 
     grid-auto-rows: minmax(150px, auto); /* Control row height */
-    gap: 1rem; 
-    padding: 1.5rem; 
-    background-color: var(--body-bg); 
-    border-bottom: 1px solid var(--border-color);
+    gap: var(--space-sm); /* Use var */
+    padding: var(--space-lg); /* Use var */
+    background-color: var(--md-sys-color-surface-container-low-dark); /* Use var */
+    border-bottom: 1px solid var(--border); /* Use var */
 }
 
 .project-image-gallery figure {
     margin: 0;
-    border-radius: var(--border-radius-sm);
+    border-radius: var(--border-radius-sm); /* Use var */
     overflow: hidden;
-    box-shadow: var(--shadow-xs);
+    box-shadow: var(--md-sys-elevation-1-dark); /* Use var */
 }
 
 /* Style for the large item */
@@ -209,11 +209,10 @@
     width: 100%;
     height: 100%; /* Make image fill the figure */
     object-fit: cover; /* Cover the area, cropping if needed */
-    transition: transform 0.3s ease;
 }
 
 .project-image-gallery figure:hover img {
-    transform: scale(1.05); 
+    /* transform: scale(1.05); */ /* Removed hover transform */
 }
 
 /* Responsive adjustments for the gallery */

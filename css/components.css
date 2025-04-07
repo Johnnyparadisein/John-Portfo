@@ -5,8 +5,8 @@
 /* Buttons (M3 Inspired) */
 .btn {
     display: inline-block;
-    padding: 12px 24px; /* M3 Button height guide (min 40px) */
-    border-radius: 100px; /* M3 pill shape */
+    padding: 8px var(--space-md); /* Use var for horizontal padding - Reduced padding */
+    border-radius: var(--border-radius-md); /* Use variable */
     font-size: var(--md-typescale-label-large-size);
     font-weight: var(--md-typescale-label-large-weight);
     letter-spacing: var(--md-typescale-label-large-letter-spacing);
@@ -16,7 +16,6 @@
     border: none;
     position: relative;
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
     -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
     z-index: 1; /* Ensure content is above pseudo-elements */
 }
@@ -31,7 +30,6 @@
     height: 100%;
     background-color: currentColor; /* Will inherit text color or primary */
     opacity: 0;
-    transition: opacity 0.2s ease;
     pointer-events: none; /* Don't intercept clicks */
 }
 
@@ -60,8 +58,6 @@
 .btn.primary:hover:not(:disabled),
 .btn.primary:focus-visible:not(:disabled) {
     box-shadow: var(--md-sys-elevation-4-dark);
-    transform: translateY(-3px);
-    background-position: -20px; /* Shift gradient on hover */
 }
 [data-theme="light"] .btn.primary:hover:not(:disabled),
 [data-theme="light"] .btn.primary:focus-visible:not(:disabled) {
@@ -86,7 +82,6 @@
     top: 0; left: 0; right: 0; bottom: 0;
     background-color: var(--md-sys-color-primary-dark);
     opacity: 0;
-    transition: opacity 0.2s ease;
     pointer-events: none;
     border-radius: inherit;
     z-index: -1;
@@ -113,16 +108,16 @@
 .skip-link {
     position: absolute;
     top: -100px;
-    left: 10px;
+    left: var(--space-md); /* Use var */
     background: var(--accent);
     color: #ffffff;
-    padding: 10px 15px;
+    padding: var(--space-sm) var(--space-md); /* Use vars */
     z-index: 10001;
     transition: top 0.3s ease;
-    border-radius: 4px;
+    border-radius: var(--border-radius-sm); /* Use var */
 }
 .skip-link:focus {
-    top: 10px;
+    top: var(--space-md); /* Use var */
 }
 
 /* Theme Toggle - M3 Icon Button */
@@ -135,13 +130,12 @@
     border: none; 
     width: 40px; 
     height: 40px;
-    border-radius: 20px; 
+    border-radius: var(--border-radius-md); /* Use var */
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     box-shadow: var(--md-sys-elevation-3-dark); 
-    transition: background-color 0.15s ease, box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 999;
     overflow: hidden; 
     padding: 0; 
@@ -162,7 +156,6 @@
     border-radius: inherit;
     background-color: var(--md-sys-color-on-surface-variant-dark);
     opacity: 0;
-    transition: opacity 0.2s ease;
     pointer-events: none;
 }
 [data-theme="light"] .theme-toggle::before {
@@ -199,7 +192,6 @@
     top: 50%;
     left: 50%;
     font-size: 24px; /* Icon size */
-    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translate(-50%, -50%) scale(1);
 }
 
@@ -248,7 +240,7 @@
 }
 .modal-container {
     background-color: var(--md-sys-color-surface-container-high-dark); /* M3 Surface */
-    border-radius: 28px; /* M3 Dialog radius */
+    border-radius: var(--border-radius-xl); /* Use var */
     box-shadow: var(--md-sys-elevation-3-dark); /* M3 Elevation 3 */
     width: 90%;
     max-width: 560px; /* M3 Max width guideline */
@@ -270,7 +262,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 24px 0 24px; /* M3 Header padding (no bottom padding yet) */
+    padding: var(--space-lg) var(--space-lg) 0 var(--space-lg); /* Use vars - M3 Header padding (no bottom padding yet) */
     border-bottom: none; /* Remove border, rely on padding */
     min-height: 64px; /* M3 Standard height */
     flex-shrink: 0; /* Prevent header shrinking */
@@ -288,22 +280,22 @@
 
 /* Modal Close Button - M3 Icon Button */
 .modal-close {
-    /* Use M3 Icon Button styling principles */
-    background: none;
+    background-color: transparent;
     border: none;
-    color: var(--md-sys-color-on-surface-variant-dark); /* Use On Surface Variant */
-    font-size: 1.5rem; /* Icon size */
+    color: var(--md-sys-color-on-surface-variant-dark);
+    font-size: 1.5rem;
     cursor: pointer;
-    width: 40px; /* M3 Standard 40px touch target */
+    padding: var(--space-sm); /* Use var */
+    line-height: 1;
+    position: absolute; 
+    top: var(--space-md); /* Use var */
+    right: var(--space-md); /* Use var */
+    width: 40px; 
     height: 40px;
-    border-radius: 50%;
+    border-radius: var(--border-radius-md); /* Use var */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    overflow: hidden;
-    margin: -8px; /* Negative margin to align visually */
-    flex-shrink: 0;
 }
 [data-theme="light"] .modal-close {
     color: var(--md-sys-color-on-surface-variant-light);
@@ -314,7 +306,6 @@
     top: 0; left: 0; right: 0; bottom: 0;
     background-color: currentColor; /* Use icon color for ripple */
     opacity: 0;
-    transition: opacity 0.2s ease;
     pointer-events: none;
     border-radius: inherit;
 }
@@ -333,7 +324,7 @@
 
 .modal-content {
     /* Add padding M3 Dialog content padding */
-    padding: 0 24px 24px 24px;
+    padding: 0 var(--space-lg) var(--space-lg) var(--space-lg); /* Use vars */
     overflow-y: auto;
     flex-grow: 1; /* Allow content to grow */
 }
@@ -343,7 +334,7 @@
     max-width: 560px; /* Keep standard width unless necessary */
 }
 .sitemap-content {
-    padding: 0 24px 24px 24px; /* Match M3 content padding */
+    padding: 0 var(--space-lg) var(--space-lg) var(--space-lg); /* Match M3 content padding */
 }
 .sitemap-grid {
     display: grid;
@@ -356,8 +347,8 @@
     line-height: var(--md-typescale-title-small-line-height, 1.25rem); 
     font-weight: var(--md-typescale-title-small-weight, 500);
     color: var(--md-sys-color-primary-dark);
-    margin-bottom: var(--space-md);
-    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-md); /* Use var */
+    padding-bottom: var(--space-sm); /* Use var */
     border-bottom: 1px solid var(--border);
 }
 [data-theme="light"] .sitemap-section h3 {
@@ -367,7 +358,7 @@
     padding: 0;
 }
 .sitemap-section li {
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-sm); /* Use var */
 }
 .sitemap-section a {
     /* Use M3 Body Medium */
@@ -480,11 +471,10 @@
     right: 0;
     background-color: var(--md-sys-color-surface-container-high-dark); 
     color: var(--md-sys-color-on-surface-dark);
-    padding: var(--space-md) 0; 
+    padding: var(--space-md) 0; /* Use var */ 
     box-shadow: var(--md-sys-elevation-3-dark); 
     z-index: 1040; 
     transform: translateY(100%);
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     visibility: hidden;
 }
 [data-theme="light"] .cookie-consent {
@@ -500,7 +490,7 @@
     display: flex;
     flex-direction: column; 
     align-items: center;
-    gap: var(--space-md);
+    gap: var(--space-md); /* Use var */
     text-align: center;
 }
 .cookie-consent p {
@@ -517,24 +507,24 @@
 }
 .cookie-consent div {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--space-md); /* Use var */
 }
 .cookie-consent .btn {
-    padding: 8px 20px; 
+    padding: var(--space-sm) var(--space-lg); /* Use vars */
     font-size: 0.875rem; 
 }
 
 /* --- Scroll Top Button --- */
 .scroll-top {
     position: fixed;
-    bottom: calc(var(--space-lg) + 55px); /* Adjust based on theme toggle */
+    bottom: calc(var(--space-lg) + 60px); /* Position above theme toggle */
     right: var(--space-lg);
+    background-color: var(--md-sys-color-tertiary-container-dark);
+    color: var(--md-sys-color-on-tertiary-container-dark);
+    border: none;
     width: 40px;
     height: 40px;
-    background-color: var(--md-sys-color-surface-variant-dark);
-    color: var(--md-sys-color-on-surface-variant-dark);
-    border: none;
-    border-radius: 50%;
+    border-radius: var(--border-radius-md); /* Use var */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -544,7 +534,6 @@
     opacity: 0;
     visibility: hidden;
     transform: scale(0.8);
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden; /* For progress ring */
 }
 .scroll-top[hidden] { /* Override hidden attribute for transition */
@@ -564,21 +553,19 @@
     font-size: 1.5rem;
     z-index: 1;
 }
-/* Progress Ring */
-.progress-ring {
+/* New Square Progress Styles */
+.scroll-progress-square {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
-    transform: rotate(-90deg); /* Start at the top */
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    z-index: 0; /* Behind the icon */
 }
-.progress-ring__circle {
-    transition: stroke-dashoffset 0.1s linear;
-    stroke: var(--md-sys-color-primary-dark);
-    stroke-linecap: round;
-}
-[data-theme="light"] .progress-ring__circle {
-    stroke: var(--md-sys-color-primary-light);
-}
+
 /* State Layer for Scroll Top (similar to theme toggle) */
 .scroll-top::before {
     content: "";
@@ -587,7 +574,6 @@
     border-radius: inherit;
     background-color: var(--md-sys-color-on-surface-variant-dark);
     opacity: 0;
-    transition: opacity 0.2s ease;
     pointer-events: none;
 }
 [data-theme="light"] .scroll-top::before {
@@ -610,6 +596,63 @@
 }
 .scroll-top:active::before {
      opacity: 0.12; /* M3 Pressed */
+}
+
+/* === Fullscreen Image Viewer Styles === */
+.fullscreen-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    z-index: 1100; /* Higher than header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer; /* Allow clicking overlay to close */
+}
+.fullscreen-viewer.active {
+    opacity: 1;
+    visibility: visible;
+}
+.fullscreen-content {
+    position: relative;
+    max-width: 95%;
+    max-height: 95%;
+    cursor: default; /* Reset cursor for the image area */
+}
+.fullscreen-content img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%; /* Changed from calc(100vh - 40px) */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transform: scale(0.95);
+}
+.fullscreen-viewer.active .fullscreen-content img {
+    transform: scale(1);
+}
+.fullscreen-close {
+    position: absolute;
+    top: var(--space-md); /* Use var */
+    right: var(--space-md); /* Use var */
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem; /* Larger close icon */
+    cursor: pointer;
+    padding: var(--space-sm); /* Use var */
+    line-height: 1;
+    z-index: 1101;
+    opacity: 0.8;
+}
+.fullscreen-close:hover {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 /* --- Media Queries for Components --- */
@@ -659,7 +702,7 @@
 
 @media (min-width: 1200px) {
      .sitemap-grid {
-        grid-template-columns: repeat(4, 1fr); /* Four columns */
+        grid-width: 800px; /* Keep sitemap wider */
     }
 }
 
@@ -677,13 +720,11 @@
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
     cursor: pointer; /* Allow clicking overlay to close */
 }
 .fullscreen-viewer.active {
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.3s ease;
 }
 .fullscreen-content {
     position: relative;
@@ -699,27 +740,134 @@
     height: auto;
     object-fit: contain;
     transform: scale(0.95);
-    transition: transform 0.3s ease;
 }
 .fullscreen-viewer.active .fullscreen-content img {
     transform: scale(1);
 }
 .fullscreen-close {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: var(--space-md); /* Use var */
+    right: var(--space-md); /* Use var */
     background: none;
     border: none;
     color: #ffffff;
     font-size: 2rem; /* Larger close icon */
     cursor: pointer;
-    padding: 5px;
+    padding: var(--space-sm); /* Use var */
     line-height: 1;
     z-index: 1101;
     opacity: 0.8;
-    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .fullscreen-close:hover {
     opacity: 1;
     transform: scale(1.1);
+}
+
+/* === Testimonials Section Styles === */
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column default */
+    gap: var(--space-lg); /* Use existing variable */
+    margin-top: var(--space-xl); /* Space below subtitle */
+}
+
+.testimonial-item {
+    background-color: var(--md-sys-color-surface-container-low-dark); /* Match other components */
+    padding: var(--space-xl); /* Generous padding */
+    border-radius: var(--border-radius-sm); /* Use var */
+    border: 1px solid var(--md-sys-color-outline-variant-dark);
+    box-shadow: var(--md-sys-elevation-1-dark); /* Subtle shadow */
+}
+
+[data-theme="light"] .testimonial-item {
+    background-color: var(--md-sys-color-surface-container-low-light);
+    border: 1px solid var(--md-sys-color-outline-variant-light);
+    box-shadow: var(--md-sys-elevation-1-light);
+}
+
+.testimonial-quote {
+    font-size: var(--md-typescale-body-large-size);
+    line-height: var(--md-typescale-body-large-line-height);
+    font-style: italic;
+    color: var(--md-sys-color-on-surface-dark);
+    margin-bottom: var(--space-lg);
+    position: relative; /* For quote marks */
+    padding-left: var(--space-lg); /* Space for quote mark */
+}
+
+[data-theme="light"] .testimonial-quote {
+    color: var(--md-sys-color-on-surface-light);
+}
+
+/* Add subtle quote marks */
+.testimonial-quote::before {
+    content: '\201C'; /* Left double quote */
+    position: absolute;
+    left: -0.1em; /* Adjust horizontal position slightly left */
+    top: -0.3em; /* Adjust vertical position slightly up */
+    font-size: 6rem; /* Much larger quote mark */
+    font-weight: 800; /* Bolder */
+    color: var(--md-sys-color-primary-dark); /* Accent color */
+    line-height: 1;
+    opacity: 0.2; /* More subtle opacity */
+    z-index: -1; /* Place behind text slightly */
+}
+
+[data-theme="light"] .testimonial-quote::before {
+     color: var(--md-sys-color-primary-light);
+}
+
+
+.testimonial-author {
+    display: block; /* Treat as block */
+    text-align: right; /* Align author info right */
+    margin-top: var(--space-md);
+    font-style: normal; /* Override blockquote italic */
+}
+
+.testimonial-author .author-name {
+    display: block;
+    font-weight: 600; /* Bold name */
+    color: var(--md-sys-color-on-surface-dark);
+    font-size: var(--md-typescale-body-medium-size);
+}
+
+[data-theme="light"] .testimonial-author .author-name {
+    color: var(--md-sys-color-on-surface-light);
+}
+
+.testimonial-author .author-title {
+    display: block;
+    font-size: var(--md-typescale-label-medium-size);
+    color: var(--md-sys-color-on-surface-variant-dark);
+    margin-top: var(--space-xs);
+}
+
+[data-theme="light"] .testimonial-author .author-title {
+    color: var(--md-sys-color-on-surface-variant-light);
+}
+
+/* Media Queries for Grid */
+@media (min-width: 768px) {
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablet */
+        gap: var(--space-xl);
+    }
+}
+
+@media (min-width: 992px) {
+    .testimonial-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns on desktop */
+    }
+}
+
+/* Optional: Placeholder styles for slider controls */
+.testimonial-controls {
+    text-align: center;
+    margin-top: var(--space-xl);
+}
+
+.testimonial-controls button {
+   /* Add styles similar to other buttons if activated */
 } 

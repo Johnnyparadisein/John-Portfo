@@ -1,83 +1,124 @@
 /* ==========================================================================
-   Contact Section Styles
+   Contact Section Styles (Now with Form)
    ========================================================================== */
 
 #contact {
-    position: relative; 
-    overflow: hidden; 
+    position: relative;
+    overflow: hidden;
 }
 
-.contact-methods {
+.contact-form-container {
+    /* max-width: 800px; */ /* Removed - Handled by parent container */
+    margin-top: var(--space-xl); /* Use var */
+    /* margin-left: auto; */ /* Removed - Handled by parent container */
+    /* margin-right: auto; */ /* Removed - Handled by parent container */
+}
+
+.contact-form {
     display: grid;
-    grid-template-columns: 1fr; 
-    gap: var(--space-lg);
-    margin-top: var(--space-xl); /* Add space below subtitle */
+    grid-template-columns: repeat(2, 1fr); /* Two columns for name/email */
+    gap: var(--space-lg); /* Use var */
 }
-.contact-method {
-    background-color: var(--md-sys-color-surface-container-dark);
-    padding: var(--space-xl);
-    border-radius: 16px; 
-    text-align: center;
-    border: none; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: var(--md-sys-elevation-1-dark);
+
+.form-group {
+    display: flex;
+    flex-direction: column;
 }
-[data-theme="light"] .contact-method {
-    background-color: var(--md-sys-color-surface-container-light);
-    box-shadow: var(--md-sys-elevation-1-light);
+
+.form-group-full {
+    grid-column: 1 / -1; /* Make subject/message span full width */
 }
-.contact-method:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--md-sys-elevation-3-dark);
+
+.form-group label {
+    font-size: var(--md-typescale-label-medium-size);
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface-variant-dark);
+    margin-bottom: var(--space-xs); /* Use var */
+    cursor: pointer;
 }
-[data-theme="light"] .contact-method:hover {
-    box-shadow: var(--md-sys-elevation-3-light);
+
+[data-theme="light"] .form-group label {
+    color: var(--md-sys-color-on-surface-variant-light);
 }
-.contact-method i {
-    font-size: 2.2rem;
-    color: var(--md-sys-color-primary-dark);
-    margin-bottom: var(--space-md);
-}
-[data-theme="light"] .contact-method i {
-    color: var(--md-sys-color-primary-light);
-}
-.contact-method h3 {
-    /* Uses base h3 style (Title Medium) */
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    font-family: inherit;
+    font-size: var(--md-typescale-body-large-size);
+    padding: var(--space-sm) var(--space-md); /* Use vars */
+    border-radius: var(--border-radius-sm); /* Use var */
+    border: 1px solid var(--md-sys-color-outline-dark);
+    background-color: var(--md-sys-color-surface-container-lowest-dark);
     color: var(--md-sys-color-on-surface-dark);
-    margin-bottom: var(--space-sm); /* Less space below heading */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-[data-theme="light"] .contact-method h3 {
+
+[data-theme="light"] .form-group input[type="text"],
+[data-theme="light"] .form-group input[type="email"],
+[data-theme="light"] .form-group textarea {
+    border-color: var(--md-sys-color-outline-light);
+    background-color: var(--md-sys-color-surface-container-lowest-light);
     color: var(--md-sys-color-on-surface-light);
 }
-.contact-method a {
-    word-break: break-word;
-    font-size: var(--md-typescale-body-medium-size); /* Use Body Medium */
-    color: var(--md-sys-color-primary-dark);
-    text-decoration: underline;
-    text-decoration-color: rgba(var(--md-sys-color-primary-dark-rgb), 0.5); /* Subtle underline */
-    transition: color 0.2s ease, text-decoration-color 0.2s ease, opacity 0.2s ease;
-}
-[data-theme="light"] .contact-method a {
-    color: var(--md-sys-color-primary-light);
-     text-decoration-color: rgba(var(--md-sys-color-primary-light-rgb), 0.5); 
-}
-.contact-method a:hover {
-    color: var(--md-sys-color-primary-dark);
-    text-decoration-color: var(--md-sys-color-primary-dark);
-    opacity: 1; /* Ensure full opacity on hover */
-}
-[data-theme="light"] .contact-method a:hover {
-    color: var(--md-sys-color-primary-light);
-    text-decoration-color: var(--md-sys-color-primary-light);
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--md-sys-color-primary-dark);
+    box-shadow: 0 0 0 2px rgba(var(--md-sys-color-primary-dark-rgb), 0.3);
 }
 
-/* --- Media Queries for Contact --- */
-@media (min-width: 768px) {
-    .contact-methods {
-        grid-template-columns: repeat(3, 1fr); 
+[data-theme="light"] .form-group input:focus,
+[data-theme="light"] .form-group textarea:focus {
+    border-color: var(--md-sys-color-primary-light);
+    box-shadow: 0 0 0 2px rgba(var(--md-sys-color-primary-light-rgb), 0.3);
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resize */
+    min-height: 120px;
+}
+
+.form-actions {
+    text-align: center; /* Center the submit button */
+    margin-top: var(--space-sm); /* Use var */
+}
+
+/* Form Status Message Styling */
+.form-status {
+    grid-column: 1 / -1; /* Span full width */
+    margin-top: var(--space-md); /* Use var */
+    padding: var(--space-md); /* Use var */
+    border-radius: var(--border-radius-sm); /* Use var */
+    text-align: center;
+    font-weight: 500;
+}
+
+.form-status.success {
+    background-color: rgba(var(--md-sys-color-tertiary-dark-rgb), 0.1);
+    color: var(--md-sys-color-tertiary-dark);
+    border: 1px solid rgba(var(--md-sys-color-tertiary-dark-rgb), 0.3);
+}
+
+[data-theme="light"] .form-status.success {
+    background-color: rgba(var(--md-sys-color-tertiary-light-rgb), 0.1);
+    color: var(--md-sys-color-tertiary-light);
+    border: 1px solid rgba(var(--md-sys-color-tertiary-light-rgb), 0.3);
+}
+
+/* --- Media Queries for Contact Form --- */
+@media (max-width: 767px) {
+    .contact-form {
+        grid-template-columns: 1fr; /* Stack all fields on mobile */
+        gap: var(--space-md); /* Use var */
+    }
+    .form-group-full {
+        grid-column: auto; /* Reset full span */
     }
 }
 
-@media (min-width: 992px) {
-     /* Adjustments if needed */
-} 
+/* Remove old contact method styles */
+/* .contact-methods { ... } */
+/* .contact-method { ... } */
+/* ... etc ... */ 

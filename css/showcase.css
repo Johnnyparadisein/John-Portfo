@@ -4,10 +4,9 @@
 
 /* Rename #portfolio to #showcase */
 #showcase {
-    /* Existing styles are fine */
-    padding-left: 0;
-    padding-right: 0;
-    max-width: none;
+    /* padding-left: 0; Remove explicit horizontal padding */
+    /* padding-right: 0; Remove explicit horizontal padding */
+    max-width: none; /* Keep this if full-width bleed is intended for grid */
 }
 
 .portfolio-filters {
@@ -19,8 +18,8 @@
     background-color: var(--md-sys-color-surface-variant-dark);
     color: var(--md-sys-color-on-surface-variant-dark);
     border: 1px solid var(--md-sys-color-outline-dark);
-    padding: 6px 16px; /* M3 chip padding */
-    border-radius: 8px; /* M3 chip radius */
+    padding: var(--space-sm) var(--space-md); /* Use vars */
+    border-radius: var(--border-radius-md); /* Use var */
     cursor: pointer;
     transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
     font-size: var(--md-typescale-label-large-size);
@@ -92,25 +91,30 @@
 /* Rename .portfolio-grid to .showcase-grid (optional, depends on JS targeting) */
 /* For now, keep as portfolio-grid as JS likely targets .portfolio-item within it */
 .portfolio-grid {
-    display: grid;
+    /* display: grid; */ /* Removed display: grid */
     /* Adjust columns - use fewer for mobile, more for desktop */
-    grid-template-columns: repeat(2, 1fr); 
+    /* grid-template-columns: repeat(2, 1fr); */ /* Removed */
     /* Define a base row height. Adjust this value as needed. */
-    grid-auto-rows: 200px; /* Example: makes each row 200px tall */
-    /* Increase the gap */
-    gap: 8px;
-    position: relative; /* Added for Isotope positioning */
+    /* grid-auto-rows: 200px; */ /* Removed */
+    /* Reduce the gap */
+    gap: 4px; /* Reduced from variable - Isotope might use 'gutter' option instead */
+    position: relative; /* Keep relative positioning for Isotope items */
+    /* Add some bottom padding if items are absolutely positioned */
+    padding-bottom: 4px; 
 }
 .portfolio-item {
     background-color: var(--md-sys-color-surface-variant-dark);
-    border-radius: 0;
+    border-radius: var(--border-radius-sm); /* Use var */
     overflow: hidden;
     box-shadow: var(--md-sys-elevation-1-dark);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative; 
+    /* position: relative; */ /* Removed - Isotope handles positioning */
     opacity: 1; /* Start visible if not using JS fade-in on load */
     transform: scale(1); 
     cursor: pointer; /* Add cursor pointer for clickable items */
+    /* Add explicit width for Isotope */
+    width: calc(25% - 3px); /* Example width for 4 columns with 4px gutter (3/4 of gutter) */
+    margin-bottom: 4px; /* Add bottom margin matching the gutter */
 }
 [data-theme="light"] .portfolio-item {
     background-color: var(--md-sys-color-surface-variant-light);
@@ -127,6 +131,7 @@
 
 .portfolio-item figure {
     margin: 0; 
+    height: 100%; /* Make figure fill the grid item */
 }
 .portfolio-item figure img {
     display: block;
@@ -150,7 +155,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: var(--space-md);
+    padding: var(--space-md); /* Use var */
     /* background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); */ /* Removed gradient overlay */
     color: #fff;
     opacity: 0;
@@ -187,46 +192,37 @@
 /* Style for the 'View Full Portfolio' button container */
 .showcase-view-all {
     text-align: center;
-    margin-top: var(--space-xl);
+    margin-top: var(--space-xl); /* Use var */
 }
 
 /* --- New Grid Span Styles --- */
-/* Spanning 2 columns, 1 row */
-.grid-span-2x1 {
+/* Removed CSS Grid span rules as Isotope handles layout */
+/* .grid-span-2x1 {
     grid-column: span 2;
     grid-row: span 1;
-}
-/* Spanning 1 column, 2 rows */
-.grid-span-1x2 {
+} */
+/* .grid-span-1x2 {
     grid-column: span 1;
     grid-row: span 2;
-}
-/* Example: Spanning 2 columns, 2 rows */
-.grid-span-2x2 {
+} */
+/* .grid-span-2x2 {
     grid-column: span 2;
     grid-row: span 2;
-}
+} */
 
 /* --- Media Queries for Showcase --- */
-@media (min-width: 768px) {
+/* Remove media queries adjusting grid columns/rows as Isotope handles responsiveness */
+/* @media (min-width: 768px) {
     .portfolio-grid {
-        /* Increase columns for medium screens */
         grid-template-columns: repeat(3, 1fr); 
-        grid-auto-rows: 250px; /* Adjust row height for larger screens */
-        /* Increase the gap */
-        gap: 8px;
+        grid-auto-rows: 250px; 
+        gap: 4px; 
     }
-    /* Remove fixed height, rely on aspect-ratio or natural dimensions */
-    /* .portfolio-item img { height: 250px; } */
-}
+} */
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
     .portfolio-grid {
-        /* Increase columns for large screens */
         grid-template-columns: repeat(4, 1fr); 
-        /* Increase the gap */
-        gap: 8px;
-        /* Further adjust row height if needed */
-        /* grid-auto-rows: 280px; */
+        gap: 4px; 
     }
-} 
+} */ 

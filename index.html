@@ -57,9 +57,9 @@
     <!-- Rename portfolio.css link -->
     <link rel="stylesheet" href="css/showcase.css">
     <link rel="stylesheet" href="css/experience.css">
-    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/expertise.css">
     <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/methodology.css">
+    <link rel="stylesheet" href="css/clients.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
@@ -82,36 +82,36 @@
     <a href="#main" class="skip-link">Skip to main content</a>
 
     <header role="banner">
-        <div class="container">
-            <h1>John Kvezereli</h1>
-            <nav role="navigation" aria-label="Main Navigation">
-                <ul>
-                    <!-- Remove About link -->
-                    <li><a href="#showcase">Showcase</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="#methodology">Methodology</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-menu" aria-label="Toggle menu" aria-expanded="false">
-                <i class="ph ph-list"></i>
-            </button>
+        <div class="container header-layout">
+            <div class="header-left">
+                 <h1>John Kvezereli</h1>
+            </div>
+            <div class="header-center">
+                <span>PORTFOLIO 2024</span>
+            </div>
+            <div class="header-right">
+                <nav role="navigation" aria-label="Main Navigation">
+                    <ul>
+                        <li><a href="#hero">ABOUT</a></li>
+                        <li><a href="portfolio.html">PORTFOLIO</a></li>
+                        <li><a href="#expertise">EXPERTISE</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
         </div>
     </header>
 
     <div class="mobile-nav">
         <nav role="navigation" aria-label="Mobile Navigation">
             <ul>
-                <!-- Remove About link -->
-                 <!-- Update nav link -->
-                <li><a href="#showcase">Showcase</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="#methodology">Methodology</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#hero">ABOUT</a></li>
+                <li><a href="portfolio.html">PORTFOLIO</a></li>
+                <li><a href="#expertise">EXPERTISE</a></li>
+                <li><a href="#contact">CONTACT</a></li>
             </ul>
         </nav>
     </div>
@@ -159,358 +159,377 @@
         </section>
         <!-- === End Hero Section === -->
 
-        <!-- === Showcase Section (Formerly Portfolio) === -->
-        <!-- Update section ID and aria-labelledby -->
-        <section id="showcase" class="container section" aria-labelledby="showcase-title">
-            <!-- Update title ID and text -->
-            <h2 id="showcase-title" class="section-title" data-aos="fade-up">Showcase</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">
-                A glimpse into recent projects. Click on an item to view it larger, or see the full portfolio for details.
-            </p>
-
-            <!-- Portfolio Filters -->
-
-            <!-- Remove id="lightgallery-container" -->
-            <div class="portfolio-grid">
-                <!-- Replace with actual portfolio items -->
-                <!-- IMPORTANT: Optimize all images for web. Consider WebP/AVIF formats. -->
-                
-                <!-- Item 1: Add grid-span-2x1 class -->
-                <div class="portfolio-item showcase-item-clickable grid-span-2x1" data-categories="branding social" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion1/1200/800">
-                    <figure>
-                        <img src="https://picsum.photos/seed/lion1/600/400" alt="Black Lion Showcase Image 1" loading="lazy">
-                        <figcaption class="portfolio-content">
-                            <h3>Black Lion 1</h3>
-                        </figcaption>
-                    </figure>
-                </div>
-                
-                <!-- Item 2: No changes -->
-                <div class="portfolio-item showcase-item-clickable" data-categories="ui-ux ai" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion2/1200/800">
-                    <figure>
-                         <img src="https://picsum.photos/seed/lion2/600/400" alt="Black Lion Showcase Image 2" loading="lazy">
-                        <figcaption class="portfolio-content">
-                            <h3>Black Lion 2</h3>
-                        </figcaption>
-                    </figure>
-                </div>
-                
-                <!-- Item 3: Add grid-span-1x2 class -->
-                <div class="portfolio-item showcase-item-clickable grid-span-1x2" data-categories="motion" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion3/800/1200">
-                     <figure>
-                        <img src="https://picsum.photos/seed/lion3/400/600" alt="Black Lion Showcase Image 3" loading="lazy">
-                        <figcaption class="portfolio-content">
-                            <h3>Black Lion 3</h3>
-                        </figcaption>
-                    </figure>
-                </div>
-                
-                <!-- Item 4: No changes -->
-                 <div class="portfolio-item showcase-item-clickable" data-categories="branding ai" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion4/1200/800">
-                    <figure>
-                        <img src="https://picsum.photos/seed/lion4/600/400" alt="Black Lion Showcase Image 4" loading="lazy">
-                        <figcaption class="portfolio-content">
-                            <h3>Black Lion 4</h3>
-                        </figcaption>
-                    </figure>
-                </div>
-                
-                <!-- Item 5: Remove <a> tag, add class and data-fullscreen-src -->
-                 <div class="portfolio-item showcase-item-clickable" data-categories="social" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion5/1200/800">
-                    <figure>
-                        <img src="https://picsum.photos/seed/lion5/600/400" alt="Black Lion Showcase Image 5" loading="lazy">
-                        <figcaption class="portfolio-content">
-                            <h3>Black Lion 5</h3>
-                        </figcaption>
-                    </figure>
-                </div>
-
-                <!-- Item 6: Similar to above -->
-                 <div class="portfolio-item showcase-item-clickable" data-categories="branding" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion6/1200/800">
-                    <figure>
-                        <img src="https://picsum.photos/seed/lion6/600/400" alt="Black Lion Showcase Image 6" loading="lazy">
-                        <figcaption class="portfolio-content">
-                            <h3>Black Lion 6</h3>
-                        </figcaption>
-                    </figure>
-                </div>
-
-                <!-- Duplicate existing items to add more rows -->
-                <!-- Item 1 Duplicate: Add grid-span-2x1 class -->
-                <div class="portfolio-item showcase-item-clickable grid-span-2x1" data-categories="branding social" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion7/1200/800">
-                    <figure>
-                        <img src="https://picsum.photos/seed/lion7/600/400" alt="Black Lion Showcase Image 7" loading="lazy">
-                        <figcaption class="portfolio-content">
-                            <h3>Black Lion 7</h3>
-                        </figcaption>
-                    </figure>
-                </div>
-                
-                <!-- Item 2 Duplicate: No changes -->
-                <div class="portfolio-item showcase-item-clickable" data-categories="ui-ux ai" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion8/1200/800">
-                    <figure>
-                         <img src="https://picsum.photos/seed/lion8/600/400" alt="Black Lion Showcase Image 8" loading="lazy">
-                        <figcaption class="portfolio-content">
-                            <h3>Black Lion 8</h3>
-                        </figcaption>
-                    </figure>
-                </div>
-                
-                <!-- Item 3 Duplicate: Add grid-span-1x2 class -->
-                <div class="portfolio-item showcase-item-clickable grid-span-1x2" data-categories="motion" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion9/800/1200">
-                     <figure>
-                        <img src="https://picsum.photos/seed/lion9/400/600" alt="Black Lion Showcase Image 9" loading="lazy">
-                        <figcaption class="portfolio-content">
-                            <h3>Black Lion 9</h3>
-                        </figcaption>
-                    </figure>
-                </div>
-                
-                <!-- Item 4 Duplicate: No changes -->
-                 <div class="portfolio-item showcase-item-clickable" data-categories="branding ai" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion10/1200/800">
-                    <figure>
-                        <img src="https://picsum.photos/seed/lion10/600/400" alt="Black Lion Showcase Image 10" loading="lazy">
-                        <figcaption class="portfolio-content">
-                            <h3>Black Lion 10</h3>
-                        </figcaption>
-                    </figure>
-                </div>
-                
-                <!-- Item 5 Duplicate: Remove <a> tag, add class and data-fullscreen-src -->
-                 <div class="portfolio-item showcase-item-clickable" data-categories="social" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion11/1200/800">
-                    <figure>
-                        <img src="https://picsum.photos/seed/lion11/600/400" alt="Black Lion Showcase Image 11" loading="lazy">
-                        <figcaption class="portfolio-content">
-                            <h3>Black Lion 11</h3>
-                        </figcaption>
-                    </figure>
-                </div>
-
-                <!-- Item 6 Duplicate: Similar to above -->
-                 <div class="portfolio-item showcase-item-clickable" data-categories="branding" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion12/1200/800">
-                    <figure>
-                        <img src="https://picsum.photos/seed/lion12/600/400" alt="Black Lion Showcase Image 12" loading="lazy">
-                        <figcaption class="portfolio-content">
-                            <h3>Black Lion 12</h3>
-                        </figcaption>
-                    </figure>
-                 </div>
-
-                <!-- End Portfolio Items -->
+        <!-- === Showcase Section === -->
+        <section id="showcase" class="section" aria-labelledby="showcase-title">
+            <div class="container"> <!-- Container for title -->
+                <h2 id="showcase-title" class="section-title" data-aos="fade-up">Showcase</h2>
             </div>
+            <div class="container"> <!-- Container for grid -->
+                <div class="portfolio-grid">
+                    <!-- Replace with actual portfolio items -->
+                    <!-- IMPORTANT: Optimize all images for web. Consider WebP/AVIF formats. -->
+                    
+                    <!-- Item 1: Add grid-span-2x1 class -->
+                    <div class="portfolio-item showcase-item-clickable grid-span-2x1" data-categories="branding social" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion1/1200/800">
+                        <figure>
+                            <img src="https://picsum.photos/seed/lion1/600/400" alt="Black Lion Showcase Image 1" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <h3>Black Lion 1</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <!-- Item 2: No changes -->
+                    <div class="portfolio-item showcase-item-clickable" data-categories="ui-ux ai" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion2/1200/800">
+                        <figure>
+                             <img src="https://picsum.photos/seed/lion2/600/400" alt="Black Lion Showcase Image 2" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <h3>Black Lion 2</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <!-- Item 3: Add grid-span-1x2 class -->
+                    <div class="portfolio-item showcase-item-clickable grid-span-1x2" data-categories="motion" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion3/800/1200">
+                         <figure>
+                            <img src="https://picsum.photos/seed/lion3/400/600" alt="Black Lion Showcase Image 3" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <h3>Black Lion 3</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <!-- Item 4: No changes -->
+                     <div class="portfolio-item showcase-item-clickable" data-categories="branding ai" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion4/1200/800">
+                        <figure>
+                            <img src="https://picsum.photos/seed/lion4/600/400" alt="Black Lion Showcase Image 4" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <h3>Black Lion 4</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <!-- Item 5: Remove <a> tag, add class and data-fullscreen-src -->
+                     <div class="portfolio-item showcase-item-clickable" data-categories="social" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion5/1200/800">
+                        <figure>
+                            <img src="https://picsum.photos/seed/lion5/600/400" alt="Black Lion Showcase Image 5" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <h3>Black Lion 5</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
 
-             <!-- Add View Full Portfolio Button -->
-            <div class="showcase-view-all" data-aos="fade-up" data-aos-delay="300">
-                <a href="portfolio.html" class="btn secondary">View Full Portfolio</a>
-            </div>
+                    <!-- Item 6: Similar to above -->
+                     <div class="portfolio-item showcase-item-clickable" data-categories="branding" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion6/1200/800">
+                        <figure>
+                            <img src="https://picsum.photos/seed/lion6/600/400" alt="Black Lion Showcase Image 6" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <h3>Black Lion 6</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
 
+                    <!-- Duplicate existing items to add more rows -->
+                    <!-- Item 1 Duplicate: Add grid-span-2x1 class -->
+                    <div class="portfolio-item showcase-item-clickable grid-span-2x1" data-categories="branding social" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion7/1200/800">
+                        <figure>
+                            <img src="https://picsum.photos/seed/lion7/600/400" alt="Black Lion Showcase Image 7" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <h3>Black Lion 7</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <!-- Item 2 Duplicate: No changes -->
+                    <div class="portfolio-item showcase-item-clickable" data-categories="ui-ux ai" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion8/1200/800">
+                        <figure>
+                             <img src="https://picsum.photos/seed/lion8/600/400" alt="Black Lion Showcase Image 8" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <h3>Black Lion 8</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <!-- Item 3 Duplicate: Add grid-span-1x2 class -->
+                    <div class="portfolio-item showcase-item-clickable grid-span-1x2" data-categories="motion" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion9/800/1200">
+                         <figure>
+                            <img src="https://picsum.photos/seed/lion9/400/600" alt="Black Lion Showcase Image 9" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <h3>Black Lion 9</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <!-- Item 4 Duplicate: No changes -->
+                     <div class="portfolio-item showcase-item-clickable" data-categories="branding ai" data-aos="fade-up" data-aos-delay="200" data-fullscreen-src="https://picsum.photos/seed/lion10/1200/800">
+                        <figure>
+                            <img src="https://picsum.photos/seed/lion10/600/400" alt="Black Lion Showcase Image 10" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <h3>Black Lion 10</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <!-- Item 5 Duplicate: Remove <a> tag, add class and data-fullscreen-src -->
+                     <div class="portfolio-item showcase-item-clickable" data-categories="social" data-aos="fade-up" data-aos-delay="300" data-fullscreen-src="https://picsum.photos/seed/lion11/1200/800">
+                        <figure>
+                            <img src="https://picsum.photos/seed/lion11/600/400" alt="Black Lion Showcase Image 11" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <h3>Black Lion 11</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Item 6 Duplicate: Similar to above -->
+                     <div class="portfolio-item showcase-item-clickable" data-categories="branding" data-aos="fade-up" data-aos-delay="400" data-fullscreen-src="https://picsum.photos/seed/lion12/1200/800">
+                        <figure>
+                            <img src="https://picsum.photos/seed/lion12/600/400" alt="Black Lion Showcase Image 12" loading="lazy">
+                            <figcaption class="portfolio-content">
+                                <h3>Black Lion 12</h3>
+                            </figcaption>
+                        </figure>
+                     </div>
+
+                    <!-- End Duplicated Items -->
+                </div> <!-- This closes the FIRST portfolio-grid -->
+
+                <!-- Remove the duplicated grid below -->
+                <!-- <div class="portfolio-grid"> ... a lot of duplicated items ... </div> -->
+
+            </div> <!-- End grid container -->
         </section>
         <!-- === End Showcase Section === -->
 
-        <!-- === Start Work Methodology Section === -->
-        <section id="methodology" class="container section" aria-labelledby="methodology-title">
-            <h2 id="methodology-title" class="section-title" data-aos="fade-up">My Work Methodology</h2>
-            <div class="methodology-content">
-                <div class="methodology-intro" data-aos="fade-up" data-aos-delay="100">
-                     <p>I blend traditional design expertise with the power of AI to create innovative and effective solutions. Here's a glimpse into my process:</p>
-                </div>
-                <div class="methodology-steps">
-                     <div class="step" data-aos="fade-up" data-aos-delay="200">
-                         <i class="ph ph-brain"></i>
-                         <h3>1. Strategy & Foundation</h3>
-                         <p>Every project begins with understanding your goals, audience, and establishing solid design principles.</p>
-                     </div>
-                     <div class="step" data-aos="fade-up" data-aos-delay="300">
-                         <i class="ph ph-atom"></i>
-                         <h3>2. AI-Powered Ideation</h3>
-                         <p>Leveraging tools like Midjourney and Stable Diffusion for rapid concept generation and exploring unique visual directions.</p>
-                     </div>
-                     <div class="step" data-aos="fade-up" data-aos-delay="400">
-                         <i class="ph ph-pencil-circle"></i>
-                         <h3>3. Human-Centric Refinement</h3>
-                         <p>Applying core UI/UX, composition, and typography skills to refine AI outputs into polished, user-friendly designs.</p>
-                     </div>
-                     <div class="step" data-aos="fade-up" data-aos-delay="500">
-                         <i class="ph ph-check-circle"></i>
-                         <h3>4. Iteration & Delivery</h3>
-                         <p>Collaborating through feedback loops to ensure the final product is impactful, effective, and exceeds expectations.</p>
-                     </div>
-                </div>
-            </div>
-        </section>
-        <!-- === End Work Methodology Section === -->
-
-        <!-- === Experience Section (Now here) === -->
-        <section id="experience" class="container section" aria-labelledby="experience-title">
-            <h2 id="experience-title" class="section-title" data-aos="fade-up">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-date">
-                        <i class="ph ph-calendar"></i>
-                        2024 - Present
+        <!-- === Expertise Section === -->
+        <section id="expertise" class="section expertise-section-new" aria-labelledby="expertise-title-main">
+            <!-- No main title, using subsection titles -->
+            <div class="container"> <!-- Container for all expertise subsections -->
+                <!-- Skills Subsection -->
+                <div class="expertise-subsection skills-subsection" data-aos="fade-up">
+                    <div class="subsection-title">
+                        <h3>SKILLS</h3>
                     </div>
-                    <div class="timeline-content">
-                        <h3><i class="ph ph-chalkboard-teacher"></i> Lecturer</h3>
-                        <p class="timeline-company">Tbilisi School of Communication</p>
-                        <div class="timeline-details">
-                            <p>Empowering the next generation of creatives by teaching advanced design concepts, modern workflows, and emerging technologies like AI integration in design.</p>
-                            <ul class="timeline-achievements">
+                    <div class="subsection-content skills-content">
+                        <!-- Skills will be listed here, potentially in columns via CSS -->
+                        <ul class="skills-columns">
+                            <li>Brand Identity</li>
+                            <li>UI/UX Design</li>
+                            <li>Social Media Design</li>
+                            <li>Motion Graphics</li>
+                            <li>Presentation Design</li>
+                            <li>Figma</li>
+                            <li>Adobe Creative Suite</li>
+                            <li>AI Tools (Midjourney, etc.)</li>
+                            <li>HTML/CSS</li>
+                            <li>Web3 Concepts</li>
+                            <li>AI Workflows</li>
+                            <li>Prompt Engineering</li>
+                            <!-- Add more specific skills if needed -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- Experience Subsection -->
+                 <div class="expertise-subsection experience-subsection" data-aos="fade-up" data-aos-delay="100">
+                    <div class="subsection-title">
+                        <h3>EXPERIENCE</h3>
+                    </div>
+                    <div class="subsection-content experience-content">
+                        <div class="experience-item">
+                            <span class="job-title">Lecturer</span>
+                            <span class="company">Tbilisi School of Communication</span>
+                            <span class="year">2024 - Present</span>
+                            <p class="experience-description">Empowering the next generation of creatives by teaching advanced design concepts, modern workflows, and emerging technologies like AI integration in design.</p>
+                            <ul class="experience-responsibilities">
                                 <li>Developing and delivering curriculum focused on AI-assisted design, branding, and creative technologies.</li>
                                 <li>Mentoring students through hands-on projects, portfolio reviews, and career guidance.</li>
                                 <li>Conducting workshops on leveraging AI tools (Midjourney, Stable Diffusion) effectively within creative workflows.</li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-date">
-                        <i class="ph ph-calendar"></i>
-                        2023 - Present
-                    </div>
-                    <div class="timeline-content">
-                        <h3><i class="ph ph-paint-brush-broad"></i> Senior Graphic Designer</h3>
-                        <p class="timeline-company">Redberry • რედბერი</p>
-                        <div class="timeline-details">
-                            <p>Leading creative direction and executing key design initiatives within a fast-paced agency environment. Driving innovation by integrating AI into design processes.</p>
-                            <ul class="timeline-achievements">
-                                <li>Spearheaded the adoption of AI tools, improving visual output quality and workflow efficiency for multiple projects.</li>
-                                <li>Managed and mentored junior designers, fostering skill development and collaborative teamwork.</li>
-                                <li>Developed impactful brand identities and comprehensive design systems for major enterprise clients, ensuring scalability and consistency.</li>
+                        <div class="experience-item">
+                            <span class="job-title">Senior Graphic Designer</span>
+                            <span class="company">Redberry • რედბერი</span>
+                            <span class="year">2023 - Present</span>
+                            <p class="experience-description">Leading design projects, mentoring junior designers, and developing high-impact visual concepts for various clients.</p>
+                            <ul class="experience-responsibilities">
+                                <li>Developed brand identities and marketing materials.</li>
+                                <li>Collaborated with cross-functional teams on campaign strategies.</li>
+                                <li>Ensured design consistency across all platforms.</li>
                             </ul>
-                            <div class="timeline-tech">
-                                <span>Tools:</span> Adobe Creative Suite, Figma, Midjourney, DALL-E, Stable Diffusion
-                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-date">
-                        <i class="ph ph-calendar"></i>
-                        2023 - 2024
-                    </div>
-                    <div class="timeline-content">
-                        <h3><i class="ph ph-film-strip"></i> Motion Graphic Designer</h3>
-                        <p class="timeline-company">Subway</p>
-                        <div class="timeline-details">
-                            <p>Produced compelling motion graphics for diverse digital marketing campaigns, enhancing brand engagement across social media platforms.</p>
-                            <ul class="timeline-achievements">
-                                <li>Created dynamic animated content utilized in national advertising campaigns, increasing viewer retention.</li>
-                                <li>Developed reusable motion graphics templates for social media, streamlining content production.</li>
-                                <li>Collaborated closely with the marketing team to visually translate brand stories and campaign messages.</li>
-                            </ul>
-                            <div class="timeline-tech">
-                                <span>Tools:</span> After Effects, Cinema 4D, Adobe Premiere, DaVinci Resolve
-                            </div>
+                        <div class="experience-item">
+                             <span class="job-title">Motion Graphic Designer</span>
+                             <span class="company">Subway</span>
+                             <span class="year">2023 - 2024</span>
+                             <p class="experience-description">Created engaging motion graphics for digital advertising and social media campaigns.</p>
+                             <ul class="experience-responsibilities">
+                                 <li>Animated logos, text, and graphics for video content.</li>
+                                 <li>Worked with marketing teams to visualize concepts.</li>
+                                 <li>Edited video footage and integrated motion elements.</li>
+                             </ul>
                         </div>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-date">
-                        <i class="ph ph-calendar"></i>
-                        2022 - 2023
-                    </div>
-                    <div class="timeline-content">
-                        <h3><i class="ph ph-palette"></i> Graphic Designer</h3>
-                        <p class="timeline-company">Dunkin' Georgia</p>
-                        <div class="timeline-details">
-                            <p>Directed the visual identity for numerous marketing campaigns and promotional materials, maintaining brand standards while introducing fresh creative concepts.</p>
-                            <ul class="timeline-achievements">
-                                <li>Designed eye-catching seasonal campaign materials (print & digital) and promotional assets.</li>
-                                <li>Created engaging social media visuals and contributed to content strategy development.</li>
-                                <li>Developed unique packaging designs for limited-time offers and special promotions.</li>
-                            </ul>
-                            <div class="timeline-tech">
-                                <span>Tools:</span> Adobe Photoshop, Illustrator, InDesign, Social Media Design Tools
-                            </div>
+                        <div class="experience-item">
+                             <span class="job-title">Graphic Designer</span>
+                             <span class="company">Dunkin' Georgia</span>
+                             <span class="year">2022 - 2023</span>
+                             <p class="experience-description">Designed print and digital assets for promotional campaigns and in-store materials.</p>
+                             <ul class="experience-responsibilities">
+                                 <li>Created social media graphics and advertisements.</li>
+                                 <li>Designed menus, posters, and packaging.</li>
+                                 <li>Maintained brand guidelines across all designs.</li>
+                             </ul>
+                         </div>
+                         <div class="experience-item">
+                             <span class="job-title">Graphic Designer</span>
+                             <span class="company">Upwork (Freelance)</span>
+                             <span class="year">2019 - 2022</span>
+                             <p class="experience-description">Provided graphic design services to various clients on a freelance basis, managing projects from concept to completion.</p>
+                             <ul class="experience-responsibilities">
+                                 <li>Designed logos, websites, and marketing materials for diverse clients.</li>
+                                 <li>Communicated effectively with clients to meet project requirements.</li>
+                                 <li>Managed multiple projects simultaneously, ensuring timely delivery.</li>
+                             </ul>
                         </div>
-                    </div>
+                     </div>
                 </div>
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-date">
-                        <i class="ph ph-calendar"></i>
-                        2019 - 2022
-                    </div>
-                    <div class="timeline-content">
-                        <h3><i class="ph ph-briefcase"></i> Graphic Designer</h3>
-                        <p class="timeline-company">Upwork (Freelance)</p>
-                        <div class="timeline-details">
-                            <p>Successfully delivered diverse design solutions for international clients as a top-rated freelance designer, specializing in brand identity and digital marketing.</p>
-                            <ul class="timeline-achievements">
-                                <li>Consistently maintained a 100% Job Success Score across 50+ completed projects.</li>
-                                <li>Built strong client relationships through effective communication and high-quality deliverables across different time zones.</li>
-                                <li>Expanded skillset in various design disciplines including web design elements and print production.</li>
-                            </ul>
-                            <div class="timeline-tech">
-                                <span>Tools:</span> Full Adobe Creative Suite, Figma, Sketch, Web Design Tools
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <!-- Awards Subsection (Optional) -->
+            </div> <!-- End expertise container -->
         </section>
-        <!-- === End Experience Section === -->
+        <!-- === End Expertise Section === -->
 
-        <section id="skills" class="container section" aria-labelledby="skills-title">
-            <h2 id="skills-title" class="section-title" data-aos="fade-up">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                    <h3><i class="ph ph-paint-brush"></i> Design</h3>
-                    <ul>
-                        <li>Brand Identity</li>
-                        <li>UI/UX Design</li>
-                        <li>Social Media Design</li>
-                        <li>Motion Graphics</li>
-                        <li>Presentation Design</li>
-                    </ul>
-                </div>
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-                    <h3><i class="ph ph-code"></i> Technology</h3>
-                    <ul>
-                        <li>Figma</li>
-                        <li>Adobe Creative Suite (PS, AI, AE, ID, PR)</li>
-                        <li>Midjourney, DALL-E, Stable Diffusion</li>
-                        <li>HTML/CSS</li>
-                        <li>Web3 Concepts</li>
-                    </ul>
-                </div>
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
-                    <h3><i class="ph ph-brain"></i> AI Integration</h3>
-                    <ul>
-                        <li>AI-Assisted Design Workflows</li>
-                        <li>Prompt Engineering for Visuals</li>
-                        <li>AI Tool Evaluation & Implementation</li>
-                        <li>Generative Art Creation</li>
-                        <li>AI in Motion Design</li>
-                    </ul>
-                </div>
+        <!-- === Clients Section === -->
+        <section id="clients" class="section clients-section" aria-labelledby="clients-title">
+            <div class="container"> <!-- Container for title -->
+                <h2 id="clients-title" class="section-title" data-aos="fade-up">Clients</h2>
             </div>
+            <!-- Outer container for scrolling logos -->
+            <div class="client-logos-outer overflow-hidden">
+                 <!-- Inner wrapper for animation -->
+                 <div class="client-logos-inner-wrapper" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Original Logos List -->
+                    <div class="client-logos">
+                        <div class="client-logo" title="Redberry">
+                            <span>Redberry</span>
+                        </div>
+                        <div class="client-logo" title="Tbilisi School of Communication">
+                            <span>Tbilisi School of Comm.</span>
+                        </div>
+                        <div class="client-logo" title="Subway">
+                            <span>Subway</span>
+                        </div>
+                        <div class="client-logo" title="Dunkin'">
+                            <span>Dunkin'</span>
+                        </div>
+                        <div class="client-logo" title="Upwork">
+                            <span>Upwork</span>
+                        </div>
+                    </div>
+                    <!-- Duplicated Logos List -->
+                    <div class="client-logos" aria-hidden="true">
+                        <div class="client-logo" title="Redberry">
+                            <span>Redberry</span>
+                        </div>
+                        <div class="client-logo" title="Tbilisi School of Communication">
+                            <span>Tbilisi School of Comm.</span>
+                        </div>
+                        <div class="client-logo" title="Subway">
+                            <span>Subway</span>
+                        </div>
+                        <div class="client-logo" title="Dunkin'">
+                            <span>Dunkin'</span>
+                        </div>
+                        <div class="client-logo" title="Upwork">
+                            <span>Upwork</span>
+                        </div>
+                    </div>
+                </div> <!-- End Inner Wrapper -->
+            </div> <!-- End Outer Container -->
         </section>
+        <!-- === End Clients Section === -->
 
-        <section id="contact" class="container section" aria-labelledby="contact-title">
-            <h2 id="contact-title" class="section-title" data-aos="fade-up">Get in Touch</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Ready to collaborate or have a question? Reach out!</p>
-            <div class="contact-methods">
-                <div class="contact-method" data-aos="fade-up" data-aos-delay="200">
-                    <i class="ph ph-envelope-simple"></i>
-                    <h3>Email</h3>
-                     <!-- *** Add your actual email address below *** -->
-                    <a href="mailto:">your.email@example.com</a>
-                </div>
-                <div class="contact-method" data-aos="fade-up" data-aos-delay="300">
-                    <i class="ph ph-linkedin-logo"></i>
-                    <h3>LinkedIn</h3>
-                     <!-- *** Add your actual LinkedIn profile URL below *** -->
-                    <a href="" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
-                </div>
-                <div class="contact-method" data-aos="fade-up" data-aos-delay="400">
-                    <i class="ph ph-behance-logo"></i>
-                    <h3>Behance</h3>
-                     <!-- *** Verify/Update Behance URL below *** -->
-                     <a href="https://www.behance.net/gallery/202855379/John-Kvezerelis-Portfolio" target="_blank" rel="noopener noreferrer">View Portfolio</a>
+        <!-- === Testimonials Section === -->
+        <section id="testimonials" class="section" aria-labelledby="testimonials-title">
+            <div class="container">
+                <h2 id="testimonials-title" class="section-title">Testimonials</h2>
+                <p class="section-subtitle">What others say about my work.</p>
+                
+                <div class="testimonial-grid"> 
+                    <!-- Testimonial Item 1 -->
+                    <div class="testimonial-item">
+                        <blockquote class="testimonial-quote">
+                            "John's creativity and attention to detail are outstanding. He delivered results beyond our expectations and was a pleasure to work with." 
+                        </blockquote>
+                        <cite class="testimonial-author">
+                            <span class="author-name">Jane Doe</span>
+                            <span class="author-title">CEO, Example Corp</span>
+                        </cite>
+                    </div>
+                    
+                    <!-- Testimonial Item 2 (Placeholder) -->
+                    <div class="testimonial-item">
+                        <blockquote class="testimonial-quote">
+                            "Working with John was a fantastic experience. Their insights and skills significantly improved our project's outcome."
+                        </blockquote>
+                        <cite class="testimonial-author">
+                            <span class="author-name">John Smith</span>
+                            <span class="author-title">Project Manager, Another Co</span>
+                        </cite>
+                    </div>
+                    
+                    <!-- Testimonial Item 3 (Placeholder) -->
+                    <div class="testimonial-item">
+                        <blockquote class="testimonial-quote">
+                            "Highly recommend John! Professional, talented, and delivered exceptional quality on a tight deadline."
+                        </blockquote>
+                        <cite class="testimonial-author">
+                            <span class="author-name">Alice Brown</span>
+                            <span class="author-title">Marketing Lead, Tech Startup</span>
+                        </cite>
+                    </div>
+
+                    <!-- Add more testimonial-item divs here as needed -->
+                    
+                     <!-- Placeholder for future slider controls if needed -->
+                     <!-- <div class="testimonial-controls">
+                          <button class="prev-btn" aria-label="Previous testimonial">&lt;</button>
+                          <button class="next-btn" aria-label="Next testimonial">&gt;</button>
+                     </div> -->
                 </div>
             </div>
-            <!-- Optional: Consider adding a contact form here (requires backend or service) -->
         </section>
+        <!-- === End Testimonials Section === -->
+
+        <!-- === Contact Section === -->
+        <section id="contact" class="section" aria-labelledby="contact-title">
+            <div class="container"> <!-- Container for title/subtitle -->
+                <h2 id="contact-title" class="section-title" data-aos="fade-up">Get in Touch</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Ready to collaborate or have a question? Send me a message!</p>
+            </div>
+            <div class="container contact-form-container"> <!-- Container for form -->
+                 <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group form-group-full">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group form-group-full">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group form-group-full form-actions">
+                         <button type="submit" class="btn primary">Send Message</button>
+                    </div>
+                    <div id="form-status" class="form-status" aria-live="polite"></div> <!-- Status message area -->
+                </form>
+            </div> <!-- End form container -->
+        </section>
+        <!-- === End Contact Section === -->
     </main>
 
     <!-- === Fullscreen Image Viewer === -->
@@ -539,11 +558,10 @@
                 <nav class="footer-nav" role="navigation" aria-label="Footer Navigation">
                     <h4>Navigation</h4>
                     <ul>
-                        <li><a href="#showcase">Showcase</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#showcase">Showcase</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#hero">ABOUT</a></li>
+                        <li><a href="portfolio.html">PORTFOLIO</a></li>
+                        <li><a href="#expertise">EXPERTISE</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
                     </ul>
                 </nav>
                 <div class="footer-services">
@@ -565,7 +583,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 John Kvezereli. All rights reserved.</p>
+                <p>&copy; <span id="current-year"></span> John Kvezereli. All rights reserved.</p>
                 <ul>
                     <li><a href="#" data-modal-trigger="sitemap-modal">Sitemap</a></li>
                      <!-- *** Create actual Privacy/Terms pages and link them below, or remove these list items *** -->
@@ -591,9 +609,7 @@
                             <ul>
                                 <li><a href="#hero" data-modal-close>Home</a></li>
                                 <li><a href="#showcase" data-modal-close>Showcase</a></li>
-                                <li><a href="#experience" data-modal-close>Experience</a></li>
-                                <li><a href="#skills" data-modal-close>Skills</a></li>
-                                <li><a href="#showcase" data-modal-close>Showcase</a></li>
+                                <li><a href="#expertise" data-modal-close>Expertise</a></li>
                                 <li><a href="#contact" data-modal-close>Contact</a></li>
                             </ul>
                         </div>
@@ -646,9 +662,7 @@
     <!-- Back to Top Button -->
     <button class="scroll-top" aria-label="Scroll to top" hidden>
         <i class="ph ph-arrow-up"></i>
-        <svg class="progress-ring" width="40" height="40">
-             <circle class="progress-ring__circle" stroke="var(--accent)" stroke-width="4" fill="transparent" r="18" cx="20" cy="20"/>
-        </svg>
+        <div class="scroll-progress-square"></div>
     </button>
 
     <!-- Typed.js Library -->
@@ -666,7 +680,6 @@
     <script src="js/theme.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/components.js"></script>
-    <!-- Rename portfolio.js reference -->
     <script src="js/showcase.js"></script>
     <script src="js/vendor.js"></script>
     <script src="js/main.js"></script>

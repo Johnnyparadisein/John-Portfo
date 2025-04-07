@@ -12,7 +12,8 @@ function initializeWebsite() {
     initializeModals();         // From components.js
     initializeScrollTopButton();// From components.js
     initializeCookieConsent();  // From components.js
-    initializeFullscreenViewer(); // From components.js (Add new initializer)
+    initializeFullscreenViewer(); // From components.js
+    initializeContactForm();    // From components.js
 
     // --- Initialize Feature-Specific Modules ---
     // initializePortfolioFiltering(); // From showcase.js (Formerly portfolio.js) - Initialization moved to showcase.js

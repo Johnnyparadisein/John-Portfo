@@ -4,8 +4,8 @@
 
 footer {
     background-color: var(--md-sys-color-surface-container-lowest-dark); /* Use darker surface */
-    padding: var(--space-xxl) 0 var(--space-lg);
-    margin-top: var(--space-xxl);
+    padding: var(--space-xl) 0 var(--space-lg);
+    margin-top: var(--space-section); /* Reduced top margin */
     border-top: 1px solid var(--border);
     color: var(--text-secondary);
     text-align: center; 
@@ -47,15 +47,15 @@ footer {
     display: flex;
     justify-content: center; 
     gap: var(--space-md);
-    margin-top: 10px;
+    margin-top: var(--space-md);
 }
 .social-links a {
     color: var(--text-secondary);
     font-size: 1.5rem;
     transition: color 0.3s ease;
     display: inline-flex; /* For hover effect */
-    padding: 4px;
-    border-radius: 50%;
+    padding: var(--space-sm);
+    border-radius: 0;
     position: relative;
     overflow: hidden;
 }
@@ -128,7 +128,7 @@ footer {
     display: flex;
     flex-direction: column; 
     gap: var(--space-sm);
-    margin-top: 10px;
+    margin-top: var(--space-md);
 }
 .footer-bottom a {
     color: var(--text-secondary);
@@ -144,11 +144,12 @@ footer {
         text-align: left; 
     }
     .footer-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: 2fr 1fr 1fr 1fr; /* Info column wider */
         gap: var(--space-xl);
     }
     .social-links {
         justify-content: flex-start; 
+        align-items: center;
     }
     .footer-contact p {
         justify-content: flex-start; /* Align left */
@@ -167,6 +168,6 @@ footer {
 
 @media (min-width: 992px) {
     .footer-grid {
-         gap: var(--space-xl); 
+         gap: var(--space-xxl);
     }
 } 

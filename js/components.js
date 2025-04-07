@@ -179,18 +179,12 @@ function handleFocusTrap(event) {
 // --- Back to Top Button --- 
 function initializeScrollTopButton() {
     const scrollTopBtn = document.querySelector('.scroll-top');
-    const scrollTopProgress = document.querySelector('.progress-ring__circle'); 
+    const scrollProgressSquare = document.querySelector('.scroll-progress-square'); 
 
-    if (!scrollTopBtn || !scrollTopProgress) {
-        console.warn('Scroll top button or progress circle not found.');
+    if (!scrollTopBtn || !scrollProgressSquare) {
+        console.warn('Scroll top button or progress square not found.');
         return;
     }
-
-    const radius = scrollTopProgress.r.baseVal.value;
-    progressCircleCircumference = 2 * Math.PI * radius;
-
-    scrollTopProgress.style.strokeDasharray = `${progressCircleCircumference} ${progressCircleCircumference}`;
-    scrollTopProgress.style.strokeDashoffset = progressCircleCircumference;
 
     scrollTopBtn.hidden = true;
     scrollTopBtn.classList.remove('visible'); // Ensure hidden initially
@@ -206,8 +200,9 @@ function initializeScrollTopButton() {
 
 function handleScrollTopVisibility() {
     const scrollTopBtn = document.querySelector('.scroll-top');
-    const scrollTopProgress = document.querySelector('.progress-ring__circle'); 
-    if (!scrollTopBtn || !scrollTopProgress) return;
+    const scrollProgressSquare = document.querySelector('.scroll-progress-square'); 
+
+    if (!scrollTopBtn || !scrollProgressSquare) return;
 
     const currentScroll = window.scrollY;
     const pageHeight = document.documentElement.scrollHeight;
@@ -216,8 +211,7 @@ function handleScrollTopVisibility() {
 
     if (scrollableHeight > 0) {
         const scrollPercentage = (currentScroll / scrollableHeight);
-        const progressOffset = progressCircleCircumference * (1 - scrollPercentage);
-        scrollTopProgress.style.strokeDashoffset = Math.max(0, Math.min(progressOffset, progressCircleCircumference));
+        scrollProgressSquare.style.transform = `scaleY(${scrollPercentage})`;
 
         if (currentScroll > viewportHeight * 0.5) { // Show after scrolling 50% VH
             if (scrollTopBtn.hidden) {
@@ -239,7 +233,7 @@ function handleScrollTopVisibility() {
     } else {
         scrollTopBtn.hidden = true;
         scrollTopBtn.classList.remove('visible');
-        scrollTopProgress.style.strokeDashoffset = progressCircleCircumference;
+        scrollProgressSquare.style.transform = 'scaleY(0)';
     }
 }
 
@@ -340,6 +334,46 @@ function closeFullscreen() {
         }
     }, { once: true });
 }
+
+// --- Initialize Contact Form Simulation ---
+function initializeContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm && formStatus) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Basic validation check (ensure all required fields are filled)
+            const name = contactForm.querySelector('#name').value.trim();
+            const email = contactForm.querySelector('#email').value.trim();
+            const subject = contactForm.querySelector('#subject').value.trim();
+            const message = contactForm.querySelector('#message').value.trim();
+
+            if (!name || !email || !subject || !message) {
+                formStatus.textContent = 'Please fill out all required fields.';
+                formStatus.className = 'form-status error'; // Add error class if needed for styling
+                return; // Stop processing if validation fails
+            }
+
+            // Simulate sending (display success message)
+            formStatus.textContent = 'Thank you for your message! I will get back to you soon.';
+            formStatus.className = 'form-status success'; // Add success class
+
+            // Optional: Clear the form fields after submission
+            contactForm.reset();
+
+            // Optional: Hide the message after a few seconds
+            setTimeout(() => {
+                formStatus.textContent = '';
+                formStatus.className = 'form-status';
+            }, 5000); // Hide after 5 seconds
+        });
+    }
+}
+
+// --- Add initializer to main function if needed ---
+// Make sure initializeContactForm() is called, for example, in js/main.js -> initializeWebsite()
 
 // --- Utility: Announce Status (Accessibility) --- 
 // ... existing code ... 

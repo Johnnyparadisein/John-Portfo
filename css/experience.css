@@ -51,7 +51,7 @@
     padding: var(--space-xl);
     background: var(--md-sys-color-surface-container-low-dark); /* M3 Surface Container Low */
     border: 1px solid var(--md-sys-color-outline-variant-dark);
-    border-radius: 16px; /* M3 Larger radius */
+    border-radius: 0; /* Use var */
     position: relative;
     margin-left: var(--space-xl); 
     box-shadow: var(--md-sys-elevation-1-dark);
@@ -154,7 +154,7 @@
     width: 6px;
     height: 6px;
     background-color: var(--md-sys-color-primary-dark);
-    border-radius: 50%;
+    border-radius: 0; /* Square */
 }
 [data-theme="light"] .timeline-achievements li::before {
     background-color: var(--md-sys-color-primary-light);

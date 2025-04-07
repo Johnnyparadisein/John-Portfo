@@ -7,10 +7,10 @@
     <title>Portfolio Details | John Kvezereli</title>
     
     <!-- Favicon Links -->
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
+    <!-- <link rel="icon" href="favicon.ico" sizes="any"> -->
+    <!-- <link rel="icon" href="favicon.svg" type="image/svg+xml"> -->
+    <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
 
     <!-- Font Preloading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +19,9 @@
     
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Vendor CSS -->
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
 
     <!-- Application CSS -->
     <link rel="stylesheet" href="css/base.css">
@@ -30,53 +33,48 @@
 </head>
 <body data-theme="dark"> <!-- Assume dark theme default, JS will handle toggle -->
 
-    <!-- Preloader (Optional, could be removed for faster load on detail page) -->
-    <div class="preloader">
-        <div class="preloader-content">
-            <div class="preloader-spinner"></div>
-            <div class="preloader-text"><span>LOADING</span></div>
-        </div>
-    </div>
-
     <!-- Skip to main content -->
     <a href="#main" class="skip-link">Skip to main content</a>
 
-    <!-- Re-use Header from index.html (Adjust links if needed) -->
+    <!-- === Updated Header (from index.html) === -->
     <header role="banner">
-        <div class="container">
-            <h1><a href="index.html">John Kvezereli</a></h1> 
-            <nav role="navigation" aria-label="Main Navigation">
-                <ul>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#showcase">Showcase</a></li>
-                    <li><a href="portfolio.html" class="active">Portfolio</a></li> <!-- Active link -->
-                    <li><a href="index.html#methodology">Methodology</a></li>
-                    <li><a href="index.html#experience">Experience</a></li>
-                    <li><a href="index.html#skills">Skills</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-menu" aria-label="Toggle menu" aria-expanded="false">
-                <i class="ph ph-list"></i>
-            </button>
+        <div class="container header-layout">
+            <div class="header-left">
+                 <!-- Link back to home page -->
+                 <h1><a href="index.html">John Kvezereli</a></h1> 
+            </div>
+            <div class="header-center">
+                <span>PORTFOLIO 2024</span>
+            </div>
+            <div class="header-right">
+                <nav role="navigation" aria-label="Main Navigation">
+                    <ul>
+                        <li><a href="index.html#hero">ABOUT</a></li>
+                        <li><a href="portfolio.html" class="active">PORTFOLIO</a></li> 
+                        <li><a href="index.html#expertise">EXPERTISE</a></li>
+                        <li><a href="index.html#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
         </div>
     </header>
 
+    <!-- === Updated Mobile Nav (from index.html) === -->
     <div class="mobile-nav">
         <nav role="navigation" aria-label="Mobile Navigation">
             <ul>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#showcase">Showcase</a></li>
-                <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                <li><a href="index.html#methodology">Methodology</a></li>
-                <li><a href="index.html#experience">Experience</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#hero">ABOUT</a></li>
+                <li><a href="portfolio.html" class="active">PORTFOLIO</a></li> 
+                <li><a href="index.html#expertise">EXPERTISE</a></li>
+                <li><a href="index.html#contact">CONTACT</a></li>
             </ul>
         </nav>
     </div>
 
-    <!-- Theme Toggle (Keep if desired) -->
+    <!-- Theme Toggle -->
     <button class="theme-toggle" aria-label="Toggle theme">
         <div class="theme-toggle-icons">
             <i class="ph ph-sun"></i>
@@ -90,7 +88,7 @@
             <p class="section-subtitle">Detailed descriptions of selected projects.</p>
             
             <div class="back-link-container">
-                 <a href="index.html" class="btn secondary icon-left"><i class="ph ph-arrow-left"></i> Back to Home</a>
+                 <a href="index.html" class="btn secondary"><i class="ph ph-arrow-left"></i> Back to Home</a>
             </div>
 
             <div class="portfolio-detail-grid">
@@ -180,98 +178,104 @@
             </div> <!-- End portfolio-detail-grid -->
             
              <div class="back-link-container bottom">
-                 <a href="index.html" class="btn secondary icon-left"><i class="ph ph-arrow-left"></i> Back to Home</a>
+                 <a href="index.html" class="btn secondary"><i class="ph ph-arrow-left"></i> Back to Home</a>
             </div>
 
         </section>
     </main>
 
-    <!-- Re-use Footer -->
+    <!-- === Updated Footer (from index.html) === -->
     <footer role="contentinfo">
-         <!-- Copy footer content from index.html -->
-         <div class="container">
+        <div class="container">
             <div class="footer-grid">
                 <div class="footer-info">
                     <h3>John Kvezereli</h3>
-                    <p>Graphic Designer & AI Musketeer creating intuitive and visually striking digital experiences.</p>
+                    <p>Graphic Designer & AI Musketeer</p>
                     <div class="social-links">
-                        <a href="#" target="_blank" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
-                        <a href="#" target="_blank" aria-label="Behance"><i class="ph ph-behance-logo"></i></a>
-                        <a href="#" target="_blank" aria-label="Dribbble"><i class="ph ph-dribbble-logo"></i></a>
-                        <!-- Add other relevant links -->
+                         <!-- *** Add your actual social profile URLs below (use your actual profile links) *** -->
+                        <a href="#" aria-label="LinkedIn Profile"><i class="ph ph-linkedin-logo"></i></a>
+                        <a href="#" aria-label="Behance Profile"><i class="ph ph-behance-logo"></i></a>
+                        <a href="#" aria-label="Dribbble Profile"><i class="ph ph-dribbble-logo"></i></a> <!-- UPDATE href or remove -->
+                        <a href="#" aria-label="Instagram Profile"><i class="ph ph-instagram-logo"></i></a> <!-- UPDATE href or remove -->
                     </div>
                 </div>
-                <div class="footer-nav">
-                    <h4>Quick Links</h4>
+                <nav class="footer-nav" role="navigation" aria-label="Footer Navigation">
+                    <h4>Navigation</h4>
                     <ul>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#showcase">Showcase</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="index.html#experience">Experience</a></li>
+                        <li><a href="index.html#hero">About</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li> 
+                        <li><a href="index.html#expertise">Expertise</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
                     </ul>
-                </div>
+                </nav>
                 <div class="footer-services">
                     <h4>Services</h4>
                     <ul>
-                        <li>Graphic Design</li>
+                        <li>Brand Identity</li>
                         <li>UI/UX Design</li>
                         <li>Motion Graphics</li>
                         <li>AI-Assisted Design</li>
-                        <li>Social Media Graphics</li>
+                        <li>Social Media Design</li>
                     </ul>
                 </div>
                 <div class="footer-contact">
-                    <h4>Get In Touch</h4>
-                    <p><i class="ph ph-envelope-simple"></i> <a href="mailto:john.kvezereli@email.com">john.kvezereli@email.com</a></p>
-                    <p><i class="ph ph-phone"></i> <a href="tel:+995123456789">+995 123 456 789</a></p> 
+                    <h4>Contact</h4>
+                     <!-- *** Add your actual phone and email below *** -->
+                    <p><i class="ph ph-phone"></i> +123 456 7890</p>
+                    <p><i class="ph ph-envelope"></i> your.email@example.com</p>
                     <p><i class="ph ph-map-pin"></i> Tbilisi, Georgia</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> John Kvezereli. All Rights Reserved.</p>
-                 <ul>
-                     <li><a href="#">Privacy Policy</a></li> 
-                     <li><a href="#">Terms of Service</a></li> 
-                 </ul>
+                <p>&copy; <span id="current-year"></span> John Kvezereli. All rights reserved.</p>
+                <ul>
+                    
+                     <!-- *** Create actual Privacy/Terms pages and link them below, or remove these list items *** -->
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
             </div>
         </div>
     </footer>
 
-    <!-- Basic JS for theme toggle and mobile nav -->
-    <!-- Vendor libraries (add if needed, e.g., AOS if components use it) -->
+    <!-- === Keep Existing Cookie Consent === -->
+    <!-- <div id="cookie-consent" class="cookie-consent" role="region" aria-label="Cookie Consent Banner" hidden>
+        <div class="container">
+            <p>This website uses cookies to enhance user experience. <a href="/privacy-policy">Learn more</a></p> 
+            <div>
+                <button class="btn primary cookie-accept">Accept</button>
+                <button class="btn secondary cookie-settings">Settings</button>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- === Keep Existing Back to Top Button === -->
+    <!-- <button class="scroll-top" aria-label="Scroll to top" hidden>
+        <i class="ph ph-arrow-up"></i>
+        <div class="scroll-progress-square"></div>
+    </button> -->
+
+    <!-- === Keep Existing Scripts === -->
+    <!-- <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script> -->
     <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <!-- <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script> -->
     <script src="js/theme.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/components.js"></script>
+    <!-- Showcase JS might not be needed here unless filtering is added -->
+    <!-- <script src="js/showcase.js"></script> --> 
     <script src="js/vendor.js"></script> 
     <script src="js/main.js"></script>
 
-    <!-- Simple script for footer year and page-specific initializations -->
+    <!-- Simple script for footer year -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Set current year in footer
             const yearSpan = document.getElementById('current-year');
             if (yearSpan) {
                 yearSpan.textContent = new Date().getFullYear();
             }
-            
-            // Initialize theme and navigation (assuming main.js doesn't do this automatically)
-            // If main.js handles these, these lines can potentially be removed.
-            if (typeof setInitialTheme === 'function') setInitialTheme();
-            if (typeof initializeThemeToggle === 'function') initializeThemeToggle();
-            if (typeof initializeNavigation === 'function') initializeNavigation();
-            
-            // Initialize AOS if added
-            // if (typeof AOS !== 'undefined') {
-            //     AOS.init({
-            //         duration: 800,
-            //         once: true,
-            //         mirror: false
-            //     });
-            // }
-
-            // Any other portfolio-detail specific JS logic can go here
+            // Main.js should handle other initializations like theme, nav
         });
     </script>
 

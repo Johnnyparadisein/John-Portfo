@@ -4,34 +4,35 @@
 
 /* Container */
 .container {
-    width: 90%; /* Consistent width */
-    max-width: var(--container-width);
+    width: 88%; /* Force full width */
+    /* max-width: var(--container-width); Remove max-width */
     margin: 0 auto;
-    padding: 0 var(--space-md); /* Use variables */
+    padding: 0; /* Remove horizontal padding */
 }
 
 /* Section Base */
 .section {
-    padding: var(--space-section) 0; 
+    padding: var(--space-section) 0; /* Use updated section padding */
 }
 
 .section-title {
     font-size: var(--md-typescale-headline-large-size);
     line-height: var(--md-typescale-headline-large-line-height);
-    font-weight: var(--md-typescale-headline-large-weight);
-    margin-bottom: var(--space-xl);
-    text-align: center;
+    /* font-weight: var(--md-typescale-headline-large-weight); */ /* Commented out original */
+    font-weight: 800; /* Set to extra bold */
+    margin-bottom: var(--space-lg); /* Reduced bottom margin */
+    text-align: left; /* Changed from center to left */
 }
 
 .section-subtitle {
-    text-align: center;
+    text-align: left; /* Changed from center */
     font-size: var(--md-typescale-body-large-size);
     line-height: var(--md-typescale-body-large-line-height);
     color: var(--md-sys-color-on-surface-variant-dark);
     margin-bottom: var(--space-xxl);
     max-width: 700px; /* Slightly increase max-width */
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto; */ /* Removed */
+    /* margin-right: auto; */ /* Removed */
 }
 [data-theme="light"] .section-subtitle {
     color: var(--md-sys-color-on-surface-variant-light);
@@ -40,24 +41,15 @@
 /* --- Media Queries for Layout --- */
 @media (min-width: 768px) {
     .container {
-        padding: 0 var(--space-lg);
+        padding: 0; /* Ensure no padding on tablet+ */
     }
     .section-title {
-        font-size: 2.5rem;
-        margin-bottom: var(--space-xxl);
+        font-size: var(--md-typescale-headline-large-size); /* Revert to variable */
+        margin-bottom: var(--space-xl); /* Keep larger margin on tablet+ */
     }
      .section-subtitle {
         font-size: 1.2rem;
     }
 }
 
-@media (min-width: 992px) {
-    .section {
-        padding: 100px 0;
-    }
-    .section-title {
-        font-size: 2.5rem; /* Keep consistent with tablet or adjust */
-    }
-}
-
-/* @media (min-width: 1200px) { ... } */ 
+/* @media (min-width: 1200px) { ... } */

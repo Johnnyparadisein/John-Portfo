@@ -3,14 +3,14 @@
    ========================================================================== */
 
 header {
-    padding: calc(var(--space-sm) / 2) 0; /* Reduced vertical padding */
+    padding: var(--space-sm) 0; /* Use variable, adjust padding */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     background-color: rgba(var(--md-sys-color-surface-dark-rgb, 26, 26, 26), 0.85); /* Use M3 Surface with opacity */
-    /* backdrop-filter: blur(10px); */ /* Removed */
-    /* -webkit-backdrop-filter: blur(10px); */ /* Removed */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid var(--md-sys-color-outline-variant-dark); /* Use M3 */
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; 
@@ -28,52 +28,94 @@ header.scrolled {
      background-color: rgba(var(--md-sys-color-surface-light-rgb, 240, 240, 240), 0.95); 
     box-shadow: var(--md-sys-elevation-2-light); 
 }
-header .container {
+
+/* Updated: Use .header-layout for main flex container styles */
+/* header .container -> header .header-layout */
+header .header-layout {
     display: flex;
     justify-content: space-between;
     align-items: center;
     min-height: var(--header-height); /* Ensure header has minimum height */
 }
-header h1 { /* Site Title / Logo */
-    font-size: var(--md-typescale-title-large-size);
-    line-height: var(--md-typescale-title-large-line-height);
-    font-weight: 800; /* Set to extra bold */
-    color: var(--md-sys-color-on-surface-dark); 
+
+/* Styles for the three sections */
+.header-left {
+    flex: 1 0 auto; /* Allow shrinking but not growing */
 }
-[data-theme="light"] header h1 {
-     color: var(--md-sys-color-on-surface-light); 
+
+.header-center {
+    flex: 0 1 auto; /* Allow shrinking but not growing, centered content */
+    text-align: center;
+    /* Add specific styles for the center text */
+    color: var(--md-sys-color-primary-dark); /* Blue color */
+    font-size: var(--md-typescale-title-medium-size); /* Example size */
+    font-weight: 500;
+}
+
+[data-theme="light"] .header-center {
+    color: var(--md-sys-color-primary-light);
+}
+
+.header-right {
+    flex: 1 0 auto; /* Allow shrinking but not growing */
+    display: flex; /* To align nav and mobile button */
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center;
+}
+
+/* header h1 -> .header-left h1 */
+.header-left h1 { /* Site Title / Logo */
+    font-size: var(--md-typescale-title-medium-size); /* Adjusted size */
+    line-height: var(--md-typescale-title-medium-line-height);
+    font-weight: 600; /* Adjusted weight */
+    color: var(--md-sys-color-primary-dark); /* Blue color */
+    margin: 0; /* Remove default margin */
+}
+
+[data-theme="light"] .header-left h1 {
+     color: var(--md-sys-color-primary-light);
 }
 
 /* Desktop nav hidden by default */
-nav[aria-label="Main Navigation"] {
+/* Ensure nav is within header-right */
+.header-right nav[aria-label="Main Navigation"] {
     display: none;
 }
+
 nav[aria-label="Main Navigation"] ul {
     display: flex;
     align-items: center; /* Vertically center nav items */
-    gap: var(--space-sm); /* Smaller gap for desktop */
-}
-nav[aria-label="Main Navigation"] li {
-    display: inline;
-}
-nav[aria-label="Main Navigation"] a {
-    /* Use M3 Label Large for nav links */
-    font-size: var(--md-typescale-label-large-size);
-    font-weight: var(--md-typescale-label-large-weight);
-    line-height: var(--md-typescale-label-large-line-height);
-    letter-spacing: var(--md-typescale-label-large-letter-spacing);
-    color: var(--md-sys-color-on-surface-variant-dark); /* Softer color */
-    padding: 5px 16px; /* Reduced vertical padding */
-    border-radius: 100px; /* Pill shape */
-    position: relative;
-    overflow: hidden;
-    transition: color 0.15s ease;
-}
-[data-theme="light"] nav[aria-label="Main Navigation"] a {
-    color: var(--md-sys-color-on-surface-variant-light);
+    gap: var(--space-md); /* Use var, adjust gap */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    list-style: none; /* Remove list bullets */
 }
 
-/* State layer for desktop nav links */
+nav[aria-label="Main Navigation"] li {
+    display: inline; /* Already inline, keep */
+}
+
+nav[aria-label="Main Navigation"] a {
+    /* Updated styles for minimalistic look */
+    font-size: var(--md-typescale-label-medium-size); /* Smaller size */
+    font-weight: 500; /* Medium weight */
+    line-height: normal; /* Reset line-height */
+    letter-spacing: 0.1em; /* Add some letter spacing */
+    text-transform: uppercase; /* Uppercase text */
+    color: var(--md-sys-color-on-surface-dark); /* Changed to on-surface */
+    padding: var(--space-sm) var(--space-md); /* Use vars */
+    border-radius: var(--border-radius-md); /* Use var */
+    position: relative;
+    overflow: hidden; /* Enable overflow hidden for state layer */
+    transition: color 0.15s ease, background-color 0.15s ease, opacity 0.15s ease; /* Added transitions */
+    text-decoration: none; /* Ensure no default underline */
+}
+
+[data-theme="light"] nav[aria-label="Main Navigation"] a {
+    color: var(--md-sys-color-on-surface-light); /* Changed to on-surface */
+}
+
+/* Re-add state layer for visual feedback */
 nav[aria-label="Main Navigation"] a::before {
     content: "";
     position: absolute;
@@ -83,72 +125,75 @@ nav[aria-label="Main Navigation"] a::before {
     transition: opacity 0.2s ease;
     pointer-events: none;
     border-radius: inherit;
+    z-index: -1;
 }
+
 [data-theme="light"] nav[aria-label="Main Navigation"] a::before {
     background-color: var(--md-sys-color-primary-light);
 }
-nav[aria-label="Main Navigation"] a:hover {
-    color: var(--md-sys-color-primary-dark); /* Change text color on hover */
-    opacity: 1; /* Override base link opacity hover */
-}
-[data-theme="light"] nav[aria-label="Main Navigation"] a:hover {
-    color: var(--md-sys-color-primary-light);
-}
-nav[aria-label="Main Navigation"] a:hover::before {
-    opacity: 0.08; /* M3 Hover state */
-}
+
+/* Updated hover/focus states with background */
+nav[aria-label="Main Navigation"] a:hover,
 nav[aria-label="Main Navigation"] a:focus-visible {
+    color: var(--md-sys-color-on-surface-dark);
     outline: none;
-    color: var(--md-sys-color-primary-dark);
 }
-[data-theme="light"] nav[aria-label="Main Navigation"] a:focus-visible {
-    color: var(--md-sys-color-primary-light);
-}
+nav[aria-label="Main Navigation"] a:hover::before,
 nav[aria-label="Main Navigation"] a:focus-visible::before {
-    opacity: 0.12; /* M3 Focus state */
-}
-nav[aria-label="Main Navigation"] a:active::before {
-    opacity: 0.12; /* M3 Pressed state */
+    opacity: 0.08; /* M3 Hover/Focus state opacity */
 }
 
-/* Active Desktop Nav Link */
-nav[aria-label="Main Navigation"] a.active {
-    color: var(--md-sys-color-primary-dark);
-    font-weight: var(--md-typescale-label-large-weight); /* Ensure weight stays */
-    /* Optional: Add a subtle background or underline if needed */
+[data-theme="light"] nav[aria-label="Main Navigation"] a:hover,
+[data-theme="light"] nav[aria-label="Main Navigation"] a:focus-visible {
+    color: var(--md-sys-color-on-surface-light);
 }
+[data-theme="light"] nav[aria-label="Main Navigation"] a:hover::before,
+[data-theme="light"] nav[aria-label="Main Navigation"] a:focus-visible::before {
+    background-color: var(--md-sys-color-primary-light);
+    opacity: 0.08;
+}
+
+/* Updated active state */
+nav[aria-label="Main Navigation"] a.active {
+    color: var(--md-sys-color-primary-dark); /* Use primary color */
+    background-color: var(--md-sys-color-surface-container-highest-dark); /* Subtle background */
+    font-weight: 600; 
+    opacity: 1;
+}
+
 [data-theme="light"] nav[aria-label="Main Navigation"] a.active {
     color: var(--md-sys-color-primary-light);
-}
-nav[aria-label="Main Navigation"] a.active::before {
-    opacity: 0; /* No state layer on active link */
+    background-color: var(--md-sys-color-surface-container-highest-light);
+    font-weight: 600;
 }
 
+/* Remove active state specific ::before */
+/* nav[aria-label="Main Navigation"] a.active::before { ... } */
 
-/* Mobile Menu Button (Hamburger) - M3 Icon Button Style */
-.mobile-menu {
+/* Mobile Menu Button - place within header-right */
+.header-right .mobile-menu {
     display: block; /* Visible by default on mobile */
     background-color: transparent; 
     border: none;
     color: var(--md-sys-color-on-surface-dark); 
     font-size: 1.8rem; 
     cursor: pointer;
-    padding: 8px; 
+    padding: var(--space-sm); /* Use var */ 
     z-index: 1001;
     width: 40px; 
     height: 40px;
-    border-radius: 50%; 
+    border-radius: var(--border-radius-md); /* Use var */
     position: relative;
     overflow: hidden;
     display: inline-flex; 
     align-items: center;
     justify-content: center;
 }
-[data-theme="light"] .mobile-menu {
+[data-theme="light"] .header-right .mobile-menu {
      color: var(--md-sys-color-on-surface-light);
 }
 
-.mobile-menu::before {
+.header-right .mobile-menu::before {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -158,21 +203,20 @@ nav[aria-label="Main Navigation"] a.active::before {
     pointer-events: none;
     border-radius: inherit;
 }
-.mobile-menu:hover::before {
+.header-right .mobile-menu:hover::before {
     opacity: 0.08; /* M3 Hover */
 }
-.mobile-menu:focus-visible {
+.header-right .mobile-menu:focus-visible {
     outline: none;
 }
-.mobile-menu:focus-visible::before {
+.header-right .mobile-menu:focus-visible::before {
      opacity: 0.12; /* M3 Focus */
 }
-.mobile-menu:active::before {
+.header-right .mobile-menu:active::before {
      opacity: 0.12; /* M3 Pressed */
 }
 
-
-/* Mobile Navigation Drawer - M3 Modal Drawer Style */
+/* Mobile Navigation Drawer */
 .mobile-nav {
     position: fixed;
     top: 0;
@@ -183,7 +227,7 @@ nav[aria-label="Main Navigation"] a.active::before {
     background-color: var(--md-sys-color-surface-container-high-dark); 
     z-index: 1002; 
     padding: var(--space-lg);
-    padding-top: calc(var(--header-height) + var(--space-md)); 
+    padding-top: calc(var(--header-height) + var(--space-lg)); /* Use var */
     transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* M3 Standard Easing */
     box-shadow: var(--md-sys-elevation-1-dark); 
     overflow-y: auto;
@@ -201,20 +245,20 @@ nav[aria-label="Main Navigation"] a.active::before {
 .mobile-nav ul {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs); 
+    gap: var(--space-sm); /* Use var */
 }
 .mobile-nav a {
     display: flex;
     align-items: center;
-    gap: var(--space-md); 
+    gap: var(--space-md); /* Use var */
     font-size: var(--md-typescale-label-large-size);
     font-weight: var(--md-typescale-label-large-weight);
     line-height: var(--md-typescale-label-large-line-height);
     letter-spacing: var(--md-typescale-label-large-letter-spacing);
-    padding: 12px var(--space-md); 
+    padding: var(--space-sm) var(--space-md); /* Use vars */
     height: 56px; 
     color: var(--md-sys-color-on-surface-variant-dark); 
-    border-radius: 100px; 
+    border-radius: 0; /* Square */
     transition: background-color 0.15s ease, color 0.15s ease;
     position: relative;
     overflow: hidden; 
@@ -267,7 +311,7 @@ nav[aria-label="Main Navigation"] a.active::before {
     font-size: 1.5rem; 
     width: 24px; 
     text-align: center;
-    margin-right: var(--space-md); 
+    margin-right: var(--space-md); /* Use var */
 } 
 
 /* Scrim for Mobile Drawer */
@@ -291,28 +335,33 @@ nav[aria-label="Main Navigation"] a.active::before {
 
 /* --- Media Queries for Header --- */
 @media (min-width: 768px) {
-    header {
-        padding: var(--space-md) 0;
+    /* Apply flex layout only on desktop */
+    header .header-layout {
+        /* display: flex; */ /* Already set above */
+        /* justify-content: space-between; */ /* Already set above */
     }
-    header h1 {
-        font-size: 1.6rem; /* Keep consistent or adjust */
-    }
-    nav[aria-label="Main Navigation"] {
+
+    /* Show desktop nav, hide mobile */
+    .header-right nav[aria-label="Main Navigation"] {
         display: flex;
     }
-    .mobile-menu {
+    .header-right .mobile-menu {
         display: none;
     }
-    .mobile-nav {
-        display: none;
+    .mobile-nav, .scrim {
+        display: none; 
     }
-    .scrim {
-        display: none; /* Scrim not needed on desktop */
-    }
+    
+    /* Hide center text on smaller desktops if needed */
+    /* @media (max-width: 991px) {
+        .header-center {
+            display: none;
+        }
+    } */
 }
 
 @media (min-width: 992px) {
     nav[aria-label="Main Navigation"] ul {
-        gap: var(--space-lg); /* Increase gap slightly */
+        gap: var(--space-lg); /* Use var, adjust gap for larger screens */
     }
 } 

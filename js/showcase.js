@@ -1,3 +1,119 @@
-// --- Portfolio/Showcase Globals ---\nlet isotope = null;\nconst grid = document.querySelector('.portfolio-grid');\nconst filters = document.querySelectorAll('.portfolio-filter');\n\n// --- Portfolio Filtering using Isotope --- \nfunction initializePortfolioFiltering() {\n    if (!grid) {\n        console.warn("Isotope grid element ('.portfolio-grid') not found. Filtering disabled.");\n        return; // Silently exit if no grid found\n    }\n\n    // Ensure Isotope and imagesLoaded are available\n    if (typeof Isotope === 'undefined' || typeof imagesLoaded === 'undefined') {\n        console.error('Isotope or imagesLoaded library not found. Cannot initialize portfolio filtering.');\n        return;\n    }\n\n    // Initialize Isotope after images are loaded\n    imagesLoaded(grid, () => {\n        try { // Add try-catch for safety during initialization\n            isotope = new Isotope(grid, {\n                itemSelector: '.portfolio-item',\n                layoutMode: 'masonry',\n                percentPosition: true,\n                masonry: {\n                    columnWidth: '.portfolio-item',\n                    gutter: 20 // Adjust gutter as needed, ensure it matches CSS\n                }\n            });\n            console.log("Isotope initialized for showcase.");\n\n            // Trigger layout after a short delay (optional, but can help with web fonts/dynamic content)\n            setTimeout(() => {\n                if (isotope) isotope.layout();\n                grid.classList.add('isotope-initialized'); // Class for potential CSS transitions\n            }, 150);\n\n        } catch (error) {\n            console.error("Error initializing Isotope:", error);\n        }\n    });\n\n    // Filter handling\n    if (filters.length > 0) {\n        filters.forEach(filter => {\n            filter.addEventListener('click', (event) => {\n                event.preventDefault(); // Prevent default button behavior if necessary\n\n                // Don't filter if Isotope hasn't initialized\n                if (!isotope) {\n                    console.warn("Isotope instance not available for filtering yet.");\n                    return;\n                }\n\n                // Update active filter button state\n                filters.forEach(f => {\n                    f.classList.remove('active');\n                    f.setAttribute('aria-pressed', 'false');\n                });\n                filter.classList.add('active');\n                filter.setAttribute('aria-pressed', 'true');\n\n                // Apply Isotope filter\n                const filterValue = filter.getAttribute('data-filter');\n                isotope.arrange({ filter: filterValue });\n\n                // Announce filter change for accessibility\n                const category = filterValue === '*' ? 'all items' : filter.textContent + ' items';\n                announceStatus(`Showing ${category}`);\n            });\n        });\n    } else {\n        console.log("No portfolio filter buttons found.");\n    }\n}\n\n// --- Helper to recalculate layout (e.g., on window resize) ---\nfunction refreshPortfolioLayout() {\n    if (isotope) {\n        isotope.layout();\n    }\n}\n\n// --- Debounced Resize Handler ---\nlet resizeTimeout;\n// Add resize listener only if the grid exists to avoid errors if showcase section is removed\nif (grid) {\n    window.addEventListener('resize', () => {\n        clearTimeout(resizeTimeout);\n        resizeTimeout = setTimeout(refreshPortfolioLayout, 250);\n    });\n}\n\n// --- Helper: Announce Status (Accessibility) ---
-let statusAnnouncer = null;\nfunction announceStatus(message) {\n    if (!statusAnnouncer) {\n        statusAnnouncer = document.createElement('div');\n        // Visually hide the element but make it readable by screen readers\n        statusAnnouncer.style.position = 'absolute';\n        statusAnnouncer.style.left = '-10000px';\n        statusAnnouncer.style.top = 'auto';\n        statusAnnouncer.style.width = '1px';\n        statusAnnouncer.style.height = '1px';\n        statusAnnouncer.style.overflow = 'hidden';\n        // ARIA attributes for screen reader announcements\n        statusAnnouncer.setAttribute('aria-live', 'polite'); // Announce changes politely\n        statusAnnouncer.setAttribute('aria-atomic', 'true'); // Announce the entire region as a whole\n        document.body.appendChild(statusAnnouncer);\n        console.log("Status announcer created."); // Log creation\n    }\n    // Update the text content, which triggers the screen reader announcement\n    statusAnnouncer.textContent = message;\n    console.log("Announcing:", message); // Log announcement\n}\n\n// --- Initialize when DOM is ready ---
+// --- Portfolio/Showcase Globals ---
+let isotope = null;
+const grid = document.querySelector('.portfolio-grid');
+const filters = document.querySelectorAll('.portfolio-filter');
+
+// --- Portfolio Filtering using Isotope --- 
+function initializePortfolioFiltering() {
+    if (!grid) {
+        console.warn("Isotope grid element ('.portfolio-grid') not found. Filtering disabled.");
+        return; // Silently exit if no grid found
+    }
+
+    // Ensure Isotope and imagesLoaded are available
+    if (typeof Isotope === 'undefined' || typeof imagesLoaded === 'undefined') {
+        console.error('Isotope or imagesLoaded library not found. Cannot initialize portfolio filtering.');
+        return;
+    }
+
+    // Initialize Isotope after images are loaded
+    imagesLoaded(grid, () => {
+        try { // Add try-catch for safety during initialization
+            isotope = new Isotope(grid, {
+                itemSelector: '.portfolio-item',
+                layoutMode: 'masonry',
+                percentPosition: true,
+                masonry: {
+                    columnWidth: '.portfolio-item',
+                    gutter: 4 // Adjusted gutter to match previous CSS gap
+                }
+            });
+            console.log("Isotope initialized for showcase.");
+
+            // Trigger layout after a short delay (optional, but can help with web fonts/dynamic content)
+            setTimeout(() => {
+                if (isotope) isotope.layout();
+                grid.classList.add('isotope-initialized'); // Class for potential CSS transitions
+            }, 150);
+
+        } catch (error) {
+            console.error("Error initializing Isotope:", error);
+        }
+    });
+
+    // Filter handling
+    if (filters.length > 0) {
+        filters.forEach(filter => {
+            filter.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default button behavior if necessary
+
+                // Don't filter if Isotope hasn't initialized
+                if (!isotope) {
+                    console.warn("Isotope instance not available for filtering yet.");
+                    return;
+                }
+
+                // Update active filter button state
+                filters.forEach(f => {
+                    f.classList.remove('active');
+                    f.setAttribute('aria-pressed', 'false');
+                });
+                filter.classList.add('active');
+                filter.setAttribute('aria-pressed', 'true');
+
+                // Apply Isotope filter
+                const filterValue = filter.getAttribute('data-filter');
+                isotope.arrange({ filter: filterValue });
+
+                // Announce filter change for accessibility
+                const category = filterValue === '*' ? 'all items' : filter.textContent + ' items';
+                announceStatus(`Showing ${category}`);
+            });
+        });
+    } else {
+        console.log("No portfolio filter buttons found.");
+    }
+}
+
+// --- Helper to recalculate layout (e.g., on window resize) ---
+function refreshPortfolioLayout() {
+    if (isotope) {
+        isotope.layout();
+    }
+}
+
+// --- Debounced Resize Handler ---
+let resizeTimeout;
+// Add resize listener only if the grid exists to avoid errors if showcase section is removed
+if (grid) {
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(refreshPortfolioLayout, 250);
+    });
+}
+
+// --- Helper: Announce Status (Accessibility) ---
+let statusAnnouncer = null;
+function announceStatus(message) {
+    if (!statusAnnouncer) {
+        statusAnnouncer = document.createElement('div');
+        // Visually hide the element but make it readable by screen readers
+        statusAnnouncer.style.position = 'absolute';
+        statusAnnouncer.style.left = '-10000px';
+        statusAnnouncer.style.top = 'auto';
+        statusAnnouncer.style.width = '1px';
+        statusAnnouncer.style.height = '1px';
+        statusAnnouncer.style.overflow = 'hidden';
+        // ARIA attributes for screen reader announcements
+        statusAnnouncer.setAttribute('aria-live', 'polite'); // Announce changes politely
+        statusAnnouncer.setAttribute('aria-atomic', 'true'); // Announce the entire region as a whole
+        document.body.appendChild(statusAnnouncer);
+        console.log("Status announcer created."); // Log creation
+    }
+    // Update the text content, which triggers the screen reader announcement
+    statusAnnouncer.textContent = message;
+    console.log("Announcing:", message); // Log announcement
+}
+
+// --- Initialize when DOM is ready ---
 document.addEventListener('DOMContentLoaded', initializePortfolioFiltering);

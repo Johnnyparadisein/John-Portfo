@@ -4,7 +4,7 @@ function initializeAOS() {
     if (typeof AOS !== 'undefined') {
         console.log("AOS library found. Initializing..."); // Log found
         AOS.init({
-            duration: 800, 
+            duration: 200, /* Further reduced duration for very fast animations */
             easing: 'ease-in-out', 
             once: true, 
             mirror: false, 

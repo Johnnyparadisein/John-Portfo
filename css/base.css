@@ -68,12 +68,12 @@
 
     --container-width: 1200px;
     /* M3 Elevation Shadows (Dark - adapt as needed) */
-    --md-sys-elevation-1-dark: 0px 1px 3px 1px rgba(0,0,0,0.15), 0px 1px 2px 0px rgba(0,0,0,0.3);
-    --md-sys-elevation-2-dark: 0px 2px 6px 2px rgba(0,0,0,0.15), 0px 1px 2px 0px rgba(0,0,0,0.3);
-    --md-sys-elevation-3-dark: 0px 1px 3px 0px rgba(0,0,0,0.3), 0px 4px 8px 3px rgba(0,0,0,0.15);
-    --md-sys-elevation-4-dark: 0px 2px 3px 0px rgba(0,0,0,0.3), 0px 6px 10px 4px rgba(0,0,0,0.15);
-    --md-sys-elevation-5-dark: 0px 4px 4px 0px rgba(0,0,0,0.3), 0px 8px 12px 6px rgba(0,0,0,0.15);
-    --shadow: var(--md-sys-elevation-2-dark); /* Map existing shadow */
+    --md-sys-elevation-1-dark: none; /* Removed shadow */
+    --md-sys-elevation-2-dark: none; /* Removed shadow */
+    --md-sys-elevation-3-dark: none; /* Removed shadow */
+    --md-sys-elevation-4-dark: none; /* Removed shadow */
+    --md-sys-elevation-5-dark: none; /* Removed shadow */
+    --shadow: none; /* Removed shadow */
 
     --transition: all 0.3s ease;
 
@@ -137,14 +137,20 @@
     /* Spacing (Aligned to 4/8 grid) */
     --space-xs: 0.25rem;  /* 4px */
     --space-sm: 0.5rem;   /* 8px */
-    --space-md: 1rem;     /* 16px */
+    --space-md: 0.1rem;     /* 16px */
     --space-lg: 1.5rem;   /* 24px */
     --space-xl: 2rem;     /* 32px */
     --space-xxl: 3rem;    /* 48px */
-    --space-section: 4rem; /* 64px - Mobile section padding */
+    --space-section: 1rem; /* 16px - Reduced section padding */
 
      /* Scrim Color */
      --md-sys-color-scrim: rgba(0, 0, 0, 0.4);
+
+    /* Border Radius */
+    --border-radius-sm: 0px;
+    --border-radius-md: 0px;  /* Matches square buttons */
+    --border-radius-lg: 0px; /* For larger cards */
+    --border-radius-xl: 0px; /* For modals */
 
     /* Add HSL values for colors used in gradient */
     --md-sys-color-primary-dark-hue: 181;
@@ -207,12 +213,12 @@
     --border: var(--md-sys-color-outline-variant-light);
 
      /* M3 Elevation Shadows (Light - adapt as needed) */
-    --md-sys-elevation-1-light: 0px 1px 3px 1px rgba(0,0,0,0.15), 0px 1px 2px 0px rgba(0,0,0,0.3);
-    --md-sys-elevation-2-light: 0px 2px 6px 2px rgba(0,0,0,0.15), 0px 1px 2px 0px rgba(0,0,0,0.3);
-    --md-sys-elevation-3-light: 0px 1px 3px 0px rgba(0,0,0,0.3), 0px 4px 8px 3px rgba(0,0,0,0.15);
-    --md-sys-elevation-4-light: 0px 2px 3px 0px rgba(0,0,0,0.3), 0px 6px 10px 4px rgba(0,0,0,0.15);
-    --md-sys-elevation-5-light: 0px 4px 4px 0px rgba(0,0,0,0.3), 0px 8px 12px 6px rgba(0,0,0,0.15);
-    --shadow: var(--md-sys-elevation-2-light); 
+    --md-sys-elevation-1-light: none; /* Removed shadow */
+    --md-sys-elevation-2-light: none; /* Removed shadow */
+    --md-sys-elevation-3-light: none; /* Removed shadow */
+    --md-sys-elevation-4-light: none; /* Removed shadow */
+    --md-sys-elevation-5-light: none; /* Removed shadow */
+    /* --shadow: var(--md-sys-elevation-2-light); */ /* Already set to none in dark theme */
 
     /* Scrim Color */
     --md-sys-color-scrim: rgba(0, 0, 0, 0.4); /* Keep same for light */
@@ -284,19 +290,6 @@ body::before {
     color: var(--md-sys-color-on-background-light); 
 }
 
-/* Update blur element colors for light theme */
-[data-theme="light"] body::before {
-    /* Update gradient colors for light theme */
-    /* Adjusted alpha values for more blue and transparency */
-    /* background: radial-gradient(circle at top left, 
-        hsla(var(--md-sys-color-primary-light-hue, 181), 100%, 21%, 0.15) 0%, /* Primary color - More transparent */
-        /* hsla(var(--md-sys-color-tertiary-light-hue, 272), 18%, 41%, 0.08) 40%, /* Tertiary color - Even more transparent */
-        /* transparent 70% /* Fade to transparent */
-    /* ); */ /* Removed background gradient */
-    /* Remove opacity override */
-    /* opacity: 0.2; */
-}
-
 a {
     color: var(--md-sys-color-primary-dark); 
     text-decoration: none;
@@ -366,6 +359,12 @@ p {
     color: var(--md-sys-color-on-surface-variant-light);
 }
 
+/* === Add Infinite Scroll Animation === */
+@keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); } /* Revert to -100% */
+}
+
 /* Accessibility Focus Outline */
 *:focus-visible {
     outline: 3px solid var(--md-sys-color-primary-dark); 
@@ -382,7 +381,7 @@ p {
 /* Media Query for Tablet Base adjustments */
 @media (min-width: 768px) {
     :root {
-        --space-section: 100px; 
+        --space-section: 50px; 
          --header-height: 70px; 
     }
     body {

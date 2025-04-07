@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Clients Section Styles
+   ========================================================================== */
+
+.clients-section {
+    /* Style the overall section container if needed */
+    /* Example: background-color: var(--md-sys-color-surface-container-low-dark); */
+}
+
+[data-theme="light"] .clients-section {
+    /* Example: background-color: var(--md-sys-color-surface-container-low-light); */
+}
+
+.clients-section .section-title {
+    margin-bottom: var(--space-xl); /* Adjust spacing below title */
+}
+
+/* New outer container */
+.client-logos-outer {
+    /* display: inline-flex; */ /* Removed */
+    width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black var(--space-xxl), black calc(100% - var(--space-xxl)), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, black var(--space-xxl), black calc(100% - var(--space-xxl)), transparent 100%);
+}
+
+/* New inner wrapper */
+.client-logos-inner-wrapper {
+    display: flex; /* Apply flex here */
+    width: fit-content; /* Allow it to size based on content */
+    /* Remove animation from wrapper */
+    /* animation: infinite-scroll 40s linear infinite; */
+}
+
+/* Container for logos (original and duplicate sets) */
+.client-logos {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    align-items: center; /* Vertically center */
+    justify-content: flex-start; /* Start logos from the left */
+    gap: var(--space-xxl); /* Use larger gap */
+    padding: var(--space-md) 0; /* Add some vertical padding */
+    flex-shrink: 0; /* Prevent shrinking */
+    
+    /* Re-apply animation here */
+    animation: infinite-scroll 40s linear infinite;
+}
+
+/* Pause animation on hover */
+.client-logos-outer:hover .client-logos {
+    animation-play-state: paused;
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .client-logos-inner-wrapper {
+      /* animation: none; */ /* Animation is not on wrapper */
+  }
+  .client-logos {
+    animation: none; /* Disable animation on logos */
+    /* Consider a static layout as fallback */
+    justify-content: center; 
+    flex-wrap: wrap;
+  }
+  /* Hide the duplicate logos */
+  .client-logos[aria-hidden="true"] {
+      display: none;
+  }
+  /* Remove mask */
+  .client-logos-outer {
+      mask-image: none;
+      -webkit-mask-image: none;
+  }
+}
+
+/* Individual logo styles */
+.client-logo {
+    flex: 0 0 auto; /* Don't grow or shrink, use natural width or defined width */
+    text-align: center;
+    opacity: 0.7; /* Slightly faded look */
+    transition: opacity 0.3s ease;
+    max-width: 150px; /* Set a max-width for consistency */
+}
+
+.client-logo:hover {
+    opacity: 1;
+}
+
+/* Style for the placeholder text */
+.client-logo span {
+    display: block;
+    padding: var(--space-md) var(--space-lg); /* Adjust padding */
+    border: 1px solid var(--md-sys-color-outline-variant-dark); /* Changed from dashed */
+    background-color: var(--md-sys-color-surface-container-lowest-dark); /* Add subtle bg */
+    color: var(--md-sys-color-on-surface-variant-dark);
+    font-size: var(--md-typescale-label-medium-size);
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+[data-theme="light"] .client-logo span {
+    border-color: var(--md-sys-color-outline-variant-light);
+    background-color: var(--md-sys-color-surface-container-lowest-light);
+    color: var(--md-sys-color-on-surface-variant-light);
+}
+
+/* Style for actual image logos (if used later) */
+.client-logo img {
+    display: block;
+    max-width: 100%;
+    height: 40px; /* Adjust height as needed */
+    margin: 0 auto;
+    object-fit: contain; /* Ensure logo aspect ratio is maintained */
+    filter: grayscale(100%); /* Optional: make logos grayscale */
+    transition: filter 0.3s ease;
+}
+
+.client-logo:hover img {
+    filter: grayscale(0%); /* Optional: color on hover */
+}
+
+/* --- Media Queries for Clients --- */
+/* Remove or adjust media queries if fixed width/scroll handles sizing */
+/* @media (max-width: 767px) { ... } */ 

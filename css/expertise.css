@@ -1,0 +1,143 @@
+/* ==========================================================================
+   Expertise Section Styles (New Layout - based on image)
+   ========================================================================== */
+
+.expertise-section-new {
+    /* Overall padding for the section */
+    /* padding: var(--space-section) var(--space-lg); */ /* Removed specific section padding, inherit from .section */
+}
+
+.expertise-subsection {
+    display: grid;
+    grid-template-columns: 20% 1fr; /* Adjust ratio for title vs content */
+    gap: var(--space-xl); /* Use var */
+    margin-bottom: var(--space-xxl); /* Increased space between subsections */
+    padding-bottom: var(--space-xxl); /* Increased space below subsection content */
+    border-bottom: 1px solid var(--md-sys-color-outline-variant-dark); /* Line between subsections */
+}
+
+[data-theme="light"] .expertise-subsection {
+    border-bottom-color: var(--md-sys-color-outline-variant-light);
+}
+
+.expertise-subsection:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.subsection-title h3 {
+    font-size: var(--md-typescale-label-large-size);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--md-sys-color-primary-dark); /* Use primary color */
+    margin: 0;
+    /* Optional: Add padding-top if needed for alignment */
+}
+
+[data-theme="light"] .subsection-title h3 {
+    color: var(--md-sys-color-primary-light);
+}
+
+.subsection-content {
+    /* Styles for the content area */
+}
+
+/* --- Skills Subsection Specific Styles --- */
+.skills-content .skills-columns {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    column-count: 3; /* Adjust number of columns */
+    column-gap: var(--space-lg); /* Use var */
+}
+
+.skills-content .skills-columns li {
+    font-size: var(--md-typescale-body-large-size);
+    color: var(--md-sys-color-on-surface-dark);
+    margin-bottom: var(--space-sm); /* Use var */
+    break-inside: avoid-column; /* Prevent items breaking across columns */
+}
+
+[data-theme="light"] .skills-content .skills-columns li {
+    color: var(--md-sys-color-on-surface-light);
+}
+
+/* --- Experience Subsection Specific Styles --- */
+.experience-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl); /* Increased space between experience items */
+}
+
+.experience-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 100px; /* Adjust column ratios as needed */
+    gap: var(--space-lg); /* Use var */
+    padding-bottom: var(--space-xl); /* Increased padding below item */
+    border-bottom: 1px solid var(--md-sys-color-outline-variant-dark);
+    align-items: start;
+}
+
+[data-theme="light"] .experience-item {
+    border-bottom-color: var(--md-sys-color-outline-variant-light);
+}
+
+.experience-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.experience-item span {
+    font-size: var(--md-typescale-body-large-size);
+    color: var(--md-sys-color-on-surface-dark);
+}
+
+[data-theme="light"] .experience-item span {
+    color: var(--md-sys-color-on-surface-light);
+}
+
+.experience-item .job-title {
+    font-weight: 600;
+}
+
+.experience-item .year {
+    text-align: right;
+    color: var(--md-sys-color-on-surface-variant-dark);
+}
+
+[data-theme="light"] .experience-item .year {
+    color: var(--md-sys-color-on-surface-variant-light);
+}
+
+/* --- Media Queries for Expertise (New Layout) --- */
+@media (max-width: 991px) {
+    .skills-content .skills-columns {
+        column-count: 2; /* Reduce columns on smaller screens */
+    }
+    .experience-item {
+         /* Stack on medium screens? Or adjust columns */
+        grid-template-columns: 1fr 1fr 80px; 
+    }
+}
+
+@media (max-width: 767px) {
+    .expertise-subsection {
+        grid-template-columns: 1fr; /* Stack title and content */
+        gap: var(--space-lg); /* Increased mobile gap */
+    }
+    .subsection-title h3 {
+        margin-bottom: var(--space-lg); /* Increased mobile margin */
+    }
+    .skills-content .skills-columns {
+        column-count: 1; /* Single column on mobile */
+    }
+    .experience-item {
+        grid-template-columns: 1fr; /* Stack all experience parts */
+        gap: var(--space-sm); /* Use var */
+    }
+    .experience-item .year {
+        text-align: left;
+    }
+} 

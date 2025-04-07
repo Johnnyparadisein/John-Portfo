@@ -5,7 +5,7 @@
 #hero {
     min-height: 80vh; /* Reduced height from 90vh */
     padding-top: var(--header-height); /* Adjust padding to only account for header */
-    padding-bottom: var(--space-xl); /* Adjusted bottom padding slightly */
+    padding-bottom: var(--space-section); /* Reduced bottom padding */
     display: flex;
     align-items: center; /* Vertically center content */
     justify-content: center; /* Horizontally center content */
@@ -24,7 +24,7 @@
     z-index: 1;
     display: grid;
     grid-template-columns: 1fr; /* Single column layout for mobile */
-    gap: var(--space-lg); /* Reduced gap for mobile */
+    gap: var(--space-xl); /* Use var */
 }
 
 /* Styles for the typed output span */
@@ -39,7 +39,7 @@
     font-size: var(--md-typescale-headline-small-size); /* Slightly larger size */
     font-weight: 600; /* Bold weight */
     color: var(--text-primary);
-    margin-bottom: var(--space-sm); /* Smaller margin below intro */
+    margin-bottom: var(--space-md); /* Use var */
     line-height: var(--md-typescale-headline-small-line-height);
     text-align: left;
 }
@@ -55,7 +55,7 @@
     font-size: var(--md-typescale-body-large-size); 
     line-height: var(--md-typescale-body-large-line-height);
     color: var(--text-primary); /* Use primary text color */
-    margin: 0 0 var(--space-lg); /* Adjusted margin */
+    margin: 0 0 var(--space-lg); /* Use var */
     max-width: 100%; /* Allow full width within its column */
     text-align: left; /* Align text left by default now */
 }
@@ -64,7 +64,7 @@
     display: flex;
     flex-direction: column; 
     align-items: flex-start; /* Align buttons left on mobile */
-    gap: var(--space-md);
+    gap: var(--space-md); /* Use var */
 }
 
 .hero-buttons .btn { 
@@ -79,7 +79,7 @@
     aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
     overflow: hidden;
     position: relative; /* Added for pseudo-element positioning */
-    /* border-radius: 50%; Removed to make it square */
+    border-radius: 0; /* Square */
 }
 
 .about-image::after {
@@ -109,7 +109,7 @@
 @media (min-width: 768px) {
     /* Tablet view adjustments */
     .hero-content {
-        gap: var(--space-xl);
+        gap: var(--space-xl); /* Use var */
     }
      /* Removed max-width increase here, handled in base */
 }
@@ -134,19 +134,19 @@
 
     .hero-text .lead-text {
         font-size: 1.1rem; /* Slightly smaller for desktop column */
-        margin-bottom: var(--space-xl);
+        margin-bottom: var(--space-xl); /* Use var */
     }
 
     .hero-buttons {
         flex-direction: row; /* Buttons side-by-side */
         align-items: center; 
-        gap: var(--space-lg);
+        gap: var(--space-lg); /* Use var */
     }
 
      .scroll-indicator {
          display: flex; 
          position: absolute;
-         bottom: 60px;
+         bottom: var(--space-xxl); /* Use var */
          left: 50%;
          transform: translateX(-50%);
          color: var(--text-secondary);
