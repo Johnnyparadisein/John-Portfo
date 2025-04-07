@@ -406,20 +406,19 @@
 }
 
 /* --- Preloader --- */
+/*
 .preloader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--md-sys-color-background-dark); 
+    background-color: var(--md-sys-color-background-dark);
+    z-index: 1040; 
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1100; 
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.6s ease 0.2s, visibility 0s linear 0s;
+    transition: opacity 0.5s ease 0.3s, visibility 0.5s ease 0.3s; 
 }
 [data-theme="light"] .preloader {
     background-color: var(--md-sys-color-background-light);
@@ -427,29 +426,28 @@
 .preloader.hidden {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.6s ease, visibility 0s linear 0.6s;
 }
 .preloader-content {
     text-align: center;
 }
 .preloader-spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid rgba(var(--md-sys-color-primary-dark-rgb, 116, 206, 255), 0.3); 
-    border-top-color: var(--md-sys-color-primary-dark);
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--md-sys-color-surface-variant-dark); 
+    border-top-color: var(--md-sys-color-primary-dark); 
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin: 0 auto var(--space-md);
 }
 [data-theme="light"] .preloader-spinner {
-    border: 4px solid rgba(var(--md-sys-color-primary-light-rgb, 0, 101, 142), 0.3);
+    border-color: var(--md-sys-color-surface-variant-light);
     border-top-color: var(--md-sys-color-primary-light);
 }
 .preloader-text {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    color: var(--md-sys-color-primary-dark);
-    font-weight: 600;
+    color: var(--md-sys-color-primary-dark); 
+    overflow: hidden; 
 }
 [data-theme="light"] .preloader-text {
     color: var(--md-sys-color-primary-light);
@@ -457,14 +455,22 @@
 .preloader-text span {
     display: inline-block;
     opacity: 0;
-    animation: fadeInUp 0.5s ease forwards;
+    transform: translateY(20px);
+    animation: letterFadeIn 0.5s forwards;
 }
-.preloader-text span:nth-child(1) { animation-delay: 0.1s; }
-.preloader-text span:nth-child(2) { animation-delay: 0.2s; }
-.preloader-text span:nth-child(3) { animation-delay: 0.3s; }
-.preloader-text span:nth-child(4) { animation-delay: 0.4s; }
-.preloader-text span:nth-child(5) { animation-delay: 0.5s; }
-.preloader-text span:nth-child(6) { animation-delay: 0.6s; }
+
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes letterFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+*/
 
 /* --- Cookie Consent Banner --- */
 .cookie-consent {

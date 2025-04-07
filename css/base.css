@@ -146,6 +146,12 @@
 
      /* Scrim Color */
      --md-sys-color-scrim: rgba(0, 0, 0, 0.4);
+
+    /* Add HSL values for colors used in gradient */
+    --md-sys-color-primary-dark-hue: 181;
+    --md-sys-color-tertiary-dark-hue: 271;
+    --md-sys-color-primary-light-hue: 181;
+    --md-sys-color-tertiary-light-hue: 272;
 }
 
 /* Light Theme - White/Gray + Blue Accent */
@@ -240,13 +246,57 @@ body {
     overflow-x: hidden;
     /* Dynamic padding set by JS */
     transition: padding-top 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    /* Ensure stacking context for pseudo-elements */
+    position: relative; 
+    z-index: 0; /* Ensure body creates a stacking context */
 }
+
+/* Blurred Background Elements */
+body::before {
+    content: '';
+    position: fixed;
+    /* Make it much larger to cover more area */
+    width: 100vw; 
+    height: 100vh;
+    /* Remove border-radius, let it be rectangular */
+    /* border-radius: 50%; */
+    /* Use a radial gradient with the theme colors */
+    /* Adjusted alpha values for more blue and transparency */
+    background: radial-gradient(circle at top left, 
+        hsla(var(--md-sys-color-primary-dark-hue, 181), 74%, 63%, 0.2) 0%, /* Primary color - More transparent */
+        hsla(var(--md-sys-color-tertiary-dark-hue, 271), 37%, 75%, 0.1) 40%, /* Tertiary color - Even more transparent */
+        transparent 70% /* Fade to transparent */
+    );
+    /* Adjust blur */
+    filter: blur(100px); 
+    z-index: -1; /* Place behind content */
+    /* Remove opacity, control via gradient alpha */
+    /* opacity: 0.3; */
+    pointer-events: none; /* Prevent interaction */
+    /* Position top-left to fill viewport */
+    top: 0;
+    left: 0;
+}
+
 [data-theme="light"] body {
     background-color: var(--md-sys-color-background-light); 
     /* ADD subtle noise texture (adjust color for light theme) */
     background-image: radial-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 1px);
     background-size: 3px 3px;
     color: var(--md-sys-color-on-background-light); 
+}
+
+/* Update blur element colors for light theme */
+[data-theme="light"] body::before {
+    /* Update gradient colors for light theme */
+    /* Adjusted alpha values for more blue and transparency */
+    background: radial-gradient(circle at top left, 
+        hsla(var(--md-sys-color-primary-light-hue, 181), 100%, 21%, 0.15) 0%, /* Primary color - More transparent */
+        hsla(var(--md-sys-color-tertiary-light-hue, 272), 18%, 41%, 0.08) 40%, /* Tertiary color - Even more transparent */
+        transparent 70% /* Fade to transparent */
+    );
+    /* Remove opacity override */
+    /* opacity: 0.2; */
 }
 
 a {

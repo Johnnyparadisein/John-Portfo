@@ -243,21 +243,6 @@ function handleScrollTopVisibility() {
     }
 }
 
-// --- Preloader --- 
-function initializePreloader() {
-    const preloader = document.querySelector('.preloader');
-    if (!preloader) {
-        console.warn('Preloader element not found.');
-        return;
-    }
-    window.addEventListener('load', () => {
-        preloader.classList.add('hidden');
-        preloader.addEventListener('transitionend', () => {
-            preloader.remove();
-        }, { once: true });
-    });
-}
-
 // --- Cookie Consent --- 
 function initializeCookieConsent() {
     const cookieConsentBanner = document.getElementById('cookie-consent');

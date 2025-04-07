@@ -12,24 +12,6 @@
     background-color: var(--md-sys-color-surface-container-lowest-light);
 } */
 
-#experience::after {
-    content: '';
-    position: absolute;
-    bottom: -150px;
-    left: -200px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(var(--md-sys-color-primary-dark-rgb), 0.06) 0%, rgba(var(--md-sys-color-primary-dark-rgb), 0) 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    opacity: 0.3;
-    z-index: -1;
-}
-[data-theme="light"] #experience::after {
-     background: radial-gradient(circle, rgba(var(--md-sys-color-primary-light-rgb), 0.06) 0%, rgba(var(--md-sys-color-primary-light-rgb), 0) 70%);
-     opacity: 0.2;
-}
-
 .timeline {
     max-width: 800px; 
     margin: 0 auto; 
@@ -43,10 +25,26 @@
     bottom: 10px; 
     left: calc(var(--space-sm) + 1px); 
     width: 2px; 
-    background-color: var(--md-sys-color-outline-variant-dark); /* M3 Outline Variant */
+    /* Change solid color to a gradient for fade effect */
+    /* background-color: var(--md-sys-color-outline-variant-dark); */
+    background: linear-gradient(
+        to bottom, 
+        transparent 0%, 
+        var(--md-sys-color-outline-variant-dark) 15%, 
+        var(--md-sys-color-outline-variant-dark) 85%, 
+        transparent 100%
+    );
 }
 [data-theme="light"] .timeline::before {
-     background-color: var(--md-sys-color-outline-variant-light);
+     /* Change solid color to a gradient for fade effect */
+     /* background-color: var(--md-sys-color-outline-variant-light); */
+     background: linear-gradient(
+        to bottom, 
+        transparent 0%, 
+        var(--md-sys-color-outline-variant-light) 15%, 
+        var(--md-sys-color-outline-variant-light) 85%, 
+        transparent 100%
+    );
 }
 .timeline-item {
     margin-bottom: var(--space-xl); 
@@ -73,22 +71,25 @@
      box-shadow: var(--md-sys-elevation-3-light);
 }
 
-.timeline-item::before { /* Dot on the timeline */
+/* REMOVED Dot on the timeline */
+/* 
+.timeline-item::before { 
    content: '';
    position: absolute;
-   top: calc(var(--space-xl) + 5px); /* Align with date roughly */
-   left: calc(-1 * var(--space-xl) - var(--space-sm) - 4px); /* Position left of card */
+   top: calc(var(--space-xl) + 5px); 
+   left: calc(-1 * var(--space-xl) - var(--space-sm) - 4px); 
    width: 10px;
    height: 10px;
    background-color: var(--md-sys-color-primary-dark);
    border: 2px solid var(--md-sys-color-surface-container-low-dark);
    border-radius: 50%;
-   z-index: 1; /* Above timeline line */
+   z-index: 1; 
 }
 [data-theme="light"] .timeline-item::before {
     background-color: var(--md-sys-color-primary-light);
     border-color: var(--md-sys-color-surface-container-low-light);
 }
+*/
 
 .timeline-date {
     margin-bottom: var(--space-sm); 
@@ -192,10 +193,13 @@
         margin-left: var(--space-xxl); 
         padding: var(--space-xl);
     }
+    /* REMOVED media query override for the removed dot */
+    /* 
     .timeline-item::before {
         left: calc(-1 * (var(--space-xxl) + var(--space-sm) + 4px)); 
-        top: calc(var(--space-xl) + 7px); /* Re-align dot */
+        top: calc(var(--space-xl) + 7px); 
     }
+    */
     .timeline-content h3 {
         /* Use Title Large on larger screens? */
         font-size: var(--md-typescale-title-large-size); 
@@ -213,11 +217,5 @@
 @media (min-width: 992px) {
     .timeline {
         max-width: 800px; /* Maintain max width */
-    }
-    #experience::after {
-        bottom: -200px;
-        left: -250px;
-        width: 600px;
-        height: 600px;
     }
 } 

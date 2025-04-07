@@ -6,25 +6,6 @@
     position: relative; 
     overflow: hidden; 
 }
-#skills::before { /* Add decorative element */
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -150px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(var(--md-sys-color-tertiary-dark-rgb, 206, 191, 223), 0.05) 0%, rgba(var(--md-sys-color-tertiary-dark-rgb, 206, 191, 223), 0) 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    opacity: 0.5;
-    z-index: -1;
-    /* Generate tertiary RGB if not defined */
-}
-[data-theme="light"] #skills::before {
-    background: radial-gradient(circle, rgba(var(--md-sys-color-tertiary-light-rgb, 99, 90, 118), 0.05) 0%, rgba(var(--md-sys-color-tertiary-light-rgb, 99, 90, 118), 0) 70%);
-    opacity: 0.4;
-}
-
 
 .skills-grid {
     display: grid;
@@ -110,12 +91,6 @@
 @media (min-width: 768px) {
     .skills-grid {
         grid-template-columns: repeat(3, 1fr);
-    }
-     #skills::before {
-        top: -150px;
-        right: -200px;
-        width: 500px;
-        height: 500px;
     }
 }
 

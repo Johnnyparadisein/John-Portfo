@@ -11,13 +11,11 @@ function initializeWebsite() {
     initializeLazyLoading();    // From components.js
     initializeModals();         // From components.js
     initializeScrollTopButton();// From components.js
-    initializePreloader();      // From components.js
     initializeCookieConsent();  // From components.js
     initializeFullscreenViewer(); // From components.js (Add new initializer)
 
     // --- Initialize Feature-Specific Modules ---
-    // initializePortfolioFiltering(); // From showcase.js (Formerly portfolio.js)  <-- Temporarily commented out
-    // initializeLightGallery();     // Remove LightGallery initialization
+    // initializePortfolioFiltering(); // From showcase.js (Formerly portfolio.js) - Initialization moved to showcase.js
 
     // --- Initialize Vendor Libraries ---
     initializeVendorLibs();     // From vendor.js (AOS, Typed.js)

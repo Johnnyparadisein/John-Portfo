@@ -1,6 +1,8 @@
 // --- Initialize AOS (Animate on Scroll) ---
 function initializeAOS() {
+    console.log("Checking for AOS library..."); // Log start
     if (typeof AOS !== 'undefined') {
+        console.log("AOS library found. Initializing..."); // Log found
         AOS.init({
             duration: 800, 
             easing: 'ease-in-out', 
@@ -8,6 +10,7 @@ function initializeAOS() {
             mirror: false, 
             anchorPlacement: 'top-bottom', 
         });
+        console.log("AOS initialized successfully."); // Log success
     } else {
         console.warn('AOS library not loaded.');
     }
@@ -15,20 +18,27 @@ function initializeAOS() {
 
 // --- Initialize Typed.js ---
 function initializeTypedJs() {
+    console.log("Checking for Typed.js library and target..."); // Log start
     const typedElement = document.getElementById('typed-output');
     if (typedElement && typeof Typed !== 'undefined') {
-        const typed = new Typed('#typed-output', {
-            strings: [
-                'Motion Designer',
-                'Graphic Designer',
-                'AI Enthusiast'
-            ],
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 1500,
-            loop: true,
-            smartBackspace: true
-        });
+        console.log("Typed.js library and target found. Initializing..."); // Log found
+        try { // Add try-catch
+            const typed = new Typed('#typed-output', {
+                strings: [
+                    'Motion Designer',
+                    'Graphic Designer',
+                    'AI Enthusiast'
+                ],
+                typeSpeed: 50,
+                backSpeed: 30,
+                backDelay: 1500,
+                loop: true,
+                smartBackspace: true
+            });
+            console.log("Typed.js initialized successfully."); // Log success
+        } catch (error) {
+            console.error("Error initializing Typed.js:", error); // Log error
+        }
     } else {
         if (!typedElement) console.warn('Typed.js target element #typed-output not found.');
         if (typeof Typed === 'undefined') console.warn('Typed.js library not loaded.');
@@ -39,5 +49,4 @@ function initializeTypedJs() {
 function initializeVendorLibs() {
     initializeAOS();
     initializeTypedJs();
-    // lightGallery is initialized in portfolio.js as it depends on portfolio items
 } 

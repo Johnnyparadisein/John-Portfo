@@ -17,25 +17,6 @@
     box-sizing: border-box; /* Include padding in height calculation */
 }
 
-/* Optional: Add a subtle graphic element */
-#hero::before {
-    content: '';
-    position: absolute;
-    bottom: -100px;
-    left: -100px;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(var(--md-sys-color-primary-dark-rgb), 0.1) 0%, rgba(var(--md-sys-color-primary-dark-rgb), 0) 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    opacity: 0.5; 
-    z-index: -1; 
-}
-[data-theme="light"] #hero::before {
-     background: radial-gradient(circle, rgba(var(--md-sys-color-primary-light-rgb), 0.1) 0%, rgba(var(--md-sys-color-primary-light-rgb), 0) 70%);
-     opacity: 0.4;
-}
-
 .hero-content {
     position: relative; 
     z-index: 1;
@@ -95,13 +76,6 @@
         padding-bottom: var(--space-xl); /* Consistent bottom padding */
         text-align: center; /* Keep centered on tablet */
     }
-    #hero::before {
-        width: 400px; 
-        height: 400px;
-        bottom: -150px;
-        left: -150px;
-        opacity: 0.6;
-    }
     .hero-content {
         grid-template-columns: 1fr; 
         gap: var(--space-xxl);
@@ -147,13 +121,6 @@
 @media (min-width: 992px) {
     .hero-content h2 {
          font-size: clamp(4rem, 7vw, 5rem); /* Larger */
-    }
-     #hero::before {
-        width: 500px; 
-        height: 500px;
-        bottom: -200px;
-        left: -200px;
-        opacity: 0.7;
     }
 }
 
