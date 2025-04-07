@@ -3,16 +3,18 @@
    ========================================================================== */
 
 #hero {
-    min-height: 100vh; /* Increased initial height */
-    padding-top: calc(var(--header-height) + var(--space-xxl)); /* Add header height to padding */
-    padding-bottom: var(--space-xxl);
+    min-height: 90vh; /* Reduced height from 100vh */
+    padding-top: var(--header-height); /* Adjust padding to only account for header */
+    padding-bottom: var(--space-xl); /* Adjusted bottom padding slightly */
     display: flex;
-    align-items: center;
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
     text-align: center; 
     position: relative;
     background-color: var(--bg-primary); 
     overflow: hidden; 
     z-index: 0;
+    box-sizing: border-box; /* Include padding in height calculation */
 }
 
 /* Optional: Add a subtle graphic element */
@@ -40,13 +42,14 @@
     display: grid;
     grid-template-columns: 1fr; 
     gap: var(--space-xl);
+    transform: translateY(-8vh); /* Increased negative value to move further up */
 }
 
 .hero-content h2 {
     /* Use M3 Display Large */
     font-size: var(--md-typescale-display-large-size);
     line-height: var(--md-typescale-display-large-line-height);
-    font-weight: var(--md-typescale-display-large-weight);
+    font-weight: 800;
     margin-bottom: var(--space-md);
     color: var(--text-primary); 
     /* Animation handled by AOS */
@@ -88,8 +91,8 @@
 /* --- Media Queries for Hero --- */
 @media (min-width: 768px) {
     #hero {
-        padding-top: calc(var(--header-height) + var(--space-xxl)); 
-        padding-bottom: var(--space-xxl);
+        padding-top: var(--header-height); /* Adjusted padding inside media query */
+        padding-bottom: var(--space-xl); /* Consistent bottom padding */
         text-align: center; /* Keep centered on tablet */
     }
     #hero::before {
@@ -124,7 +127,7 @@
     .scroll-indicator {
          display: flex; 
          position: absolute;
-         bottom: 30px;
+         bottom: 60px; /* Increased from 30px to move it up */
          left: 50%;
          transform: translateX(-50%);
          color: var(--text-secondary);

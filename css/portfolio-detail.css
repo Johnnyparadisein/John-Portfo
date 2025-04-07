@@ -2,6 +2,7 @@
 
 .portfolio-detail-page {
     padding-top: var(--header-height); /* Adjust based on actual header height */
+    padding-bottom: 4rem; /* Add some padding at the bottom */
 }
 
 .page-title {
@@ -20,8 +21,19 @@
 
 .portfolio-detail-grid {
     display: grid;
-    gap: 4rem; /* Space between projects */
+    gap: 2.5rem; /* Consistent gap */
     margin-top: 3rem;
+}
+
+.project-group-title {
+    grid-column: 1 / -1; /* Make title span full width */
+    margin-top: 3rem;
+    margin-bottom: 0rem; /* Reduced space before grid items */
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    font-family: var(--font-heading);
+    font-size: 1.8rem; /* Adjust size as needed */
+    color: var(--text-color-strong);
 }
 
 .portfolio-detail-item {
@@ -30,6 +42,8 @@
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Ensure image is always on top */
 }
 
 .portfolio-detail-item:hover {
@@ -37,30 +51,81 @@
     box-shadow: var(--shadow-md);
 }
 
+.portfolio-detail-image {
+    width: 100%; /* Image takes full width of item */
+    flex-shrink: 0;
+    border-right: none; /* Remove side border */
+    border-bottom: 1px solid var(--border-color); /* Restore bottom border */
+    position: relative; /* Needed for absolute positioning of overlay */
+}
+
 .portfolio-detail-image img {
     display: block;
     width: 100%;
-    height: auto;
-    object-fit: cover; /* Adjust as needed */
-    border-bottom: 1px solid var(--border-color);
+    height: auto; /* Let image height be natural */
+    object-fit: contain; /* Changed from cover */
+    border-bottom: none; 
+}
+
+/* Hover Overlay Styles */
+.image-hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--card-bg-rgb), 0.85); /* Use card bg with alpha */
+    color: var(--text-color-strong);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Allow clicks/hovers on things behind if needed */
+}
+
+.image-hover-overlay h3 {
+    font-size: 1.2rem; /* Adjust size for overlay */
+    margin-bottom: 0.5rem;
+}
+
+.image-hover-overlay .portfolio-categories {
+     justify-content: center; /* Center tags in overlay */
+     margin-bottom: 0;
+}
+
+.portfolio-detail-image:hover .image-hover-overlay {
+    opacity: 1;
+    pointer-events: auto; /* Allow interaction with overlay content if needed */
 }
 
 .portfolio-detail-content {
-    padding: 1.5rem;
+    width: 100%; /* Content takes full width below image */
+    padding: 1.5rem; 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
 }
 
 .portfolio-detail-content h3 {
     margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem; /* Increased space below title */
     font-family: var(--font-heading);
     color: var(--text-color-strong);
+    font-size: 1.4rem; /* Adjust size */
+    text-align: left; /* Ensure left alignment */
 }
 
 .portfolio-categories {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem; /* Increased space below categories */
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    text-align: left; /* Ensure left alignment */
 }
 
 .category-tag {
@@ -68,25 +133,120 @@
     color: var(--primary-color);
     padding: 0.25rem 0.75rem;
     border-radius: var(--border-radius-sm);
-    font-size: 0.85rem;
+    font-size: 0.8rem; /* Slightly smaller */
     font-weight: 500;
 }
 
 .portfolio-detail-content p {
-    margin-bottom: 0.75rem;
-    line-height: 1.6;
+    margin-bottom: 1rem; /* Consistent paragraph spacing */
+    line-height: 1.65; /* Slightly increased line height */
+    text-align: left; /* Ensure left alignment */
+    flex-grow: 1; /* Allow description paragraphs to take space */
+}
+
+.portfolio-detail-content p:last-of-type {
+    margin-bottom: 0; /* Remove margin from last paragraph */
 }
 
 .portfolio-detail-content p strong {
     color: var(--text-color-medium);
+    display: block; /* Make labels like 'Description:' block */
+    margin-bottom: 0.25rem;
 }
 
-/* --- Responsive Adjustments --- */
+/* Explanation Section Styles */
+.portfolio-detail-explanation {
+    padding: 1.5rem;
+    margin-top: 0; /* Remove potential double margin */
+    border-top: 1px solid var(--border-color);
+}
 
-/* Example: Adjust grid for larger screens if needed */
-/* @media (min-width: 768px) {
-    .portfolio-detail-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+.portfolio-detail-explanation p strong {
+     color: var(--text-color-medium);
+     display: block; 
+     margin-bottom: 0.25rem;
+     font-size: 0.9rem; /* Slightly smaller label */
+     font-weight: 600;
+}
+
+.portfolio-detail-explanation p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 0.95rem; /* Slightly smaller text for details */
+}
+
+.portfolio-detail-explanation p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Styles for the new image gallery within each project item */
+.project-image-gallery {
+    display: grid;
+    /* Default to 3 columns for larger screens */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-auto-rows: minmax(150px, auto); /* Control row height */
+    gap: 1rem; 
+    padding: 1.5rem; 
+    background-color: var(--body-bg); 
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-image-gallery figure {
+    margin: 0;
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    box-shadow: var(--shadow-xs);
+}
+
+/* Style for the large item */
+.project-image-gallery .gallery-item--large {
+    grid-column: span 2; 
+    grid-row: span 2;
+}
+
+.project-image-gallery img {
+    display: block;
+    width: 100%;
+    height: 100%; /* Make image fill the figure */
+    object-fit: cover; /* Cover the area, cropping if needed */
+    transition: transform 0.3s ease;
+}
+
+.project-image-gallery figure:hover img {
+    transform: scale(1.05); 
+}
+
+/* Responsive adjustments for the gallery */
+@media (max-width: 992px) { /* Tablet breakpoint */
+    .project-image-gallery {
+        grid-template-columns: repeat(2, 1fr); 
+        grid-auto-rows: minmax(120px, auto);
     }
-} */ 
+    .project-image-gallery .gallery-item--large {
+        grid-column: span 2; /* Still span full width */
+        grid-row: span 1;    /* But only one row high */
+    }
+}
+
+@media (max-width: 576px) { /* Mobile breakpoint */
+    .project-image-gallery {
+        grid-template-columns: 1fr; /* Single column */
+        grid-auto-rows: minmax(180px, auto); /* Taller rows for single column */
+    }
+    .project-image-gallery .gallery-item--large {
+        grid-column: span 1; /* Reset span */
+        grid-row: span 1;    /* Reset span */
+    }
+}
+
+/* REMOVED OLD STYLES for .portfolio-detail-image and .image-hover-overlay */
+/* .portfolio-detail-image { ... } */
+/* .portfolio-detail-image img { ... } */
+/* .image-hover-overlay { ... } */
+/* .image-hover-overlay h3 { ... } */
+/* .image-hover-overlay .portfolio-categories { ... } */
+/* .portfolio-detail-image:hover .image-hover-overlay { ... } */
+
+/* REMOVED OLD RESPONSIVE STYLES related to --large / --small classes */
+/* @media (min-width: 768px) { ... } */
+/* @media (min-width: 1200px) { ... } */ 

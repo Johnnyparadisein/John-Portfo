@@ -116,9 +116,11 @@
 .portfolio-item:hover {
     transform: translateY(-5px);
     box-shadow: var(--md-sys-elevation-4-dark);
+    border: 1px solid var(--md-sys-color-primary-dark); /* Added border on hover */
 }
 [data-theme="light"] .portfolio-item:hover {
     box-shadow: var(--md-sys-elevation-4-light);
+    border: 1px solid var(--md-sys-color-primary-light); /* Added border on hover */
 }
 
 .portfolio-item figure {
